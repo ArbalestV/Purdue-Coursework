@@ -1,0 +1,75 @@
+==18085== Memcheck, a memory error detector
+==18085== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==18085== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==18085== Command: ./pa05 i inputs/intinput4 outputs/intoutput4
+==18085== Parent PID: 18082
+==18085== 
+--18085-- 
+--18085-- Valgrind options:
+--18085--    --tool=memcheck
+--18085--    --leak-check=full
+--18085--    --verbose
+--18085--    --log-file=outputs/intmemoutput4
+--18085-- Contents of /proc/version:
+--18085--   Linux version 2.6.32-358.18.1.el6.x86_64 (mockbuild@x86-003.build.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) ) #1 SMP Fri Aug 2 17:04:38 EDT 2013
+--18085-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--18085-- Page sizes: currently 4096, max supported 4096
+--18085-- Valgrind library directory: /usr/lib64/valgrind
+--18085-- Reading syms from /home/shay/a/kalita/ECE264/solutions/Assignments264/PA05/pa05
+--18085-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--18085--    object doesn't have a dynamic symbol table
+--18085-- Reading syms from /lib64/ld-2.12.so
+--18085-- Scheduler: using generic scheduler lock implementation.
+--18085-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==18085== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-18085-by-kalita-on-ecelinux13.ecn.purdue.edu
+==18085== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-18085-by-kalita-on-ecelinux13.ecn.purdue.edu
+==18085== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-18085-by-kalita-on-ecelinux13.ecn.purdue.edu
+==18085== 
+==18085== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==18085== don't want to do, unless you know exactly what you're doing,
+==18085== or are doing some strange experiment):
+==18085==   /usr/lib64/valgrind/../../bin/vgdb --pid=18085 ...command...
+==18085== 
+==18085== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==18085==   /path/to/gdb ./pa05
+==18085== and then give GDB the following command
+==18085==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=18085
+==18085== --pid is optional if only one valgrind process is running
+==18085== 
+--18085-- REDIR: 0x3eb5217520 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--18085-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--18085-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--18085-- REDIR: 0x3eb5217390 (index) redirected to 0x4a07bf0 (index)
+--18085-- REDIR: 0x3eb5217410 (strcmp) redirected to 0x4a08530 (strcmp)
+--18085-- Reading syms from /lib64/libc-2.12.so
+--18085-- REDIR: 0x3eb5684ec0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--18085-- REDIR: 0x3eb5687180 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--18085-- REDIR: 0x3eb5682e30 (__GI_strrchr) redirected to 0x4a07a70 (__GI_strrchr)
+--18085-- REDIR: 0x3eb567f8d0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--18085-- REDIR: 0x3eb5727ac0 (__strcmp_sse42) redirected to 0x4a08490 (strcmp)
+--18085-- REDIR: 0x3eb567a8e0 (malloc) redirected to 0x4a0696c (malloc)
+--18085-- REDIR: 0x3eb567b710 (free) redirected to 0x4a06369 (free)
+--18085-- REDIR: 0x3eb568ace0 (strchrnul) redirected to 0x4a09f10 (strchrnul)
+==18085== 
+==18085== HEAP SUMMARY:
+==18085==     in use at exit: 568 bytes in 1 blocks
+==18085==   total heap usage: 3 allocs, 2 frees, 1,140 bytes allocated
+==18085== 
+==18085== Searching for pointers to 1 not-freed blocks
+==18085== Checked 64,544 bytes
+==18085== 
+==18085== LEAK SUMMARY:
+==18085==    definitely lost: 0 bytes in 0 blocks
+==18085==    indirectly lost: 0 bytes in 0 blocks
+==18085==      possibly lost: 0 bytes in 0 blocks
+==18085==    still reachable: 568 bytes in 1 blocks
+==18085==         suppressed: 0 bytes in 0 blocks
+==18085== Reachable blocks (those to which a pointer was found) are not shown.
+==18085== To see them, rerun with: --leak-check=full --show-reachable=yes
+==18085== 
+==18085== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
+--18085-- 
+--18085-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--18085-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==18085== 
+==18085== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)

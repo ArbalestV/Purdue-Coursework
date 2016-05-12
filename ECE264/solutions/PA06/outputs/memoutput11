@@ -1,0 +1,87 @@
+==6848== Memcheck, a memory error detector
+==6848== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==6848== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==6848== Command: pa06 images/corrupt-testcases/height-wrong.ee264 outputs/output6
+==6848== Parent PID: 31823
+==6848== 
+--6848-- 
+--6848-- Valgrind options:
+--6848--    --tool=memcheck
+--6848--    --leak-check=full
+--6848--    --verbose
+--6848--    --log-file=outputs/memoutput11
+--6848-- Contents of /proc/version:
+--6848--   Linux version 2.6.32-358.18.1.el6.x86_64 (mockbuild@x86-003.build.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) ) #1 SMP Fri Aug 2 17:04:38 EDT 2013
+--6848-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--6848-- Page sizes: currently 4096, max supported 4096
+--6848-- Valgrind library directory: /usr/lib64/valgrind
+--6848-- Reading syms from /home/shay/a/kalita/ECE264/solutions/Assignments264/PA06/pa06
+--6848-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--6848--    object doesn't have a dynamic symbol table
+--6848-- Reading syms from /lib64/ld-2.12.so
+--6848-- Scheduler: using generic scheduler lock implementation.
+--6848-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==6848== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-6848-by-kalita-on-ecelinux15.ecn.purdue.edu
+==6848== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-6848-by-kalita-on-ecelinux15.ecn.purdue.edu
+==6848== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-6848-by-kalita-on-ecelinux15.ecn.purdue.edu
+==6848== 
+==6848== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==6848== don't want to do, unless you know exactly what you're doing,
+==6848== or are doing some strange experiment):
+==6848==   /usr/lib64/valgrind/../../bin/vgdb --pid=6848 ...command...
+==6848== 
+==6848== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==6848==   /path/to/gdb pa06
+==6848== and then give GDB the following command
+==6848==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=6848
+==6848== --pid is optional if only one valgrind process is running
+==6848== 
+--6848-- REDIR: 0x3ca9217520 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--6848-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--6848-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--6848-- REDIR: 0x3ca9217390 (index) redirected to 0x4a07bf0 (index)
+--6848-- REDIR: 0x3ca9217410 (strcmp) redirected to 0x4a08530 (strcmp)
+--6848-- Reading syms from /lib64/libc-2.12.so
+--6848-- REDIR: 0x3ca9684ec0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--6848-- REDIR: 0x3ca9687180 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--6848-- REDIR: 0x3ca9682e30 (__GI_strrchr) redirected to 0x4a07a70 (__GI_strrchr)
+--6848-- REDIR: 0x3ca967f8d0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--6848-- REDIR: 0x3ca9727ac0 (__strcmp_sse42) redirected to 0x4a08490 (strcmp)
+--6848-- REDIR: 0x3ca967a8e0 (malloc) redirected to 0x4a0696c (malloc)
+--6848-- REDIR: 0x3ca9689860 (memcpy) redirected to 0x4a08b20 (memcpy)
+--6848-- REDIR: 0x3ca967b710 (free) redirected to 0x4a06369 (free)
+--6848-- REDIR: 0x3ca968ace0 (strchrnul) redirected to 0x4a09f10 (strchrnul)
+--6848-- REDIR: 0x3ca96846f0 (mempcpy) redirected to 0x4a09f80 (mempcpy)
+==6848== 
+==6848== HEAP SUMMARY:
+==6848==     in use at exit: 672 bytes in 3 blocks
+==6848==   total heap usage: 4 allocs, 1 frees, 696 bytes allocated
+==6848== 
+==6848== Searching for pointers to 3 not-freed blocks
+==6848== Checked 1,113,104 bytes
+==6848== 
+==6848== 16 bytes in 1 blocks are definitely lost in loss record 1 of 3
+==6848==    at 0x4A069EE: malloc (vg_replace_malloc.c:270)
+==6848==    by 0x40082C: loadImage (in /home/shay/a/kalita/ECE264/solutions/Assignments264/PA06/pa06)
+==6848==    by 0x400E51: main (in /home/shay/a/kalita/ECE264/solutions/Assignments264/PA06/pa06)
+==6848== 
+==6848== 88 bytes in 1 blocks are definitely lost in loss record 2 of 3
+==6848==    at 0x4A069EE: malloc (vg_replace_malloc.c:270)
+==6848==    by 0x400904: loadImage (in /home/shay/a/kalita/ECE264/solutions/Assignments264/PA06/pa06)
+==6848==    by 0x400E51: main (in /home/shay/a/kalita/ECE264/solutions/Assignments264/PA06/pa06)
+==6848== 
+==6848== LEAK SUMMARY:
+==6848==    definitely lost: 104 bytes in 2 blocks
+==6848==    indirectly lost: 0 bytes in 0 blocks
+==6848==      possibly lost: 0 bytes in 0 blocks
+==6848==    still reachable: 568 bytes in 1 blocks
+==6848==         suppressed: 0 bytes in 0 blocks
+==6848== Reachable blocks (those to which a pointer was found) are not shown.
+==6848== To see them, rerun with: --leak-check=full --show-reachable=yes
+==6848== 
+==6848== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 6 from 6)
+--6848-- 
+--6848-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--6848-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==6848== 
+==6848== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 6 from 6)

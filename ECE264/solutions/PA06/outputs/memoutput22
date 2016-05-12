@@ -1,0 +1,69 @@
+==7749== Memcheck, a memory error detector
+==7749== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==7749== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==7749== Command: ./pa06 images/corrupt-testcases/bad-comment-len.ee264 outputs/output1
+==7749== Parent PID: 31823
+==7749== 
+--7749-- 
+--7749-- Valgrind options:
+--7749--    --tool=memcheck
+--7749--    --leak-check=full
+--7749--    --verbose
+--7749--    --log-file=outputs/memoutput22
+--7749-- Contents of /proc/version:
+--7749--   Linux version 2.6.32-358.18.1.el6.x86_64 (mockbuild@x86-003.build.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) ) #1 SMP Fri Aug 2 17:04:38 EDT 2013
+--7749-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--7749-- Page sizes: currently 4096, max supported 4096
+--7749-- Valgrind library directory: /usr/lib64/valgrind
+--7749-- Reading syms from /home/shay/a/kalita/ECE264/solutions/Assignments264/PA06/pa06
+--7749-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--7749--    object doesn't have a dynamic symbol table
+--7749-- Reading syms from /lib64/ld-2.12.so
+--7749-- Scheduler: using generic scheduler lock implementation.
+--7749-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==7749== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-7749-by-kalita-on-ecelinux15.ecn.purdue.edu
+==7749== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-7749-by-kalita-on-ecelinux15.ecn.purdue.edu
+==7749== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-7749-by-kalita-on-ecelinux15.ecn.purdue.edu
+==7749== 
+==7749== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==7749== don't want to do, unless you know exactly what you're doing,
+==7749== or are doing some strange experiment):
+==7749==   /usr/lib64/valgrind/../../bin/vgdb --pid=7749 ...command...
+==7749== 
+==7749== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==7749==   /path/to/gdb ./pa06
+==7749== and then give GDB the following command
+==7749==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=7749
+==7749== --pid is optional if only one valgrind process is running
+==7749== 
+--7749-- REDIR: 0x3ca9217520 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--7749-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--7749-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--7749-- REDIR: 0x3ca9217390 (index) redirected to 0x4a07bf0 (index)
+--7749-- REDIR: 0x3ca9217410 (strcmp) redirected to 0x4a08530 (strcmp)
+--7749-- Reading syms from /lib64/libc-2.12.so
+--7749-- REDIR: 0x3ca9684ec0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--7749-- REDIR: 0x3ca9687180 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--7749-- REDIR: 0x3ca9682e30 (__GI_strrchr) redirected to 0x4a07a70 (__GI_strrchr)
+--7749-- REDIR: 0x3ca967f8d0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--7749-- REDIR: 0x3ca9727ac0 (__strcmp_sse42) redirected to 0x4a08490 (strcmp)
+--7749-- REDIR: 0x3ca967a8e0 (malloc) redirected to 0x4a0696c (malloc)
+--7749-- REDIR: 0x3ca9689860 (memcpy) redirected to 0x4a08b20 (memcpy)
+==7749== Warning: set address range perms: large range [0x3aeed040, 0x7c694a98) (undefined)
+--7749-- REDIR: 0x3ca96846f0 (mempcpy) redirected to 0x4a09f80 (mempcpy)
+--7749-- REDIR: 0x3ca967b710 (free) redirected to 0x4a06369 (free)
+==7749== Warning: set address range perms: large range [0x3aeed028, 0x7c694ab0) (noaccess)
+--7749-- REDIR: 0x3ca968ace0 (strchrnul) redirected to 0x4a09f10 (strchrnul)
+==7749== 
+==7749== HEAP SUMMARY:
+==7749==     in use at exit: 0 bytes in 0 blocks
+==7749==   total heap usage: 4 allocs, 4 frees, 1,098,546,360 bytes allocated
+==7749== 
+==7749== All heap blocks were freed -- no leaks are possible
+==7749== 
+==7749== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
+--7749-- 
+--7749-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--7749-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==7749== 
+==7749== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)

@@ -1,0 +1,83 @@
+==7278== Memcheck, a memory error detector
+==7278== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==7278== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==7278== Command: pa06 images/corrupt-testcases/width0.ee264 outputs/output6
+==7278== Parent PID: 31823
+==7278== 
+--7278-- 
+--7278-- Valgrind options:
+--7278--    --tool=memcheck
+--7278--    --leak-check=full
+--7278--    --verbose
+--7278--    --log-file=outputs/memoutput14
+--7278-- Contents of /proc/version:
+--7278--   Linux version 2.6.32-358.18.1.el6.x86_64 (mockbuild@x86-003.build.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) ) #1 SMP Fri Aug 2 17:04:38 EDT 2013
+--7278-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--7278-- Page sizes: currently 4096, max supported 4096
+--7278-- Valgrind library directory: /usr/lib64/valgrind
+--7278-- Reading syms from /home/shay/a/kalita/ECE264/solutions/Assignments264/PA06/pa06
+--7278-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--7278--    object doesn't have a dynamic symbol table
+--7278-- Reading syms from /lib64/ld-2.12.so
+--7278-- Scheduler: using generic scheduler lock implementation.
+--7278-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==7278== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-7278-by-kalita-on-ecelinux15.ecn.purdue.edu
+==7278== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-7278-by-kalita-on-ecelinux15.ecn.purdue.edu
+==7278== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-7278-by-kalita-on-ecelinux15.ecn.purdue.edu
+==7278== 
+==7278== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==7278== don't want to do, unless you know exactly what you're doing,
+==7278== or are doing some strange experiment):
+==7278==   /usr/lib64/valgrind/../../bin/vgdb --pid=7278 ...command...
+==7278== 
+==7278== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==7278==   /path/to/gdb pa06
+==7278== and then give GDB the following command
+==7278==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=7278
+==7278== --pid is optional if only one valgrind process is running
+==7278== 
+--7278-- REDIR: 0x3ca9217520 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--7278-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--7278-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--7278-- REDIR: 0x3ca9217390 (index) redirected to 0x4a07bf0 (index)
+--7278-- REDIR: 0x3ca9217410 (strcmp) redirected to 0x4a08530 (strcmp)
+--7278-- Reading syms from /lib64/libc-2.12.so
+--7278-- REDIR: 0x3ca9684ec0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--7278-- REDIR: 0x3ca9687180 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--7278-- REDIR: 0x3ca9682e30 (__GI_strrchr) redirected to 0x4a07a70 (__GI_strrchr)
+--7278-- REDIR: 0x3ca967f8d0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--7278-- REDIR: 0x3ca9727ac0 (__strcmp_sse42) redirected to 0x4a08490 (strcmp)
+--7278-- REDIR: 0x3ca967a8e0 (malloc) redirected to 0x4a0696c (malloc)
+--7278-- REDIR: 0x3ca9689860 (memcpy) redirected to 0x4a08b20 (memcpy)
+--7278-- REDIR: 0x3ca9681350 (__GI_strlen) redirected to 0x4a07f70 (__GI_strlen)
+--7278-- REDIR: 0x3ca96846f0 (mempcpy) redirected to 0x4a09f80 (mempcpy)
+--7278-- REDIR: 0x3ca968ace0 (strchrnul) redirected to 0x4a09f10 (strchrnul)
+--7278-- REDIR: 0x3ca967b710 (free) redirected to 0x4a06369 (free)
+==7278== 
+==7278== HEAP SUMMARY:
+==7278==     in use at exit: 584 bytes in 2 blocks
+==7278==   total heap usage: 2 allocs, 0 frees, 584 bytes allocated
+==7278== 
+==7278== Searching for pointers to 2 not-freed blocks
+==7278== Checked 1,113,088 bytes
+==7278== 
+==7278== 16 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==7278==    at 0x4A069EE: malloc (vg_replace_malloc.c:270)
+==7278==    by 0x40082C: loadImage (in /home/shay/a/kalita/ECE264/solutions/Assignments264/PA06/pa06)
+==7278==    by 0x400E51: main (in /home/shay/a/kalita/ECE264/solutions/Assignments264/PA06/pa06)
+==7278== 
+==7278== LEAK SUMMARY:
+==7278==    definitely lost: 16 bytes in 1 blocks
+==7278==    indirectly lost: 0 bytes in 0 blocks
+==7278==      possibly lost: 0 bytes in 0 blocks
+==7278==    still reachable: 568 bytes in 1 blocks
+==7278==         suppressed: 0 bytes in 0 blocks
+==7278== Reachable blocks (those to which a pointer was found) are not shown.
+==7278== To see them, rerun with: --leak-check=full --show-reachable=yes
+==7278== 
+==7278== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 6)
+--7278-- 
+--7278-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--7278-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==7278== 
+==7278== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 6)

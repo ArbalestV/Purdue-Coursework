@@ -1,0 +1,82 @@
+==19029== Memcheck, a memory error detector
+==19029== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==19029== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==19029== Command: ./pa05 s inputs/strinput7 outputs/stroutput7
+==19029== Parent PID: 19025
+==19029== 
+--19029-- 
+--19029-- Valgrind options:
+--19029--    --tool=memcheck
+--19029--    --leak-check=full
+--19029--    --verbose
+--19029--    --log-file=outputs/strmemoutput7
+--19029-- Contents of /proc/version:
+--19029--   Linux version 2.6.32-358.18.1.el6.x86_64 (mockbuild@x86-003.build.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-3) (GCC) ) #1 SMP Fri Aug 2 17:04:38 EDT 2013
+--19029-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--19029-- Page sizes: currently 4096, max supported 4096
+--19029-- Valgrind library directory: /usr/lib64/valgrind
+--19029-- Reading syms from /home/shay/a/kalita/ECE264/solutions/Assignments264/PA05/pa05
+--19029-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--19029--    object doesn't have a dynamic symbol table
+--19029-- Reading syms from /lib64/ld-2.12.so
+--19029-- Scheduler: using generic scheduler lock implementation.
+--19029-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==19029== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-19029-by-kalita-on-ecelinux13.ecn.purdue.edu
+==19029== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-19029-by-kalita-on-ecelinux13.ecn.purdue.edu
+==19029== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-19029-by-kalita-on-ecelinux13.ecn.purdue.edu
+==19029== 
+==19029== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==19029== don't want to do, unless you know exactly what you're doing,
+==19029== or are doing some strange experiment):
+==19029==   /usr/lib64/valgrind/../../bin/vgdb --pid=19029 ...command...
+==19029== 
+==19029== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==19029==   /path/to/gdb ./pa05
+==19029== and then give GDB the following command
+==19029==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=19029
+==19029== --pid is optional if only one valgrind process is running
+==19029== 
+--19029-- REDIR: 0x3eb5217520 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--19029-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--19029-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--19029-- REDIR: 0x3eb5217390 (index) redirected to 0x4a07bf0 (index)
+--19029-- REDIR: 0x3eb5217410 (strcmp) redirected to 0x4a08530 (strcmp)
+--19029-- Reading syms from /lib64/libc-2.12.so
+--19029-- REDIR: 0x3eb5684ec0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--19029-- REDIR: 0x3eb5687180 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--19029-- REDIR: 0x3eb5682e30 (__GI_strrchr) redirected to 0x4a07a70 (__GI_strrchr)
+--19029-- REDIR: 0x3eb567f8d0 (strcmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--19029-- REDIR: 0x3eb5727ac0 (__strcmp_sse42) redirected to 0x4a08490 (strcmp)
+--19029-- REDIR: 0x3eb567a8e0 (malloc) redirected to 0x4a0696c (malloc)
+--19029-- REDIR: 0x3eb5683540 (memchr) redirected to 0x4a085d0 (memchr)
+--19029-- REDIR: 0x3eb5689860 (memcpy) redirected to 0x4a08b20 (memcpy)
+--19029-- REDIR: 0x3eb5681310 (strlen) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--19029-- REDIR: 0x3eb5732d90 (__strlen_sse42) redirected to 0x4a07f50 (strlen)
+--19029-- REDIR: 0x3eb5680d60 (strcpy) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--19029-- REDIR: 0x3eb5733820 (???) redirected to 0x4a07f90 (strcpy)
+--19029-- REDIR: 0x3eb567b710 (free) redirected to 0x4a06369 (free)
+--19029-- REDIR: 0x3eb5681350 (__GI_strlen) redirected to 0x4a07f70 (__GI_strlen)
+--19029-- REDIR: 0x3eb56846f0 (mempcpy) redirected to 0x4a09f80 (mempcpy)
+==19029== 
+==19029== HEAP SUMMARY:
+==19029==     in use at exit: 568 bytes in 1 blocks
+==19029==   total heap usage: 43 allocs, 42 frees, 2,791 bytes allocated
+==19029== 
+==19029== Searching for pointers to 1 not-freed blocks
+==19029== Checked 64,576 bytes
+==19029== 
+==19029== LEAK SUMMARY:
+==19029==    definitely lost: 0 bytes in 0 blocks
+==19029==    indirectly lost: 0 bytes in 0 blocks
+==19029==      possibly lost: 0 bytes in 0 blocks
+==19029==    still reachable: 568 bytes in 1 blocks
+==19029==         suppressed: 0 bytes in 0 blocks
+==19029== Reachable blocks (those to which a pointer was found) are not shown.
+==19029== To see them, rerun with: --leak-check=full --show-reachable=yes
+==19029== 
+==19029== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
+--19029-- 
+--19029-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--19029-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==19029== 
+==19029== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
