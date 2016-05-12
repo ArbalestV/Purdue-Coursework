@@ -1,0 +1,11 @@
+import StringIO
+import sys
+import string
+
+while True:
+    n = raw_input("Enter an integer smaller than 50: ")
+    if n >= 50:
+        print "Number should be less than 50."
+    else:
+        break
+

@@ -1,0 +1,155 @@
+#!/usr/bin/env/python
+import sys,copy
+sys.path.append( "/home/shay/a/kalita/ece404/HW4/BitVector-3.3.2" )
+from BitVector import *
+import string
+
+class RC4:
+    key = "" #the key
+    S = [] #the state vector S for encryption
+    S_d = [] #the state vector S for decryption
+    T = [] #the temporary vector T (same for both encryption and decryption)
+    K = [] #the key vector
+    header = [] #to extract the header string
+    content = [] #to get the image file contents minus the header
+    cont_e_int = [] #content in integer format
+    header_d = [] #to extract the header string for decryption
+    content_d = [] #to get the image file contents minus the header fpr decryption
+    cont_e_int_d = [] #content in integer format fpr decryption
+    def initialize_K(self): #define the K[] vector of 16 integers
+        for i in range(0, len(self.key)):#for all the key characters
+            self.K.append(ord(self.key[i])) #convert from string to int in 8bits ASCII
+        return
+
+    def __init__(self): #constructor for key reading of 16 characters in length
+         while True: #key looping until the key itself is 8-characters long
+             self.key = raw_input("Enter the 128-bit long key: ")
+             if len(self.key) != 16:
+                 print "Key should be 16 characters long."
+             else: 
+                 break
+
+    def initialize_S(self): #function to initialize the S[] array for encryption
+        for i in range(0, 256): #since it is from 0 to 255
+            self.S.append(int(i)) #0-255 
+        return
+    
+    def initialize_S_d(self): #function to initialize the S[] array for decryption
+        for i in range(0, 256): #since it is from 0 to 255
+            self.S_d.append(int(i)) #0-255 
+        return
+
+    def initialize_T(self): #function to initialize the T[] array
+        for i in range(0, 256): #since it is from 0 to 255
+            self.T.append(self.K[i % len(self.K)]) #make each element of T[] based on repetition of K
+        return
+        
+    def KSA_e(self): #define the Key Scheduling Algorithm for encryption
+        j = 0
+        for i in range(0, 256):
+            j = (j + self.S[i] + self.T[i]) % 256 #randomize j based on the algorithm
+            #now swap S[i], S[j]
+            tmp = self.S[i]
+            self.S[i] = self.S[j]
+            self.S[j] = tmp
+        return
+
+    def KSA_d(self): #define the Key Scheduling Algorithm for encryption
+        j = 0
+        for i in range(0, 256):
+            j = (j + self.S_d[i] + self.T[i]) % 256 #randomize j based on the algorithm
+            #now swap S[i], S[j]
+            tmp = self.S_d[i]
+            self.S_d[i] = self.S_d[j]
+            self.S_d[j] = tmp
+        return
+        
+    def get_content(self): #seperate the header and the content
+        f = open("Tiger2.ppm", 'r') #open the .ppm file
+        data = copy.deepcopy(list(f)) #get the image file contents
+        self.header = data[:5] #since header will be in lines 1 to 5
+        self.content = data[5:] #since content will be the rest of the lines
+        for i in range(0, len(self.content)):
+            for j in range(0, len(self.content[i])):
+                self.cont_e_int.append(ord(self.content[i][j])) #basically convert into an array
+        print self.cont_e_int
+        f.close() #close the input .ppm file
+        return
+
+    def get_content_d(self): #seperate the header and the content
+        f = open("encrypt_tiger.ppm", 'r') #open the .ppm file
+        data = copy.deepcopy(list(f)) #get the image file contents
+        #print 'printing the data..'
+        #print data
+        self.header_d = data[:5] #since header will be in lines 1 to 5
+        #print self.header
+        self.content_d = data[5:] #since content will be the rest of the lines
+        for i in range(0, len(self.content_d)):
+            for j in range(0, len(self.content_d[i])):
+                self.cont_e_int_d.append(ord(self.content_d[i][j])) #basically convert into an array
+                #print self.content_d[i][j]
+        f.close() #close the input .ppm file
+        return
+    
+    def encrypt_pseudo_random(self): #encryption pseudo-random sequence generator and write to file
+        i = 0
+        j = 0
+        f_e = open("encrypt_tiger.ppm", 'w') #encrypted file open
+        #first of all, attach the header
+        for l in range(0, len(self.header)):
+            f_e.write(self.header[l])
+        for c in range(0, len(self.cont_e_int)): #for all the integers in content
+            i = (i + 1) % 256
+            j = (j + self.S[i]) % 256
+            #now swap S[i], S[j]
+            tmp = self.S[i]
+            self.S[i] = self.S[j]
+            self.S[j] = tmp
+            k = (self.S[i] + self.S[j]) % 256
+            xor_op = self.S[k] ^ self.cont_e_int[c] #xor S[K] spit-out output with content integer
+            f_e.write(chr(xor_op)) #write to file
+        return
+
+    def encrypt_pseudo_random_d(self): #encryption pseudo-random sequence generator and write to file
+        i = 0
+        j = 0
+        f_e = open("decrypt_tiger.ppm", 'w') #encrypted file open
+        #first of all, attach the header
+        for l in range(0, len(self.header_d)):
+            f_e.write(self.header_d[l])
+        for c in range(0, len(self.cont_e_int_d)): #for all the integers in content
+            i = (i + 1) % 256
+            j = (j + self.S_d[i]) % 256
+            #now swap S[i], S[j]
+            tmp = self.S_d[i]
+            self.S_d[i] = self.S_d[j]
+            self.S_d[j] = tmp
+            k = (self.S_d[i] + self.S_d[j]) % 256
+            xor_op = self.S_d[k] ^ self.cont_e_int_d[c] #xor S[K] spit-out output with content integer
+            f_e.write(chr(xor_op)) #write to file
+        return
+    
+    def encrypt(self): #encrypt function
+         self.initialize_K() #initialize K[] vector
+         self.initialize_S() #initialize the S[] vector
+         self.initialize_T() #initialize the T[] vector
+         self.KSA_e() #Key Scheduling Algorithm for encryption
+         self.get_content() #get content and header function for encryption
+         self.encrypt_pseudo_random() #call the pseudo random generator for encryption
+         return
+    
+    def decrypt(self): 
+        #encrypt function
+        self.initialize_S_d() #initialize the S_d[] vector
+        self.KSA_d() #Key Scheduling Algorithm for decryption
+        self.get_content_d() #get content and header function for decryption
+        self.encrypt_pseudo_random_d() #call the pseudo random generator for decryption
+        return
+
+if __name__ == "__main__":
+    obj = RC4() #RC4 object
+    obj.encrypt() #call the encrypt function
+    obj.decrypt() #call the decrypt function
+    
+    
+    

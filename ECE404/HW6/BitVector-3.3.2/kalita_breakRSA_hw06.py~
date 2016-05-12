@@ -1,0 +1,44 @@
+#!/usr/bin/env/python
+import sys
+sys.path.append( "/home/shay/a/kalita/ece404/HW4/BitVector-3.3.2" )
+from BitVector import *
+import string
+from PrimeGenerator import *
+
+#Euclid's Binary GCD algorithm defined here
+def gcd(a,n):
+    if n > a: #if the RHS argument is greater than LHS argument, then flip the arguments
+        return gcd(n,a);
+    else:
+        if n == 0: # if the RHS argument is zero, then return the LHS number
+            return a;
+        elif n == a: #if both numbers are equal then return the number
+            return a;
+        else:
+            return gcd(n, (a%n)); #otherwise gcd(a,n)=gcd(n,(a%n)) -> recursive implementation
+
+def modular_exp(A, B, n): #modular exponentiation
+    result = 1
+    while (B > 0):
+        if (B & 1): #check the lowest bit of B
+            result = (result * A) % n
+        B = B >> 1 #shift B by one bit to the right
+        A = (A * A) % n
+    return result
+
+e = 3 #value of e to be used as stated
+generator = PrimeGenerator( bits = 128, debug = 0 )
+p1 = generator.findPrime() #prime number p
+#print "Prime returned: ", p
+generator = PrimeGenerator( bits = 128, debug = 0 )
+q1 = generator.findPrime() #prime number q
+#print "Prime returned: ", q
+#print p_bv
+while (p_bv[0] != 1 or p_bv[1] != 1 or q_bv[0] != 1 or q_bv[1] != 1 or p == q or gcd(p - 1, e) != 1 or gcd(q - 1, e) != 1):
+    print "Regenerating..."
+    generator = PrimeGenerator( bits = 128, debug = 0 )
+    p = generator.findPrime() #prime number p
+    generator = PrimeGenerator( bits = 128, debug = 0 )
+    q = generator.findPrime() #prime number q
+    p_bv = BitVector(intVal = p) #bit vector representation of p
+    q_bv = BitVector(intVal = q) #bit vector representation of q

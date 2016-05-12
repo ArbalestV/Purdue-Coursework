@@ -1,0 +1,16 @@
+#!/usr/bin/env/python
+import sys
+#from BitVector import *
+sys.path.append( "/home/shay/a/kalita/ece404/HW2/BitVector-3.3.2" )
+from BitVector import *
+import string
+with open('s-box-tables.txt') as f:
+    arrays = [line.split() for line in f]
+    #print arrays
+s_box = []
+for i in range(0,32, 4):
+    s_box.append([arrays[k] for k in range(i, i+4)]) # S_BOX
+    
+for i in range(0,8):
+    print i
+    print s_box[i]

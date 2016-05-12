@@ -1,0 +1,42 @@
+import StringIO
+import sys
+
+while True:
+    i_file = raw_input("Enter the name of the plaintext file: ")
+    if i_file != 'input.txt':
+        print "Wrong name of plaintext file."
+        #sys.exit(1)
+    else:
+        break
+    #print (i_file)
+#print('jiu')
+#print (i_file)
+#f = open(
+#hello = "hello world"
+#print hello
+while True:
+    key_file = raw_input("Enter the name of the key file: ")
+    if key_file != 'key.txt':
+        print "Wrong name of key file."
+        #sys.exit(1)
+    else: 
+        break
+        #print (key_file)
+while True:
+    o_file = raw_input("Enter the name of the output file: ")
+    if o_file != 'output.txt':
+        print "Wrong name of output file."
+        #sys.exit(1)
+    else:
+        break
+        #print (o_file)
+
+#print "outside while"
+f_input = open(i_file, 'r')
+for line_i in f_input:
+    print line_i
+f_key = open(key_file, 'r')
+for line_k in f_key:
+    print line_k
+
+

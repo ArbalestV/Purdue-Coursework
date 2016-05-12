@@ -1,0 +1,79 @@
+HELL=/bin/sh
+PATH=/usr/local/lib/mh:$PATH
+MAILDIR=$HOME/Mail
+LOGFILE=$HOME/Mail/logfile
+SENDMAIL=/usr/sbin/sendmail
+#VERBOSE=1
+VERBOSE=0
+EOL="
+"
+LOG="$EOL$EOL$EOL"
+LOG="New message log:$EOL"
+LOG=`perl GET_MESSAGE_INDEX`
+LOG="$EOL"
+
+## Recipe_1
+## trapping emails [1-50] with multiple 
+## senders.
+##
+:0 H:
+* ^From: <[0-9a-zA-Z+-_]+@[0-9a-zA-Z]+\.[a-zA-Z]+>[ ]*,[ ]*<[0-9a-zA-Z+-_]+@[0-9a-zA-Z]+\.[a-zA-Z]+>
+{
+  LOG="Filtered out emails as required by HW12."
+
+  :0 :
+  junkMail
+}
+
+
+## Recipe_2:
+## Trap emails [51-63] based on
+## their subject lines.
+## 
+:0 H:
+* ^Subject.*(medication[s]*|[a-zA-z]*[dD]iploma[a-zA-z]*|reinvent|online|master's|b[a-zA-z]*u[a-zA-z]*y|free|Magento|).*
+{
+  LOG="Filtered out emails as required by HW12."
+
+  :0 :
+  junkMail
+}
+
+
+
+## Recipe_3:
+## Trap emails [64-66] based on
+## their body contents.
+## 
+:0 B:
+* .*(Sub-Penny|Ruby Palace casino).*
+{
+  LOG="Filtered out emails as required by HW12."
+
+  :0 :
+  junkMail
+}
+
+
+
+
+
+#Recipe 4
+## To trap emails [67-75] based on
+## a compound recipe based on content type, 
+## content encoding and character set used.
+##
+:0 HB:
+* ^Content-Type: text/(html|plain)
+* ^Content-Transfer-Encoding: (8bit|quoted-printable)
+* charset[ ]*=.*(Windows-1252|utf-8).*
+{
+  LOG="Filtered out emails as required by HW12."
+
+  :0 :
+  junkMail
+}
+
+
+
+

@@ -1,0 +1,56 @@
+#!/usr/bin/env/python
+import sys,copy
+sys.path.append( "/home/shay/a/kalita/ece404/HW4/BitVector-3.3.2" )
+from BitVector import *
+import string
+
+class RC4:
+    key = "" #the key
+    S = [] #the state vector S for encryption
+    S_d = [] #the state vector S for decryption
+    T = [] #the temporary vector T (same for both encryption and decryption)
+    K = [] #the key vector
+    header = [] #to extract the header string
+    content = [] #to get the image file contents minus the header
+    cont_e_int = [] #content in integer format
+    header_d = [] #to extract the header string for decryption
+    content_d = [] #to get the image file contents minus the header fpr decryption
+    cont_e_int_d = [] #content in integer format fpr decryption
+    def initialize_K(self): #define the K[] vector of 16 integers
+        for i in range(0, len(self.key)):#for all the key characters
+            self.K.append(ord(self.key[i])) #convert from string to int in 8bits ASCII
+        return
+
+    def __init__(self): #constructor for key reading of 16 characters in length
+         while True: #key looping until the key itself is 8-characters long
+             self.key = raw_input("Enter the 128-bit long key: ")
+             if len(self.key) != 16:
+                 print "Key should be 16 characters long."
+             else: 
+                 break
+
+    def initialize_S(self): #function to initialize the S[] array for encryption
+        for i in range(0, 256): #since it is from 0 to 255
+            self.S.append(int(i)) #0-255 
+        return
+    
+    def initialize_S_d(self): #function to initialize the S[] array for decryption
+        for i in range(0, 256): #since it is from 0 to 255
+            self.S_d.append(int(i)) #0-255 
+        return
+
+    def initialize_T(self): #function to initialize the T[] array
+        for i in range(0, 256): #since it is from 0 to 255
+            self.T.append(self.K[i % len(self.K)]) #make each element of T[] based on repetition of K
+        return
+        
+    def KSA_e(self): #define the Key Scheduling Algorithm for encryption
+        j = 0
+        for i in range(0, 256):
+            j = (j + self.S[i] + self.T[i]) % 256 #randomize j based on the algorithm
+            #now swap S[i], S[j]
+            tmp = self.S[i]
+            self.S[i] = self.S[j]
+            self.S[j] = tmp
+        return
+

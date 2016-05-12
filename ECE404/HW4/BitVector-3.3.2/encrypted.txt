@@ -1,0 +1,4 @@
+Key: sherlock
+Plaintext: jiuisgod
+Encrypted Text: v?÷qúﬂ
+Encrypted Text BitVector:0111011000111111000011011101011000010001011100011001110011011111

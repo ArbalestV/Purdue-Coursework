@@ -1,0 +1,81 @@
+#!/usr/bin/env/python
+import sys
+#from BitVector import *
+sys.path.append( "/home/shay/a/kalita/ece404/HW2/BitVector-3.3.2" )
+from BitVector import *
+import string
+
+################################   Initial setup  ################################
+
+# Expansion permutation (See Section 3.3.1):
+expansion_permutation = [31, 0, 1, 2, 3, 4, 3, 4, 5, 6, 7, 8, 7, 8, 
+9, 10, 11, 12, 11, 12, 13, 14, 15, 16, 15, 16, 17, 18, 19, 20, 19, 
+20, 21, 22, 23, 24, 23, 24, 25, 26, 27, 28, 27, 28, 29, 30, 31, 0]
+
+# P-Box permutation (the last step of the Feistel function in Figure 4):
+p_box_permutation = [15,6,19,20,28,11,27,16,0,14,22,25,4,17,30,9,
+1,7,23,13,31,26,2,8,18,12,29,5,21,10,3,24]
+
+# Initial permutation of the key (See Section 3.3.6):
+key_permutation_1 = [56,48,40,32,24,16,8,0,57,49,41,33,25,17,9,1,58,
+50,42,34,26,18,10,2,59,51,43,35,62,54,46,38,30,22,14,6,61,53,45,37,
+29,21,13,5,60,52,44,36,28,20,12,4,27,19,11,3]
+
+# Contraction permutation of the key (See Section 3.3.7):
+key_permutation_2 = [13,16,10,23,0,4,2,27,14,5,20,9,22,18,11,3,25,
+7,15,6,26,19,12,1,40,51,30,36,46,54,29,39,50,44,32,47,43,48,38,55,
+33,52,45,41,49,35,28,31]
+
+# Each integer here is the how much left-circular shift is applied
+# to each half of the 56-bit key in each round (See Section 3.3.5):
+shifts_key_halvs = [1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1]
+
+#get encryption key from the user
+def get_encryption_key(): # key                                                     ## ask user for input
+    while True:
+        key = raw_input("Enter the 8 character long key: ")
+        if len(key) != 8:
+            print "Key should be 8 characters in length."
+        else:
+            break
+    ## make sure it satisfies any constraints on the key
+
+    ## next, construct a BitVector from the key    
+    user_key_bv = BitVector(textstring = key)  
+    #print(user_key_bv)
+    #print(len(user_key_bv))
+    key_bv = user_key_bv.permute( key_permutation_1 )        ## permute() is a BitVector function
+    #print key_bv
+    #print(str(len(key_bv)))
+    return key_bv
+
+
+key_bv = get_encryption_key()
+#print key_bv 
+f_i = open("message.txt", 'r')
+i_bv = BitVector(textstring = "jiuintig")
+print i_bv
+#now, we will do the expansion permutation step for the right half
+#print len(expansion_permutation)
+[left,right] = i_bv.divide_into_two()
+print len(left)
+print left 
+print len(right)
+print right
+right_permute = right.permute(expansion_permutation)
+'''
+for i in range(0, len(expansion_permutation)):
+    right_permute[i] = right[expansion_permutation[i]]
+'''
+print "right 48 bits"
+print right_permute
+print len(right_permute)
+#now we will do the contraction permutation step for the key to generate 48 bits from 56 bits
+fin_key_bv = key_bv.permute(key_permutation_2)
+print "final key"
+print fin_key_bv
+print len(fin_key_bv)
+right_xor = right_permute ^ fin_key_bv
+print "right xor"
+print right_xor
+print len(right_xor)

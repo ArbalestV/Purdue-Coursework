@@ -1,0 +1,11 @@
+For Diffusion - plaintext
+No. of bits changed in plaintext: 2
+No. of bits changed in ciphertext: 35
+Average of bit change: 17.5
+For Confusion - key
+No. of bits changed in plaintext: 2
+No. of bits changed in ciphertext: 29
+Average of bit change: 14.5
+For Diffusion - S-boxes
+No. of bits changed in from s-box 1 ciphertext: 24
+No. of bits changed in from s-box 2 ciphertext: 28
