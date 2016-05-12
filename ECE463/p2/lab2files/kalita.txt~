@@ -1,0 +1,17 @@
+At the end of check point 1. I have completed the five routing table functions, and made the contact with network emulator and gotten the routing information. After the routing information I also initialize the routing table for each node.
+
+
+11/20/15
+At the end of project 2. The convergence works fine, although there might be an issue with the 4_routers.conf input file, in the sense that I do get the correct configurations eventually, but when the very first time a convergence is achieved, R2 and R3 both converge at the same time (7 seconds since the initial time), and because of that, the latest short path from R0-R3 (11) is not yet updated, and what happens is that the previous distance (56) is shown. However, upon disconnecting R3 and then reconnecting it to the network emulator, it eventually converges to the correct values for R3-R0, via R2. Also, my R0 converges initially at time 8 seconds after the initial bootstrap as opposed to the 7 seconds as shown in the lab manual, I am guessing that time should not matter much as long as the correct convergences are exhibited. Furthermore, I was convinced that my algorithm itself wasn't at fault but rather was a timing issue because I checked with the configuration of HW 4, and got the exact same answers for the shortest distance to the node C (in my case R2) from each of the individual nodes from R0 to R4. Lastly, I removed R2(C) from the network and checked that all the subsequent nodes, they all converged with the distance to the dead node C being infinity. 
+
+All in all, my convergences should work fine. 
+
+11:35 pm 11/20/15 - After three further hours of testing, I truly feel that while my convergence works, there could be possible issues with the timing. For eg:, in the UninstallRoutesOnNbrDeath() function in routingtable.c, if I remove the print statements, then the convergence when R2 is removed in 4_router.conf and then re-connected with the system, produces different convergence values. Thus, as of right now, I could not yet ascertain as to why that's happening. I am just submitting this code for my deadline submission, and will try and fix the problem over the next two days.
+
+
+11/22/15
+3:35 am
+Now the table converges to the correct form. It produces the correct convergence table, however in some extremely rare occassions, it may not write the "Converged" message in some of the routers although the log file may not have changed at all for a long time when a couple of routers are killed together. I cannot find the problem for that. However, once the routers are live again, it gets to the correct convergence sequence. Second issue is that sometimes say one router is killed, it prints the distance as INFINITY, but for some reason it keeps printing up the distance in equal intervals until it reaches INFINITY finally which is when it finally says "Converged". Therefore, it finally converges, but with a series of steps. Once again, I couldn't figure out why that happens. However, the final convergence value is right. Therefore, if you see a 999 after a router kill followed by numbers increasing in equal intervals, please wait until the time it has converged, because finally it converges to INFINITY, as it should.
+
+7:30 pm
+Convergence printing issue fixed, but the second issue is still there although it eventually converges to the correct value.

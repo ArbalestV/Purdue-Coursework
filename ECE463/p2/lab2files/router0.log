@@ -1,0 +1,772 @@
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R2, 50
+R0 -> R5: R5, 5
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R2, 56
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R1, 11
+8:Converged
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R1, 66
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R1, 121
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R1, 82
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R1, 135
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R2, 129
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 90
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 143
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 104
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 159
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 120
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 175
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 136
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 191
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 152
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 207
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 168
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 223
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 184
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 239
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 200
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 255
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 216
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 271
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 232
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 287
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 248
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 303
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 264
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 319
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 280
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 335
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 296
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 351
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 312
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 367
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 328
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 383
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 344
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 399
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 360
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 415
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 376
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 431
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 392
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 447
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 408
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 463
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 424
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 479
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 440
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 495
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 456
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 511
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 472
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 527
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 488
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 543
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 504
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 559
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 520
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 575
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 536
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 591
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 552
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 607
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 568
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 623
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 584
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 639
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 600
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 655
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 616
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 671
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 632
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 687
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 648
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 703
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 664
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 719
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 680
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 735
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 696
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 712
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 728
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 744
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 760
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 776
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 792
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 808
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 824
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 840
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 856
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 872
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 888
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 904
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 920
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 936
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 952
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 968
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 984
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R5, 999
+251:Converged
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 999
+R0 -> R2: R1, 999
+R0 -> R5: R5, 5
+R0 -> R4: R1, 999
+R0 -> R3: R5, 999
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 999
+R0 -> R2: R2, 50
+R0 -> R5: R5, 5
+R0 -> R4: R1, 999
+R0 -> R3: R5, 999
+315:Converged
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 999
+R0 -> R2: R2, 50
+R0 -> R5: R5, 5
+R0 -> R4: R1, 999
+R0 -> R3: R2, 56
+346:Converged
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R2, 56
+Routing Table:
+R0 -> R0: R0, 0
+R0 -> R1: R1, 4
+R0 -> R2: R1, 5
+R0 -> R5: R5, 5
+R0 -> R4: R1, 92
+R0 -> R3: R1, 11
+383:Converged

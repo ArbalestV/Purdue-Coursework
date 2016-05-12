@@ -1,0 +1,773 @@
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R0, 50
+R2 -> R1: R1, 1
+R2 -> R3: R3, 6
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R0, 50
+R2 -> R1: R1, 1
+R2 -> R3: R3, 6
+R2 -> R5: R0, 55
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R3, 6
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+7:Converged
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R3, 999
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R0, 61
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R0, 116
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R0, 171
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 79
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 132
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 93
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 148
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 109
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 164
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 125
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 180
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 141
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 196
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 157
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 212
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 173
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 228
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 189
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 244
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 205
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 260
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 221
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 276
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 237
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 292
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 253
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 308
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 269
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 324
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 285
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 340
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 301
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 356
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 317
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 372
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 333
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 388
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 349
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 404
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 365
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 420
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 381
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 436
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 397
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 452
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 413
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 468
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 429
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 484
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 445
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 500
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 461
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 516
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 477
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 532
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 493
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 548
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 509
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 564
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 525
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 580
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 541
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 596
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 557
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 612
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 573
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 628
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 589
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 644
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 605
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 660
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 621
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 676
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 637
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 692
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 653
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 708
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 669
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 724
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 685
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 740
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 701
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 717
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 733
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 749
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 765
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 781
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 797
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 813
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 829
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 845
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 861
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 877
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 893
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 909
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 925
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 941
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 957
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 973
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 989
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R1, 999
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+253:Converged
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 999
+R2 -> R1: R1, 999
+R2 -> R3: R1, 999
+R2 -> R5: R1, 999
+R2 -> R4: R1, 999
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R0, 50
+R2 -> R1: R1, 999
+R2 -> R3: R1, 999
+R2 -> R5: R0, 55
+R2 -> R4: R1, 999
+315:Converged
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R0, 50
+R2 -> R1: R1, 999
+R2 -> R3: R3, 6
+R2 -> R5: R0, 55
+R2 -> R4: R1, 999
+346:Converged
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 5
+R2 -> R1: R1, 1
+R2 -> R3: R3, 6
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+382:Converged
+Routing Table:
+R2 -> R2: R2, 0
+R2 -> R0: R1, 999
+R2 -> R1: R1, 1
+R2 -> R3: R3, 6
+R2 -> R5: R1, 8
+R2 -> R4: R1, 89
+429:Converged
