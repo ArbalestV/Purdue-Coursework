@@ -1,0 +1,18 @@
+	ori $29, $0, 0xFFFC
+	
+	#get all the data values in regs 1-5
+MAIN:	ori $1, $0, 0x0002
+	ori $2, $0, 0x0002
+	ori $3, $0, 0x0001
+	ori $4, $0, 0x0002
+	ori $5, $0, 0x0003
+
+
+	ori $15, $0, 0xFFF8 #to compare the stack pointer with if it has only one element
+	
+	#push all the data values from regs 1-5 in the stack
+	push $1
+	push $2
+	push $3
+	push $4
+	push $5

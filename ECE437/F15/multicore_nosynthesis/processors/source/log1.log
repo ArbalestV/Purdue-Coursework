@@ -1,0 +1,43 @@
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Critical Violations                                                                                                                   ;
++---------------------------------------------------------------------------------+-----------------------------------------------------+
+; Rule name                                                                       ; Name                                                ;
++---------------------------------------------------------------------------------+-----------------------------------------------------+
+; Rule A101: Design should not contain combinational loops - Combinational loop 1 ;                                                     ;
+;  Combinational loop 1                                                           ; multicore:CPU|memory_control:CC|Selector41~0        ;
+;  Combinational loop 1                                                           ; multicore:CPU|memory_control:CC|Selector73~0        ;
+;  Combinational loop 1                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector41   ;
+;  Combinational loop 1                                                           ; multicore:CPU|caches:CM0|dcache:DCACHE|Selector41   ;
+;  Combinational loop 1                                                           ; multicore:CPU|caches:CM0|dcache:DCACHE|Selector41~1 ;
+;  Combinational loop 1                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector41~5 ;
+; Rule A101: Design should not contain combinational loops - Combinational loop 2 ;                                                     ;
+;  Combinational loop 2                                                           ; multicore:CPU|caches:CM0|dcache:DCACHE|Selector40   ;
+;  Combinational loop 2                                                           ; multicore:CPU|memory_control:CC|Selector40~0        ;
+;  Combinational loop 2                                                           ; multicore:CPU|memory_control:CC|Selector72~0        ;
+;  Combinational loop 2                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector40   ;
+;  Combinational loop 2                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector40~0 ;
+;  Combinational loop 2                                                           ; multicore:CPU|caches:CM0|dcache:DCACHE|Selector40~7 ;
+; Rule A101: Design should not contain combinational loops - Combinational loop 3 ;                                                     ;
+;  Combinational loop 3                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector39   ;
+;  Combinational loop 3                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector39~0 ;
+;  Combinational loop 3                                                           ; multicore:CPU|memory_control:CC|Selector71~0        ;
+;  Combinational loop 3                                                           ; multicore:CPU|caches:CM0|dcache:DCACHE|Selector39   ;
+;  Combinational loop 3                                                           ; multicore:CPU|memory_control:CC|Selector39~0        ;
+;  Combinational loop 3                                                           ; multicore:CPU|caches:CM0|dcache:DCACHE|Selector39~1 ;
+; Rule A101: Design should not contain combinational loops - Combinational loop 4 ;                                                     ;
+;  Combinational loop 4                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector42~3 ;
+;  Combinational loop 4                                                           ; multicore:CPU|caches:CM0|dcache:DCACHE|Selector42~4 ;
+;  Combinational loop 4                                                           ; multicore:CPU|memory_control:CC|Selector74~0        ;
+;  Combinational loop 4                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector42~0 ;
+; Rule A101: Design should not contain combinational loops - Combinational loop 5 ;                                                     ;
+;  Combinational loop 5                                                           ; multicore:CPU|memory_control:CC|Selector75~0        ;
+;  Combinational loop 5                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector43~0 ;
+;  Combinational loop 5                                                           ; multicore:CPU|memory_control:CC|Selector43~0        ;
+;  Combinational loop 5                                                           ; multicore:CPU|caches:CM0|dcache:DCACHE|Selector43~1 ;
+; Rule A101: Design should not contain combinational loops - Combinational loop 6 ;                                                     ;
+;  Combinational loop 6                                                           ; multicore:CPU|memory_control:CC|Selector76~0        ;
+;  Combinational loop 6                                                           ; multicore:CPU|caches:CM1|dcache:DCACHE|Selector44~0 ;
+;  Combinational loop 6                                                           ; multicore:CPU|memory_control:CC|Selector44~0        ;
+;  Combinational loop 6                                                           ; multicore:CPU|caches:CM0|dcache:DCACHE|Selector44~1 ;
++---------------------------------------------------------------------------------+-----------------------------------------------------+
