@@ -1,0 +1,222 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/mg232/Desktop/previous-files/single-cycle/with-latency/ece437/processors
+Ycache_control_if
+Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z2 DXx4 work 13 cpu_types_pkg 0 22 ]QV^3KDUUSk7Y9J3nBiLh0
+Z3 !s110 1453914822
+!i10b 1
+!s100 <cbl?n>azHhcEZN^GXCPV1
+IAl[<mcY1O1g1>8fEGTJ>@2
+Z4 V`JN@9S9cnhjKRR_L]QIcM3
+Z5 !s105 memory_control_tb_sv_unit
+S1
+R0
+Z6 w1442804427
+Z7 Finclude/cache_control_if.vh
+Z8 8testbench/memory_control_tb.sv
+Z9 Ftestbench/memory_control_tb.sv
+L0 16
+Z10 OL;L;10.3b;59
+r1
+!s85 0
+31
+Z11 !s108 1453914821.955761
+Z12 !s107 include/cpu_ram_if.vh|include/cpu_types_pkg.vh|include/cache_control_if.vh|testbench/memory_control_tb.sv|
+Z13 !s90 +acc|-sv12compat|-mfcu|-lint|+incdir+include|testbench/memory_control_tb.sv|
+!i113 1
+Z14 o+acc -sv12compat -mfcu -lint -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z15 !s92 +acc -sv12compat -mfcu -lint +incdir+include -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z16 tShow_source 1 ScalarOpts 1 Show_Lint 1 Show_BadOptionWarning 1 Svlog 1 FsmImplicitTrans 1
+Ycpu_ram_if
+R1
+R2
+R3
+!i10b 1
+!s100 hjHhAgmOnZDTN2@[1K8:V0
+Ig_e0Q]GV9`mFf1EZ>oNN80
+R4
+R5
+S1
+R0
+R6
+Z17 Finclude/cpu_ram_if.vh
+R8
+R9
+L0 14
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 1
+R14
+R15
+R16
+Xcpu_types_pkg
+R1
+R3
+!i10b 1
+!s100 SMSe3nVL3JA;n2iA?1FBk1
+I]QV^3KDUUSk7Y9J3nBiLh0
+V]QV^3KDUUSk7Y9J3nBiLh0
+S1
+R0
+R6
+Z18 Finclude/cpu_types_pkg.vh
+R7
+R8
+R9
+L0 9
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 1
+R14
+R15
+R16
+vmemory_control
+R1
+R2
+!s110 1453914820
+!i10b 1
+!s100 I?mbZi@9WL@HziW^J74Z21
+IT0W<m27]5KJf0h_Nn]W<30
+R4
+!s105 memory_control_sv_unit
+S1
+R0
+w1442803257
+8source/memory_control.sv
+Fsource/memory_control.sv
+L0 15
+R10
+r1
+!s85 0
+31
+!s108 1453914820.463920
+!s107 include/cpu_types_pkg.vh|include/cache_control_if.vh|source/memory_control.sv|
+!s90 +acc|-sv12compat|-mfcu|-lint|+incdir+include|source/memory_control.sv|
+!i113 1
+R14
+R15
+R16
+vmemory_control_tb
+R1
+R2
+Z19 DXx4 work 25 memory_control_tb_sv_unit 0 22 EV3a<KQWz_`bTIShaH]?;0
+R4
+r1
+!s85 0
+31
+!i10b 1
+!s100 od6>U>9L4V=f:ibN`H26o2
+IXOEHEU`0FV2bmjP_E;_0g1
+R5
+S1
+R0
+R6
+R8
+R9
+L0 11
+R10
+R11
+R12
+R13
+!i113 1
+R14
+R15
+R16
+Xmemory_control_tb_sv_unit
+R1
+R2
+VEV3a<KQWz_`bTIShaH]?;0
+r1
+!s85 0
+31
+!i10b 1
+!s100 ZQYlk0X=gWcYWf[I3HFZ;0
+IEV3a<KQWz_`bTIShaH]?;0
+!i103 1
+S1
+R0
+R6
+R8
+R9
+R7
+R18
+R17
+L0 9
+R10
+R11
+R12
+R13
+!i113 1
+R14
+R15
+R16
+vram
+R1
+R2
+!s110 1453914821
+!i10b 1
+!s100 :5h21mFQ_aI3^e:L3zId`0
+IURROB5Bh=B>Gfo>RbR]o`0
+R4
+!s105 ram_sv_unit
+S1
+R0
+w1453474297
+8source/ram.sv
+Fsource/ram.sv
+L0 13
+R10
+r1
+!s85 0
+31
+!s108 1453914821.176965
+!s107 include/cpu_types_pkg.vh|include/cpu_ram_if.vh|source/ram.sv|
+!s90 +acc|-sv12compat|-mfcu|-lint|+incdir+include|source/ram.sv|
+!i113 1
+R14
+R15
+R16
+4test
+R1
+R2
+R19
+R4
+r1
+!s85 0
+31
+!i10b 1
+!s100 =9ej9MoBYkCBGSZZ@9<5?3
+IcoYNWZKX6NK7=AW8YRMX12
+R5
+S1
+R0
+R6
+R8
+R9
+L0 36
+R10
+R11
+R12
+R13
+!i113 1
+R14
+R15
+R16

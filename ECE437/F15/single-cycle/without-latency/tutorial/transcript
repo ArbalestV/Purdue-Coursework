@@ -1,0 +1,58 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -do "view objects; do scripts/test.do; run -all;" -onfinish stop -L altera_mf_ver -L altera_ver -L cycloneive_ver -wlf test_tb.wlf work.test_tb 
+# Start time: 13:15:18 on Aug 28,2015
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading sv_std.std
+# Loading work.types_pkg
+# Loading work.test_tb
+# Loading work.test
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading work.simple
+# Loading altera_ver.PRIM_GDFF_LOW
+# view objects
+# .main_pane.objects.interior.cs.body.tree
+#  do scripts/test.do
+# ** Error: (vish-4014) No objects found matching '/test_tb/DUT/nvalue'.
+# Executing ONERROR command at macro ./scripts/test.do line 7
+#  run -all
+# @0 CLK = 1 nRST = 0 dir = 0 count = 0
+# @5 CLK = 0 nRST = 0 dir = 0 count = 0
+# @10 CLK = 1 nRST = 1 dir = 0 count = 0
+# @15 CLK = 0 nRST = 1 dir = 0 count = 0
+# @20 CLK = 1 nRST = 1 dir = 0 count = 2
+# @25 CLK = 0 nRST = 1 dir = 0 count = 2
+# @30 CLK = 1 nRST = 1 dir = 0 count = 4
+# @35 CLK = 0 nRST = 1 dir = 0 count = 4
+# @40 CLK = 1 nRST = 1 dir = 0 count = 6
+# @45 CLK = 0 nRST = 1 dir = 0 count = 6
+# @50 CLK = 1 nRST = 1 dir = 0 count = 8
+# @55 CLK = 0 nRST = 1 dir = 0 count = 8
+# @60 CLK = 1 nRST = 1 dir = 1 count = 10
+# @65 CLK = 0 nRST = 1 dir = 1 count = 10
+# @70 CLK = 1 nRST = 1 dir = 1 count = 8
+# @75 CLK = 0 nRST = 1 dir = 1 count = 8
+# @80 CLK = 1 nRST = 1 dir = 1 count = 6
+# @85 CLK = 0 nRST = 1 dir = 1 count = 6
+# @90 CLK = 1 nRST = 1 dir = 1 count = 4
+# @95 CLK = 0 nRST = 1 dir = 1 count = 4
+# @100 CLK = 1 nRST = 1 dir = 1 count = 2
+# @105 CLK = 0 nRST = 1 dir = 1 count = 2
+# Break in Module simple at testbench/test_tb.sv line 47
+# 
+# End time: 13:15:38 on Aug 28,2015, Elapsed time: 0:00:20
+# Errors: 3, Warnings: 1

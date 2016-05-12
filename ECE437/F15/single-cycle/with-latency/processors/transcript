@@ -1,0 +1,38 @@
+# vsim -c -do "run -all; exit;" -L altera_mf_ver -L altera_ver -L cycloneive_ver -wlf memory_control_tb.wlf work.memory_control_tb 
+# Start time: 12:13:44 on Jan 27,2016
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.cpu_types_pkg
+# Loading work.memory_control_tb_sv_unit
+# Loading work.memory_control_tb
+# Loading work.cache_control_if
+# Loading work.cpu_ram_if
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading work.test
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all
+# ERROR: cannot read meminit.hex.
+# Passed the iwait active case for load instruction (BUSY).
+# Passed the dwait active case for load instruction (BUSY).
+# Passed the dwait active case for store instruction with dREN = 0 (BUSY).
+# Passed the dwait active case for store instruction with dREN = 1 (BUSY).
+# Passed the dwait inactive test case for store instruction with dREN = 1 (ACCESS).
+# Passed the dwait inactive test case for store instruction with dREN = 1, iREN = 1 (ACCESS).
+# Starting memory dump.
+# Finished memory dump.
+# End time: 12:13:45 on Jan 27,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

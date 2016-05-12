@@ -1,0 +1,186 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -do "view objects; add wave *; run -all;" -onfinish stop -L altera_mf_ver -L altera_ver -L cycloneive_ver -wlf system_tb.wlf work.system_tb 
+# Start time: 15:23:52 on Sep 24,2015
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.singlecycle
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.alu_if
+# Loading work.register_file_if
+# Loading work.control_unit_if
+# Loading work.alu_sv_unit
+# Loading work.alu
+# Loading work.register_file_sv_unit
+# Loading work.register_file
+# Loading work.control_unit
+# Loading work.request_unit
+# Loading work.program_counter
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# view objects
+# .main_pane.objects.interior.cs.body.tree
+#  add wave *
+#  run -all
+# Starting Processor.
+# Cycle no -          0
+# Cycle no -          1
+# Cycle no -          2
+# Cycle no -          3
+# Cycle no -          4
+# Cycle no -          5
+# Cycle no -          6
+# Cycle no -          7
+# Cycle no -          8
+# Cycle no -          9
+# Cycle no -         10
+# Cycle no -         11
+# Cycle no -         12
+# Cycle no -         13
+# Cycle no -         14
+# Cycle no -         15
+# Cycle no -         16
+# Cycle no -         17
+# Cycle no -         18
+# Cycle no -         19
+# Cycle no -         20
+# Halted at 440 time and ran for         21 cycles.
+# Starting memory dump.
+# Finished memory dump.
+# Break in Module test at testbench/system_tb.sv line 81
+# 
+add wave -position insertpoint  \
+sim:/system_tb/DUT/CPU/DP/pc
+add wave -position insertpoint  \
+sim:/system_tb/DUT/CPU/DP/ALUOp
+add wave -position insertpoint  \
+sim:/system_tb/DUT/CPU/DP/REGISTER_FILE/rfile
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.singlecycle
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.alu_if
+# Loading work.register_file_if
+# Loading work.control_unit_if
+# Loading work.alu_sv_unit
+# Loading work.alu
+# Loading work.register_file_sv_unit
+# Loading work.register_file
+# Loading work.control_unit
+# Loading work.request_unit
+# Loading work.program_counter
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+run 400 ns
+# Starting Processor.
+# Cycle no -          0
+# Cycle no -          1
+# Cycle no -          2
+# Cycle no -          3
+# Cycle no -          4
+# Cycle no -          5
+# Cycle no -          6
+# Cycle no -          7
+# Cycle no -          8
+# Cycle no -          9
+# Cycle no -         10
+# Cycle no -         11
+# Cycle no -         12
+# Cycle no -         13
+# Cycle no -         14
+# Cycle no -         15
+# Cycle no -         16
+# Cycle no -         17
+# Cycle no -         18
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.singlecycle
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.alu_if
+# Loading work.register_file_if
+# Loading work.control_unit_if
+# Loading work.alu_sv_unit
+# Loading work.alu
+# Loading work.register_file_sv_unit
+# Loading work.register_file
+# Loading work.control_unit
+# Loading work.request_unit
+# Loading work.program_counter
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+run 1000 ns
+# Starting Processor.
+# Cycle no -          0
+# Cycle no -          1
+# Cycle no -          2
+# Cycle no -          3
+# Cycle no -          4
+# Cycle no -          5
+# Cycle no -          6
+# Cycle no -          7
+# Cycle no -          8
+# Cycle no -          9
+# Cycle no -         10
+# Cycle no -         11
+# Cycle no -         12
+# Cycle no -         13
+# Cycle no -         14
+# Cycle no -         15
+# Cycle no -         16
+# Cycle no -         17
+# Cycle no -         18
+# Cycle no -         19
+# Cycle no -         20
+# Halted at 440 time and ran for         21 cycles.
+# Starting memory dump.
+# End time: 15:29:53 on Sep 24,2015, Elapsed time: 0:06:01
+# Errors: 0, Warnings: 3

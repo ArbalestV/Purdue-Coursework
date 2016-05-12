@@ -1,0 +1,6 @@
+module program_counter(
+		       input logic CLK, nRST, 
+		       input word_t pc_in,
+		       output word_t pc_out
+		       );
+   

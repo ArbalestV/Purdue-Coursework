@@ -1,0 +1,5 @@
+// mapped needs this
+`include "alu_if.vh"
+
+//mapped timing needs this. 1 ns is too fast
+`timescale 1 ns / 1 ns
