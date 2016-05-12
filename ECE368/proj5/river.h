@@ -1,0 +1,24 @@
+typedef struct _Node{
+  int r;
+  int c;
+  int weight;
+  int dist;
+}Node;
+
+typedef struct _loc{
+  int row;
+  int col;
+}loc;
+
+
+//macros
+#define MIN(x,y) ((x) < (y) ? (x) : (y))
+#define SPATH(arr,x,y) arr[x][y].dist
+#define ROW(n) n.row
+#define COL(n) n.col
+
+
+Node** loadfile(FILE* fin,int * size);
+void shortestPath(Node** node, int size);
+void shortestPathHelper(Node** node, int size, int col);
+int dist(Node** g, int r1, int c1, int r2, int c2);

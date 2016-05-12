@@ -1,0 +1,76 @@
+==5068== Memcheck, a memory error detector
+==5068== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==5068== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==5068== Command: ./proj1 s 10000.txt seq10000s.txt output10000s.txt
+==5068== Parent PID: 4397
+==5068== 
+--5068-- 
+--5068-- Valgrind options:
+--5068--    --tool=memcheck
+--5068--    --leak-check=full
+--5068--    --verbose
+--5068--    --log-file=memoutputs10000
+--5068-- Contents of /proc/version:
+--5068--   Linux version 2.6.32-431.5.1.el6.x86_64 (mockbuild@x86-002.build.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-4) (GCC) ) #1 SMP Fri Jan 10 14:46:43 EST 2014
+--5068-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--5068-- Page sizes: currently 4096, max supported 4096
+--5068-- Valgrind library directory: /usr/lib64/valgrind
+--5068-- Reading syms from /home/shay/a/kalita/ECE368/proj1
+--5068-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--5068--    object doesn't have a dynamic symbol table
+--5068-- Reading syms from /lib64/ld-2.12.so
+--5068-- Scheduler: using generic scheduler lock implementation.
+--5068-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==5068== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-5068-by-kalita-on-ecelinux48.ecn.purdue.edu
+==5068== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-5068-by-kalita-on-ecelinux48.ecn.purdue.edu
+==5068== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-5068-by-kalita-on-ecelinux48.ecn.purdue.edu
+==5068== 
+==5068== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==5068== don't want to do, unless you know exactly what you're doing,
+==5068== or are doing some strange experiment):
+==5068==   /usr/lib64/valgrind/../../bin/vgdb --pid=5068 ...command...
+==5068== 
+==5068== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==5068==   /path/to/gdb ./proj1
+==5068== and then give GDB the following command
+==5068==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=5068
+==5068== --pid is optional if only one valgrind process is running
+==5068== 
+--5068-- REDIR: 0x3908617530 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--5068-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--5068-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--5068-- REDIR: 0x39086173a0 (index) redirected to 0x4a07bf0 (index)
+--5068-- REDIR: 0x3908617420 (strcmp) redirected to 0x4a08530 (strcmp)
+--5068-- Reading syms from /lib64/libc-2.12.so
+--5068-- REDIR: 0x3908a84fb0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--5068-- REDIR: 0x3908a87270 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--5068-- REDIR: 0x3908a82f20 (__GI_strrchr) redirected to 0x4a07a70 (__GI_strrchr)
+--5068-- REDIR: 0x3908a7a920 (malloc) redirected to 0x4a0696c (malloc)
+--5068-- REDIR: 0x3908a7b800 (free) redirected to 0x4a06369 (free)
+--5068-- REDIR: 0x3908a8add0 (strchrnul) redirected to 0x4a09f10 (strchrnul)
+--5068-- REDIR: 0x3908a89950 (memcpy) redirected to 0x4a08b20 (memcpy)
+--5068-- REDIR: 0x3908a81440 (__GI_strlen) redirected to 0x4a07f70 (__GI_strlen)
+--5068-- REDIR: 0x3908a847e0 (mempcpy) redirected to 0x4a09f80 (mempcpy)
+==5068== 
+==5068== HEAP SUMMARY:
+==5068==     in use at exit: 568 bytes in 1 blocks
+==5068==   total heap usage: 6 allocs, 5 frees, 82,064 bytes allocated
+==5068== 
+==5068== Searching for pointers to 1 not-freed blocks
+==5068== Checked 64,592 bytes
+==5068== 
+==5068== LEAK SUMMARY:
+==5068==    definitely lost: 0 bytes in 0 blocks
+==5068==    indirectly lost: 0 bytes in 0 blocks
+==5068==      possibly lost: 0 bytes in 0 blocks
+==5068==    still reachable: 568 bytes in 1 blocks
+==5068==         suppressed: 0 bytes in 0 blocks
+==5068== Reachable blocks (those to which a pointer was found) are not shown.
+==5068== To see them, rerun with: --leak-check=full --show-reachable=yes
+==5068== 
+==5068== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)
+--5068-- 
+--5068-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--5068-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==5068== 
+==5068== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 6 from 6)

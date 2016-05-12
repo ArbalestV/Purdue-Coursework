@@ -1,0 +1,78 @@
+==12632== Memcheck, a memory error detector
+==12632== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==12632== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==12632== Command: ./proj4 r3.po output3.txt
+==12632== Parent PID: 5626
+==12632== 
+--12632-- 
+--12632-- Valgrind options:
+--12632--    --tool=memcheck
+--12632--    --leak-check=full
+--12632--    --verbose
+--12632--    --log-file=ValgrindTestLog
+--12632-- Contents of /proc/version:
+--12632--   Linux version 2.6.32-431.11.2.el6.x86_64 (mockbuild@x86-027.build.eng.bos.redhat.com) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-4) (GCC) ) #1 SMP Mon Mar 3 13:32:45 EST 2014
+--12632-- Arch and hwcaps: AMD64, amd64-sse3-cx16
+--12632-- Page sizes: currently 4096, max supported 4096
+--12632-- Valgrind library directory: /usr/lib64/valgrind
+--12632-- Reading syms from /home/shay/a/kalita/ECE368/proj4/proj4
+--12632-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--12632--    object doesn't have a dynamic symbol table
+--12632-- Reading syms from /lib64/ld-2.12.so
+--12632-- Scheduler: using generic scheduler lock implementation.
+--12632-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==12632== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-12632-by-kalita-on-ecelinux13.ecn.purdue.edu
+==12632== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-12632-by-kalita-on-ecelinux13.ecn.purdue.edu
+==12632== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-12632-by-kalita-on-ecelinux13.ecn.purdue.edu
+==12632== 
+==12632== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==12632== don't want to do, unless you know exactly what you're doing,
+==12632== or are doing some strange experiment):
+==12632==   /usr/lib64/valgrind/../../bin/vgdb --pid=12632 ...command...
+==12632== 
+==12632== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==12632==   /path/to/gdb ./proj4
+==12632== and then give GDB the following command
+==12632==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=12632
+==12632== --pid is optional if only one valgrind process is running
+==12632== 
+--12632-- REDIR: 0x3807c17530 (strlen) redirected to 0x38049551 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--12632-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--12632-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--12632-- REDIR: 0x3807c173a0 (index) redirected to 0x4a07bf0 (index)
+--12632-- REDIR: 0x3807c17420 (strcmp) redirected to 0x4a08530 (strcmp)
+--12632-- Reading syms from /lib64/libc-2.12.so
+--12632-- REDIR: 0x3808084fb0 (strcasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--12632-- REDIR: 0x3808087270 (strncasecmp) redirected to 0x480155c (_vgnU_ifunc_wrapper)
+--12632-- REDIR: 0x3808082f20 (__GI_strrchr) redirected to 0x4a07a70 (__GI_strrchr)
+--12632-- REDIR: 0x380807a920 (malloc) redirected to 0x4a0696c (malloc)
+--12632-- REDIR: 0x3808081440 (__GI_strlen) redirected to 0x4a07f70 (__GI_strlen)
+--12632-- REDIR: 0x380807b800 (free) redirected to 0x4a06369 (free)
+--12632-- REDIR: 0x380808add0 (strchrnul) redirected to 0x4a09f10 (strchrnul)
+--12632-- REDIR: 0x3808089950 (memcpy) redirected to 0x4a08b20 (memcpy)
+--12632-- REDIR: 0x38080847e0 (mempcpy) redirected to 0x4a09f80 (mempcpy)
+==12632== 
+==12632== HEAP SUMMARY:
+==12632==     in use at exit: 16 bytes in 1 blocks
+==12632==   total heap usage: 3,449 allocs, 3,448 frees, 125,208 bytes allocated
+==12632== 
+==12632== Searching for pointers to 1 not-freed blocks
+==12632== Checked 64,280 bytes
+==12632== 
+==12632== 16 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==12632==    at 0x4A069EE: malloc (vg_replace_malloc.c:270)
+==12632==    by 0x402882: main (in /home/shay/a/kalita/ECE368/proj4/proj4)
+==12632== 
+==12632== LEAK SUMMARY:
+==12632==    definitely lost: 16 bytes in 1 blocks
+==12632==    indirectly lost: 0 bytes in 0 blocks
+==12632==      possibly lost: 0 bytes in 0 blocks
+==12632==    still reachable: 0 bytes in 0 blocks
+==12632==         suppressed: 0 bytes in 0 blocks
+==12632== 
+==12632== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 6)
+--12632-- 
+--12632-- used_suppression:      4 U1004-ARM-_dl_relocate_object
+--12632-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==12632== 
+==12632== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 6)
