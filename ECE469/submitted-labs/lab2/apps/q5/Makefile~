@@ -1,0 +1,18 @@
+default:
+	cd makeprocs; make
+	cd reactor_1; make
+	cd injector_1; make
+	cd reactor_2; make
+	cd reactor_3; make
+	cd injector_2;make
+
+clean:
+	cd makeprocs; make clean
+	cd reactor_1; make clean
+	cd injector_1; make clean
+	cd reactor_2; make clean
+	cd reactor_3; make clean
+	cd injector_2;make clean
+
+run:
+	cd ../../bin; dlxsim -x os.dlx.obj -a -u makeprocs.dlx.obj 6 4; ee469_fixterminal

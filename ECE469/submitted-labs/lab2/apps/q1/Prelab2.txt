@@ -1,0 +1,5 @@
+﻿1. How many semaphores are available? There is a maximum of 32 semaphores available in DLXOS.
+2. How many locks are availasble in DLXOS? There are 64 locks available in DLXOS.
+3. How is a semaphore created in DLXOS? The inuse variable in the code is used to maintain atomicity, since before the condition statement interrupts are disables, this allows us to make sure that two processes do not assign the same semaphore to one.
+4. Explain how sem_signal and sem_wait work. Sem_signal works by first disabling interrupts, then it needs to increment the count to let other processes on the wait queue know that they have finished using the wait queue variable, then before returning control it needs to re-enable interrupts. Sem_wait works by waiting on the count to be greater then or equal to zero, if it is, it can get out of the loop and the next process can take the count and the the count is decrements.
+5. What is a handle and how is it used to access semaphores in DLXOS? The handle checks to see if the current semaphor is valid and in use, if it is then it will call either the wait or signal function depending on which function it is coming from.

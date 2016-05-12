@@ -1,0 +1,5 @@
+to run the files:
+go to appropriate directory
+ do make clean-make-make run
+make sure to do this for the os...
+for q5 the current make file is set to 26 h2o and 24 so4

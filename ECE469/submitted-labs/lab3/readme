@@ -1,0 +1,7 @@
+instructions
+1. Make OS
+2. make desired test
+3. to change between round robin and lottery go to process.h and comment/uncomment LT_SCHED and RR_SCHED depending on which one you want.
+4. A simple test for slepp/yield/idle is located in q5test. it runs one programs, forces it to yield, then sleep for a long time, forcing processidle, then waking up successfully. 
+5. q2 is also currently setup with sleep and yield implemented. 
+unusual-some programs that run end with an unexpected vector. the output is otherwise the same.
