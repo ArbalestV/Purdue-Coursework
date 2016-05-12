@@ -1,0 +1,413 @@
+/*
+  Eric Villasenor
+  evillase@gmail.com
+
+  this block is the coherence protocol
+  and artibtration for ram
+*/
+
+// interface include
+`include "cache_control_if.vh"
+
+// memory types
+`include "cpu_types_pkg.vh"
+
+module memory_control (
+  input CLK, nRST,
+  cache_control_if.cc ccif
+);
+  // type import
+  import cpu_types_pkg::*;
+
+  // number of cpus for cc
+  parameter CPUS = 2;
+
+
+   typedef enum logic [3:0] {IDLE, iREQ, SNOOP, MEM0, MEM1, CACHE0, CACHE1, WB0, WB1} StateType;
+   StateType curr_state, next_state;
+
+   logic 	req, serv;
+
+   //next state logic
+   always_comb
+     begin
+	next_state = curr_state;
+	case(curr_state)
+	  IDLE:
+	    begin
+	       if( (ccif.iREN[0] || ccif.iREN[1] ) && ~ccif.cctrans[0] && ~ccif.cctrans[1] && ~ccif.dWEN[0] && ~ccif.dWEN[1] && ~ccif.dREN[0] && ~ccif.dREN[1] )
+		 begin
+		    next_state = iREQ;
+		 end
+	       else if(ccif.dWEN[0] || ccif.dWEN[1])
+		 begin
+		    next_state = WB0;
+		 end
+	       else if( ccif.cctrans[0] || ccif.cctrans[1] )
+		 begin
+		    next_state = SNOOP;
+		 end
+	       else
+		 begin
+		    next_state = IDLE;
+		 end
+	    end // case: IDLE
+
+	  iREQ:
+	    begin
+	       if( ccif.ramstate == ACCESS )
+		 begin
+		    next_state = IDLE;
+		 end
+	       else
+		 begin
+		    next_state = iREQ;
+		 end
+	    end // case: iREQ
+
+	  SNOOP:
+	    begin
+	       if(ccif.ccwrite[serv] == 0)
+		 begin
+		    next_state = MEM0;
+		 end
+	       else if(ccif.ccwrite[serv] == 1)
+		 begin
+		    next_state = CACHE0;
+		 end
+	       else
+		 begin
+		    next_state = SNOOP;
+		 end
+	    end // case: SNOOP
+
+	  MEM0:
+	    begin
+	       if(ccif.ramstate == ACCESS)
+		 begin
+		    next_state = MEM1;
+		 end
+	       else
+		 begin
+		    next_state = MEM0;
+		 end
+	    end // case: MEM0
+
+	  MEM1:
+	    begin
+	       if(ccif.ramstate == ACCESS)
+		 begin
+		    next_state = IDLE;
+		 end
+	       else
+		 begin
+		    next_state = MEM1;
+		 end
+	    end // case: MEM1
+
+	  CACHE0:
+	    begin
+	       if(ccif.ramstate == ACCESS)
+		 begin
+		    next_state = CACHE1;
+		 end
+	       else
+		 begin
+		    next_state = CACHE0;
+		 end
+	    end // case: CACHE0
+
+	  WB0:
+	    begin
+	       if(ccif.ramstate == ACCESS)
+		 begin
+		    next_state = WB1;
+		 end
+	       else
+		 begin
+		    next_state = WB0;
+		 end
+	    end // case: WB0
+
+	  WB1:
+	    begin
+	       if(ccif.ramstate == ACCESS && ccif.cctrans[req] == 0)
+		 begin
+		    next_state = IDLE;
+		 end
+	       else if(ccif.ramstate == ACCESS && ccif.cctrans[req] == 1)
+		 begin
+		    next_state = SNOOP;
+		 end
+	    end // case: WB1
+
+	endcase // case (curr_state)
+     end // always_comb begin
+   
+
+   //output logic
+   always_comb
+     begin
+	case(curr_state)
+	  IDLE:
+	    begin
+	       ccif.iwait[req] = 1;
+	       ccif.iwait[serv] = 1;
+	       ccif.dwait[req] = 1;
+	       ccif.dwait[serv] = 1;
+	       ccif.iload[req] = 0;
+	       ccif.iload[serv] = 0;
+	       ccif.dload[req] = 0;
+	       ccif.dload[serv] = 0;
+	       ccif.ccwait[req] = 0;
+	       ccif.ccwait[serv] = 0;
+	       ccif.ccinv[req] = 0;
+	       ccif.ccinv[serv] = 0;
+	       ccif.ccsnoopaddr[req] = 0;
+	       ccif.ccsnoopaddr[serv] = 0;
+	       ccif.ramstore = 0;
+	       ccif.ramaddr = 0;
+	       ccif.ramWEN = 0;
+	       ccif.ramREN = 0;
+	    end // case: IDLE
+
+	  iREQ:
+	    begin
+	       ccif.iwait[req] = (ccif.ramstate != ACCESS);
+	       ccif.iwait[serv] = 1;
+	       ccif.dwait[req] = 1;
+	       ccif.dwait[serv] = 1;
+	       ccif.iload[req] = ccif.ramload;
+	       ccif.iload[serv] = 0;
+	       ccif.dload[req] = 0;
+	       ccif.dload[serv] = 0;
+	       ccif.ccwait[req] = 1;
+	       ccif.ccwait[serv] = 1;
+	       ccif.ccinv[req] = 0;
+	       ccif.ccinv[serv] = 0;
+	       ccif.ccsnoopaddr[req] = 0;
+	       ccif.ccsnoopaddr[serv] = 0;
+	       ccif.ramstore = 0;
+	       ccif.ramaddr = ccif.iaddr[req];
+	       ccif.ramWEN = 0;
+	       ccif.ramREN = 1;
+	    end // case: iREQ
+
+	  SNOOP:
+	    begin
+	       ccif.iwait[req] = 1;
+	       ccif.iwait[serv] = 1;
+	       ccif.dwait[req] = 1;
+	       ccif.dwait[serv] = 1;
+	       ccif.iload[req] = 0;
+	       ccif.iload[serv] = 0;
+	       ccif.dload[req] = 0;
+	       ccif.dload[serv] = 0;
+	       ccif.ccwait[req] = 0;
+	       ccif.ccwait[serv] = 1;
+	       ccif.ccinv[req] = 0;
+	       ccif.ccinv[serv] = ccif.ccwrite[req];
+	       ccif.ccsnoopaddr[req] = 0;
+	       ccif.ccsnoopaddr[serv] = ccif.daddr[req];
+	       ccif.ramstore = 0;
+	       ccif.ramaddr = 0;
+	       ccif.ramWEN = 0;
+	       ccif.ramREN = 0;
+	    end // case: SNOOP
+
+	  MEM0:
+	    begin
+	       ccif.iwait[req] = 1;
+	       ccif.iwait[serv] = 1;
+	       ccif.dwait[req] = ccif.ramstate == ACCESS;
+	       ccif.dwait[serv] = 1;
+	       ccif.iload[req] = 0;
+	       ccif.iload[serv] = 0;
+	       ccif.dload[req] = ccif.ramload;
+	       ccif.dload[serv] = 0;
+	       ccif.ccwait[req] = 0;
+	       ccif.ccwait[serv] = 1;
+	       ccif.ccinv[req] = 0;
+	       ccif.ccinv[serv] = 0;
+	       ccif.ccsnoopaddr[req] = 0;
+	       ccif.ccsnoopaddr[serv] = 0;
+	       ccif.ramstore = 0;
+	       ccif.ramaddr = ccif.daddr[req];
+	       ccif.ramWEN = 0;
+	       ccif.ramREN = 1;
+	    end // case: MEM0
+
+	  MEM1:
+	    begin
+	       ccif.iwait[req] = 1;
+	       ccif.iwait[serv] = 1;
+	       ccif.dwait[req] = ccif.ramstate == ACCESS;
+	       ccif.dwait[serv] = 1;
+	       ccif.iload[req] = 0;
+	       ccif.iload[serv] = 0;
+	       ccif.dload[req] = ccif.ramload;
+	       ccif.dload[serv] = 0;
+	       ccif.ccwait[req] = 0;
+	       ccif.ccwait[serv] = 1;
+	       ccif.ccinv[req] = 0;
+	       ccif.ccinv[serv] = 0;
+	       ccif.ccsnoopaddr[req] = 0;
+	       ccif.ccsnoopaddr[serv] = 0;
+	       ccif.ramstore = 0;
+	       ccif.ramaddr = ccif.daddr[req];
+	       ccif.ramWEN = 0;
+	       ccif.ramREN = 1;
+	    end // case: MEM1
+
+	  CACHE0:
+	    begin
+	       ccif.iwait[req] = 1;
+	       ccif.iwait[serv] = 1;
+	       ccif.dwait[req] = ccif.ramstate == ACCESS;
+	       ccif.dwait[serv] = 1;
+	       ccif.iload[req] = 0;
+	       ccif.iload[serv] = 0;
+	       ccif.dload[req] = ccif.dstore[serv];
+	       ccif.dload[serv] = 0;
+	       ccif.ccwait[req] = 0;
+	       ccif.ccwait[serv] = 1;
+	       ccif.ccinv[req] = 0;
+	       ccif.ccinv[serv] = 1;
+	       ccif.ccsnoopaddr[req] = 0;
+	       ccif.ccsnoopaddr[serv] = 0;
+	       ccif.ramstore = ccif.dstore[serv];
+	       ccif.ramaddr = ccif.daddr[serv];
+	       ccif.ramWEN = 1;
+	       ccif.ramREN = 0;
+	    end // case: CACHE0
+
+	  CACHE1:
+	    begin
+	       ccif.iwait[req] = 1;
+	       ccif.iwait[serv] = 1;
+	       ccif.dwait[req] = ccif.ramstate == ACCESS;
+	       ccif.dwait[serv] = 1;
+	       ccif.iload[req] = 0;
+	       ccif.iload[serv] = 0;
+	       ccif.dload[req] = ccif.dstore[serv];
+	       ccif.dload[serv] = 0;
+	       ccif.ccwait[req] = 0;
+	       ccif.ccwait[serv] = 1;
+	       ccif.ccinv[req] = 0;
+	       ccif.ccinv[serv] = 1;
+	       ccif.ccsnoopaddr[req] = 0;
+	       ccif.ccsnoopaddr[serv] = 0;
+	       ccif.ramstore = ccif.dstore[serv];
+	       ccif.ramaddr = ccif.daddr[serv];
+	       ccif.ramWEN = 1;
+	       ccif.ramREN = 0;
+	    end // case: CACHE1
+
+	  WB0:
+	    begin
+	       ccif.iwait[req] = 1;
+	       ccif.iwait[serv] = 1;
+	       ccif.dwait[req] = ccif.ramstate == ACCESS;
+	       ccif.dwait[serv] = 1;
+	       ccif.iload[req] = 0;
+	       ccif.iload[serv] = 0;
+	       ccif.dload[req] = 0;
+	       ccif.dload[serv] = 0;
+	       ccif.ccwait[req] = 1;
+	       ccif.ccwait[serv] = 1;
+	       ccif.ccinv[req] = 0;
+	       ccif.ccinv[serv] = 0;
+	       ccif.ccsnoopaddr[req] = 0;
+	       ccif.ccsnoopaddr[serv] = 0;
+	       ccif.ramstore = ccif.dstore[req];
+	       ccif.ramaddr = ccif.daddr[req];
+	       ccif.ramWEN = 1;
+	       ccif.ramREN = 0;
+	    end // case: WB0
+
+	  WB1:
+	    begin
+	       ccif.iwait[req] = 1;
+	       ccif.iwait[serv] = 1;
+	       ccif.dwait[req] = ccif.ramstate == ACCESS;
+	       ccif.dwait[serv] = 1;
+	       ccif.iload[req] = 0;
+	       ccif.iload[serv] = 0;
+	       ccif.dload[req] = 0;
+	       ccif.dload[serv] = 0;
+	       ccif.ccwait[req] = 1;
+	       ccif.ccwait[serv] = 1;
+	       ccif.ccinv[req] = 0;
+	       ccif.ccinv[serv] = 0;
+	       ccif.ccsnoopaddr[req] = 0;
+	       ccif.ccsnoopaddr[serv] = 0;
+	       ccif.ramstore = ccif.dstore[req];
+	       ccif.ramaddr = ccif.daddr[req];
+	       ccif.ramWEN = 1;
+	       ccif.ramREN = 0;
+	    end // case: WB1	
+
+	endcase // case (curr_state)
+     end // always_comb begin
+
+
+   always_ff @ (posedge CLK, negedge nRST)
+     begin
+	if(nRST == 1'b0)
+	  begin
+	     curr_state <= IDLE;
+	     req <= 0;
+	     serv <= 1;
+	  end
+	else
+	  begin
+	     if(curr_state == IDLE)
+	       begin
+		  if(ccif.cctrans[0] == 1'b1)
+		    begin
+		       req <= 0;
+		       serv <= 1;
+		    end
+		  else if(ccif.cctrans[1] == 1'b1)
+		    begin
+		       req <= 1;
+		       serv <= 0;
+		    end
+		  else if(ccif.dWEN[0] == 1'b1)
+		    begin
+		       req <= 0;
+		       serv <= 1;
+		    end
+		  else if(ccif.dWEN[1] == 1'b1)
+		    begin
+		       req <= 1;
+		       serv <= 0;
+		    end
+		  else if( (ccif.iREN[0] == 1'b1) && (ccif.iREN[1] == 1'b1))
+		    begin
+		       req <= ~req;
+		       serv <= ~serv;
+		    end
+		  else if(ccif.iREN[0] == 1'b1)
+		    begin
+		       req <= 0;
+		       serv <= 1;
+		    end
+		  else if(ccif.iREN[1] == 1'b1)
+		    begin
+		       req <= 1;
+		       serv <= 0;
+		    end
+		  else
+		    begin
+		       req <= 0;
+		       serv <= 1;
+		    end
+		  
+	       end // if (curr_state == IDLE)
+	     curr_state <= next_state;
+	     
+	  end // else: !if(nRST == 1'b0)
+     end // always_ff @ (posedge CLK, negedge nRST)
+   
+endmodule
