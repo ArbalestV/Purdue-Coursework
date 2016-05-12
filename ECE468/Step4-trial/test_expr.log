@@ -1,0 +1,1071 @@
+in EXPR
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+1
+
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: a
+1 
+The right child content at the root: 1
+
+PRINTED PARSE TREE:
+1 
+
+
+in EXPR
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+2
+
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: b
+2 
+The right child content at the root: 2
+
+PRINTED PARSE TREE:
+2 
+
+
+in EXPR
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+10
+
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: c
+10 
+The right child content at the root: 10
+
+PRINTED PARSE TREE:
+10 
+
+
+in EXPR
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+20
+
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: d
+20 
+The right child content at the root: 20
+
+PRINTED PARSE TREE:
+20 
+
+
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+a
+
+in ADDOP
++
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+b
+
+a 
++ 
+b 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: a
+a 
++ 
+b 
+The right child content at the root: +
+
+PRINTED PARSE TREE:
+a 
++ 
+b 
+
+
+in EXPR
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYid
+a
+
+in MULOP
+*
+
+in POSTFIX_EXPR
+in PRIMARYid
+c
+
+a 
+* 
+c 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: b
+a 
+* 
+c 
+The right child content at the root: *
+
+PRINTED PARSE TREE:
+a 
+* 
+c 
+
+
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+0
+
+in ADDOP
+-
+
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+a
+
+0 
+- 
+a 
+in ADDOP
++
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+b
+
+0 
+- 
+a 
++ 
+b 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: c
+0 
+- 
+a 
++ 
+b 
+The right child content at the root: +
+
+PRINTED PARSE TREE:
+0 
+- 
+a 
++ 
+b 
+
+
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+0
+
+in ADDOP
+-
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+d
+
+0 
+- 
+d 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: d
+0 
+- 
+d 
+The right child content at the root: -
+
+PRINTED PARSE TREE:
+0 
+- 
+d 
+
+
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYexpr
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+a
+
+in ADDOP
++
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+b
+
+a 
++ 
+b 
+in MULOP
+*
+
+in POSTFIX_EXPR
+in PRIMARYexpr
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+d
+
+in ADDOP
++
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+c
+
+d 
++ 
+c 
+a 
++ 
+b 
+* 
+d 
++ 
+c 
+in ADDOP
+-
+
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYexpr
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+a
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+b
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+c
+
+in ADDOP
++
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+d
+
+c 
++ 
+d 
+/
+
+in POSTFIX_EXPR
+in PRIMARYid
+a
+
+c 
++ 
+d 
+/ 
+a 
+b 
++ 
+c 
++ 
+d 
+/ 
+a 
+a 
++ 
+b 
++ 
+c 
++ 
+d 
+/ 
+a 
+a 
++ 
+b 
+* 
+d 
++ 
+c 
+- 
+a 
++ 
+b 
++ 
+c 
++ 
+d 
+/ 
+a 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: a
+a 
++ 
+b 
+* 
+d 
++ 
+c 
+- 
+a 
++ 
+b 
++ 
+c 
++ 
+d 
+/ 
+a 
+The right child content at the root: -
+
+PRINTED PARSE TREE:
+a 
++ 
+b 
+* 
+d 
++ 
+c 
+- 
+a 
++ 
+b 
++ 
+c 
++ 
+d 
+/ 
+a 
+
+
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+a
+
+in ADDOP
++
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+10
+
+a 
++ 
+10 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: a
+a 
++ 
+10 
+The right child content at the root: +
+
+PRINTED PARSE TREE:
+a 
++ 
+10 
+
+
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+b
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+a
+
+b 
++ 
+a 
+in ADDOP
++
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+10
+
+b 
++ 
+a 
++ 
+10 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: b
+b 
++ 
+a 
++ 
+10 
+The right child content at the root: +
+
+PRINTED PARSE TREE:
+b 
++ 
+a 
++ 
+10 
+
+
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+0
+
+in ADDOP
+-
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYint
+10
+
+0 
+- 
+10 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: c
+0 
+- 
+10 
+The right child content at the root: -
+
+PRINTED PARSE TREE:
+0 
+- 
+10 
+
+
+in EXPR
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYfloat
+1.0
+
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: x
+1.0 
+The right child content at the root: 1.0
+
+PRINTED PARSE TREE:
+1.0 
+
+
+in EXPR
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYfloat
+2.0
+
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: y
+2.0 
+The right child content at the root: 2.0
+
+PRINTED PARSE TREE:
+2.0 
+
+
+in EXPR
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYfloat
+3.14159
+
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: z
+3.14159 
+The right child content at the root: 3.14159
+
+PRINTED PARSE TREE:
+3.14159 
+
+
+in EXPR
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYid
+z
+
+/
+
+in POSTFIX_EXPR
+in PRIMARYfloat
+2.0
+
+z 
+/ 
+2.0 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: x
+z 
+/ 
+2.0 
+The right child content at the root: /
+
+PRINTED PARSE TREE:
+z 
+/ 
+2.0 
+
+
+in EXPR
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYid
+z
+
+/
+
+in POSTFIX_EXPR
+in PRIMARYid
+y
+
+z 
+/ 
+y 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: y
+z 
+/ 
+y 
+The right child content at the root: /
+
+PRINTED PARSE TREE:
+z 
+/ 
+y 
+
+
+in EXPR
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYexpr
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+x
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+y
+
+in ADDOP
++
+
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+z
+
+y 
++ 
+z 
+/
+
+in POSTFIX_EXPR
+in PRIMARYid
+z
+
+y 
++ 
+z 
+/ 
+z 
+x 
++ 
+y 
++ 
+z 
+/ 
+z 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: t
+x 
++ 
+y 
++ 
+z 
+/ 
+z 
+The right child content at the root: +
+
+PRINTED PARSE TREE:
+x 
++ 
+y 
++ 
+z 
+/ 
+z 
+
+
+in EXPR
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYid
+t
+
+in MULOP
+*
+
+in POSTFIX_EXPR
+in PRIMARYid
+t
+
+t 
+* 
+t 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: t
+t 
+* 
+t 
+The right child content at the root: *
+
+PRINTED PARSE TREE:
+t 
+* 
+t 
+
+
+in EXPR
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYexpr
+in EXPR
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+t
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+z
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in POSTFIX_EXPR
+in PRIMARYid
+t
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYid
+t
+
+/
+
+in POSTFIX_EXPR
+in PRIMARYfloat
+2.0
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYid
+z
+
+/
+
+in POSTFIX_EXPR
+in PRIMARYfloat
+4.0
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYid
+z
+
+/
+
+in POSTFIX_EXPR
+in PRIMARYfloat
+5.0
+
+in ADDOP
++
+
+in EXPR_PREFIX
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYid
+z
+
+/
+
+in POSTFIX_EXPR
+in PRIMARYfloat
+6.0
+
+in ADDOP
++
+
+in FACTOR
+in FACTOR_PREFIX
+in POSTFIX_EXPR
+in PRIMARYid
+z
+
+/
+
+in POSTFIX_EXPR
+in PRIMARYfloat
+7.0
+
+z 
+/ 
+7.0 
+6.0 
++ 
+z 
+/ 
+7.0 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+4.0 
++ 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+z 
+/ 
+4.0 
++ 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+2.0 
++ 
+z 
+/ 
+4.0 
++ 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+t 
+/ 
+2.0 
++ 
+z 
+/ 
+4.0 
++ 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+t 
++ 
+t 
+/ 
+2.0 
++ 
+z 
+/ 
+4.0 
++ 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+z 
++ 
+t 
++ 
+t 
+/ 
+2.0 
++ 
+z 
+/ 
+4.0 
++ 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+t 
++ 
+z 
++ 
+t 
++ 
+t 
+/ 
+2.0 
++ 
+z 
+/ 
+4.0 
++ 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+
+AT THE END OF THE EXPRESSION.
+The root node: :=
+The left child: t
+t 
++ 
+z 
++ 
+t 
++ 
+t 
+/ 
+2.0 
++ 
+z 
+/ 
+4.0 
++ 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+The right child content at the root: +
+
+PRINTED PARSE TREE:
+t 
++ 
+z 
++ 
+t 
++ 
+t 
+/ 
+2.0 
++ 
+z 
+/ 
+4.0 
++ 
+z 
+/ 
+5.0 
++ 
+z 
+/ 
+6.0 
++ 
+z 
+/ 
+7.0 
+
+

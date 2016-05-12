@@ -1,0 +1,8 @@
+import java.util.*;
+
+public class IRnode {
+    public String instr;
+    public String op1;
+    public String op2;
+    public String res;
+}

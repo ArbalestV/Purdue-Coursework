@@ -1,0 +1,187 @@
+factor recognized
+end of expression
+assign_expr --> popFinal
+factor recognized
+end of expression
+assign_expr --> popFinal
+Out of init_statment
+PUSHING FOR LABELS
+factor recognized
+end of expression
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: <=
+Root: <= Right Child: 120 Left Child: a
+ROOT: a
+ROOT: 120
+Now back at Non-Leaf Node: <=
+End of condition
+in INCR_STATEMENT
+factor recognized
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+Out of Increment statment
+factor recognized
+end of expression
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: =
+Root: = Right Child: 1 Left Child: b
+ROOT: b
+ROOT: 1
+Now back at Non-Leaf Node: =
+End of condition
+Finished conditionin move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: *
+Root: * Right Child: a Left Child: 1
+ROOT: 1
+ROOT: a
+Now back at Non-Leaf Node: *
+In Write statment
+Finished WRite statement
+factor recognized
+end of expression
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: =
+Root: = Right Child: 2 Left Child: b
+ROOT: b
+ROOT: 2
+Now back at Non-Leaf Node: =
+End of condition
+Finished conditionin move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: *
+Root: * Right Child: a Left Child: 2
+ROOT: 2
+ROOT: a
+Now back at Non-Leaf Node: *
+In Write statment
+Finished WRite statement
+factor recognized
+end of expression
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: =
+Root: = Right Child: 3 Left Child: b
+ROOT: b
+ROOT: 3
+Now back at Non-Leaf Node: =
+End of condition
+Finished conditionin move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: *
+Root: * Right Child: a Left Child: 3
+ROOT: 3
+ROOT: a
+Now back at Non-Leaf Node: *
+In Write statment
+Finished WRite statement
+factor recognized
+end of expression
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: =
+Root: = Right Child: 4 Left Child: b
+ROOT: b
+ROOT: 4
+Now back at Non-Leaf Node: =
+End of condition
+Finished conditionin move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: *
+Root: * Right Child: a Left Child: 4
+ROOT: 4
+ROOT: a
+Now back at Non-Leaf Node: *
+In Write statment
+Finished WRite statement
+factor recognized
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: +
+Root: + Right Child: 1 Left Child: b
+ROOT: b
+ROOT: 1
+Now back at Non-Leaf Node: +
+AST.incrIRnode
+ROOT: +
+Root: + Right Child: 20 Left Child: a
+ROOT: a
+ROOT: 20
+Now back at Non-Leaf Node: +
+TYPE LEFT CHILD: INT
+;IR code
+;STOREI 1 $T1
+;STOREI $T1 b
+;STOREI 1 $T2
+;STOREI $T2 a
+;LABEL label1
+;STOREI 120 $T3
+;GT a $T3 label3
+;STOREI 1 $T4
+;NE b $T4 label4
+;STOREI 1 $T5
+;MULTI $T5 a $T6
+;STOREI $T6 g
+;WRITEI g
+;JUMP label5
+;LABEL label4
+;STOREI 2 $T7
+;NE b $T7 label6
+;STOREI 2 $T8
+;MULTI $T8 a $T9
+;STOREI $T9 p
+;WRITEI p
+;JUMP label7
+;LABEL label6
+;STOREI 3 $T10
+;NE b $T10 label8
+;STOREI 3 $T11
+;MULTI $T11 a $T12
+;STOREI $T12 k
+;WRITEI k
+;JUMP label9
+;LABEL label8
+;STOREI 4 $T13
+;NE b $T13 label10
+;STOREI 4 $T14
+;MULTI $T14 a $T15
+;STOREI $T15 u
+;WRITEI u
+;JUMP label11
+;LABEL label10
+;LABEL label11
+;JUMP label9
+;LABEL label9
+;JUMP label7
+;LABEL label7
+;JUMP label5
+;LABEL label5
+;STOREI 1 $T16
+;ADDI b $T16 $T17
+;STOREI $T17 b
+;LABEL label2
+;STOREI 20 $T18
+;ADDI a $T18 $T19
+;STOREI $T19 a
+;JUMP label1
+;LABEL label3

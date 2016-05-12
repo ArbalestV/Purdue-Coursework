@@ -1,0 +1,115 @@
+factor recognized
+end of expression
+assign_expr --> popFinal
+factor recognized
+end of expression
+assign_expr --> popFinal
+factor recognized
+end of expression
+assign_expr --> popFinal
+factor recognized
+in move ok yes. Stack Count = 2
+in move ok yes. Stack Count = 1
+factor recognized
+factor recognized
+factor recognized
+end of expression
+Found nested expression
+in move ok yes. Stack Count = 2
+in move ok yes. Stack Count = 1
+factor recognized
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: +
+Root: + Right Child: 20 Left Child: +
+ROOT: +
+Root: + Right Child: / Left Child: +
+ROOT: +
+Root: + Right Child: * Left Child: c
+ROOT: c
+ROOT: *
+Root: * Right Child: b Left Child: a
+ROOT: a
+ROOT: b
+Now back at Non-Leaf Node: *
+Now back at Non-Leaf Node: +
+ROOT: /
+Root: / Right Child: a Left Child: +
+ROOT: +
+Root: + Right Child: c Left Child: *
+ROOT: *
+Root: * Right Child: b Left Child: a
+ROOT: a
+ROOT: b
+Now back at Non-Leaf Node: *
+ROOT: c
+Now back at Non-Leaf Node: +
+ROOT: a
+Now back at Non-Leaf Node: /
+Now back at Non-Leaf Node: +
+ROOT: 20
+Now back at Non-Leaf Node: +
+in move ok yes. Stack Count = 1
+factor recognized
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: +
+Root: + Right Child: a Left Child: *
+ROOT: *
+Root: * Right Child: b Left Child: b
+ROOT: b
+ROOT: b
+Now back at Non-Leaf Node: *
+ROOT: a
+Now back at Non-Leaf Node: +
+factor recognized
+end of expression
+Found nested expression
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: /
+Root: / Right Child: a Left Child: *
+ROOT: *
+Root: * Right Child: a Left Child: b
+ROOT: b
+ROOT: a
+Now back at Non-Leaf Node: *
+ROOT: a
+Now back at Non-Leaf Node: /
+In Write statment
+Finished WRite statement
+In Write statment
+Finished WRite statement
+In Write statment
+Finished WRite statement
+;IR code
+;STOREI 20 $T1
+;STOREI $T1 a
+;STOREI 30 $T2
+;STOREI $T2 b
+;STOREI 40 $T3
+;STOREI $T3 c
+;MULTI a b $T4
+;ADDI c $T4 $T5
+;MULTI a b $T6
+;ADDI $T6 c $T7
+;DIVI $T7 a $T8
+;ADDI $T5 $T8 $T9
+;STOREI 20 $T10
+;ADDI $T9 $T10 $T11
+;STOREI $T11 c
+;MULTI b b $T12
+;ADDI $T12 a $T13
+;STOREI $T13 b
+;MULTI b a $T14
+;DIVI $T14 a $T15
+;STOREI $T15 a
+;WRITEI c
+;WRITEI b
+;WRITEI a

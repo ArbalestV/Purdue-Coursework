@@ -1,0 +1,63 @@
+import java.util.*;
+public class AST {
+    public String root; //since AST is only called from assignments, ':=' will always be the root. This will be called accordingly from the grammar file
+    public String leftChild; //for an AST since it is only initialized during an assignment statement, we will have have the left child as an identifier. We will be called accordingly from the grammar file
+    public ASTnode rightChild; //the right child could be either an identifier/literal, or another node which would essentially be a subtree. We will declare a different data structure ASTnode for this purpose
+    public /*static*/ int nodecount = 0; //this should be at least one, in fact when it is one after a series of pops thats when we know we have finished reading the entire expression
+    public static Stack<ASTnode> nodestackframe = new Stack<ASTnode>(); //the right child will essentially be a node, consisting of successive left and right children of nodes. Thus, we need to keep pushing it onto the stack, so that we know which stage of the right subtree we are in
+    String is_node_stack_frame_zero = 'yes'; //this is essentially to know if there are no nodes in the stack frame. initialilly its value is yes
+    String lastChild = 'left'; //distinguish between right or left
+
+    public AST(String root, String leftChild_id/*, ASTnode rightChild*/) {
+	this.root = root;
+	this.leftChild = leftChild_id;
+	this.rightChild = null; //initially the rightChild will point to nothing
+    }
+
+    public /*static*/ void createTerminalNode(String text) {
+	ASTnode node = new ASTnode(text, null, null); //create the terminal node. leftchild and rightchild will both be null
+	if (this.is_node_stack_frame_zero == 'yes') {//basically when the very first terminal will be pushed onto the stack
+	    this.is_node_stack_frame_zero = 'no';
+	    nodestackframe.push(node); //push into stack and GET OUT!!!
+	    this.nodecount++;
+	    return; //no need to change lastChild since first child will always be left 
+	}
+	ASTnode topnode = nodestackframe.pop();
+	this.nodecount--;
+	if ( (this.lastChild == 'left') && (topnode.leftChild != null) && (topnode.rightChild == null) ) {//distinguishing between left and right subtrees
+	    topnode.rightChild = node; //then this node will be the right child
+	    nodestackframe.push(topnode); //push the completed subtree into the stack
+	    this.nodecount++;
+	    this.lastChild = 'right'; //update the last child to right
+	    //now check if the node count in stack is more than 1, then that means this topnode is the right child of another tree
+	    if (this.nodecount > 1) {
+		ASTnode right = this.nodestackframe.pop(); //the right subtree
+		ASTnode parent = this.nodestackframe.pop(); //the parent
+		parent.rightChild = right; //make the assignment
+		//now push back to the stack and decrease the count
+		this.nodestackframe.push(parent);
+		this.nodecount = this.nodecount - 1; //since only one node remains now
+	    }
+	}
+	else {//this will form a left subtree
+	    nodestackframe.push(topnode); //push the previous subtree into the stack
+	    nodestackframe.push(node); //push the newly created node into the stack
+	    this.nodecount = this.nodecount + 2;
+	    this.lastChild = 'left'; //update the last child to left
+	}
+	//this.nodecount = (this.nodecount + 1) % 3; //increment the node count		    
+    }
+    
+    public /*static*/ void createNonTerminalNode(String text) {
+	ASTnode node = new ASTnode(text, this.nodestackframe.pop(), null); //create the non-terminal node. rightchild will both be null initially, but will be updated along the way. leftchild can be gotten by popping the current node in the stack
+	//this.nodecount--; //since the left subtree has been popped off, decrement stack count of nodes by 1
+	this.lastChild = 'left'; //since it goes to the left subtree
+	nodestackframe.push(node); //push the newly created node into the stack
+	//this.nodecount = (this.nodecount + 1) % 3; //increment the node count.
+    }
+
+    public /*static*/ void popFinalNode() { //this function will essentially return the final node in the stack, which will contain the entire right child of the expression as a binary tree
+	this.rightChild = this.nodestackframe.pop();//assign to the right child
+    }
+    
+}

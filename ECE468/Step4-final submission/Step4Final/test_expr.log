@@ -1,0 +1,1122 @@
+Element hit: 1
+The element pushed to the stack: 1
+Top element of the stack now: 1
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+The inorder traversal of the overall tree: 
+(1)
+Stack count now (should be 0):0
+Element hit: 2
+The element pushed to the stack: 2
+Top element of the stack now: 2
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+The inorder traversal of the overall tree: 
+(2)
+Stack count now (should be 0):0
+Element hit: 10
+The element pushed to the stack: 10
+Top element of the stack now: 10
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+The inorder traversal of the overall tree: 
+(10)
+Stack count now (should be 0):0
+Element hit: 20
+The element pushed to the stack: 20
+Top element of the stack now: 20
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+The inorder traversal of the overall tree: 
+(20)
+Stack count now (should be 0):0
+Element hit: a
+The element pushed to the stack: a
+Top element of the stack now: a
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: b
+The element pushed to the stack: b
+Top element of the stack now: b
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: b
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((a)+(b))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+((a)$T5(b))
+Stack count now (should be 0):0
+Element hit: a
+The element pushed to the stack: a
+Top element of the stack now: a
+Stack Count: 1
+Element hit: *
+The element pushed to the stack: *
+Top element of the stack now: *
+Stack Count: 1
+Element hit: c
+The element pushed to the stack: c
+Top element of the stack now: c
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: c
+The parent to be joined to: *
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((a)*(c))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+Set Instruction MULTI
+The inorder traversal of the overall tree: 
+((a)$T6(c))
+Stack count now (should be 0):0
+Element hit: 0
+The element pushed to the stack: 0
+Top element of the stack now: 0
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Element hit: -
+The element pushed to the stack: -
+Top element of the stack now: -
+Stack Count: 1
+Element hit: a
+The element pushed to the stack: a
+Top element of the stack now: a
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: a
+The parent to be joined to: -
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((0)-(a))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: b
+The element pushed to the stack: b
+Top element of the stack now: b
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: b
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+(((0)-(a))+(b))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+((($T7)$T8(a))$T9(b))
+Stack count now (should be 0):0
+Element hit: 0
+The element pushed to the stack: 0
+Top element of the stack now: 0
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Element hit: -
+The element pushed to the stack: -
+Top element of the stack now: -
+Stack Count: 1
+Element hit: d
+The element pushed to the stack: d
+Top element of the stack now: d
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: d
+The parent to be joined to: -
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((0)-(d))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+(($T10)$T11(d))
+Stack count now (should be 0):0
+
+Expression stack count at entry: 0
+Element hit: a
+The element pushed to the stack: a
+Top element of the stack now: a
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: b
+The element pushed to the stack: b
+Top element of the stack now: b
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: no
+factorRecognized value:1
+The child to be joined: b
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((a)+(b))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: *
+The element pushed to the stack: *
+Top element of the stack now: *
+Stack Count: 1
+
+Expression stack count at entry: 1
+Element hit: d
+The element pushed to the stack: d
+Top element of the stack now: d
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 2
+Element hit: c
+The element pushed to the stack: c
+Top element of the stack now: c
+Stack Count: 3
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 3
+Move ok value: no
+factorRecognized value:1
+The child to be joined: c
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((d)+(c))
+Stack Count: 2
+Getting out of checkStack().
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: +
+The parent to be joined to: *
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+(((a)+(b))*((d)+(c)))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: -
+The element pushed to the stack: -
+Top element of the stack now: -
+Stack Count: 1
+
+Expression stack count at entry: 1
+Element hit: a
+The element pushed to the stack: a
+Top element of the stack now: a
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 2
+Element hit: b
+The element pushed to the stack: b
+Top element of the stack now: b
+Stack Count: 3
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 3
+Move ok value: no
+factorRecognized value:1
+The child to be joined: b
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((a)+(b))
+Stack Count: 2
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 2
+Element hit: c
+The element pushed to the stack: c
+Top element of the stack now: c
+Stack Count: 3
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 3
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: c
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+(((a)+(b))+(c))
+Stack Count: 2
+Move ok value: yes
+factorRecognized value:0
+The child to be joined: +
+The parent to be joined to: -
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((((a)+(b))*((d)+(c)))-(((a)+(b))+(c)))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: d
+The element pushed to the stack: d
+Top element of the stack now: d
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: d
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+(((((a)+(b))*((d)+(c)))-(((a)+(b))+(c)))+(d))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: /
+The element pushed to the stack: /
+Top element of the stack now: /
+Stack Count: 1
+Element hit: a
+The element pushed to the stack: a
+Top element of the stack now: a
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: a
+The parent to be joined to: /
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((((((a)+(b))*((d)+(c)))-(((a)+(b))+(c)))+(d))/(a))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+Set Instruction MULTI
+The inorder traversal of the overall tree: 
+((((((a)$T12(b))$T14((d)$T13(c)))$T17(((a)$T15(b))$T16(c)))$T18(d))$T19(a))
+Stack count now (should be 0):0
+Element hit: a
+The element pushed to the stack: a
+Top element of the stack now: a
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: 10
+The element pushed to the stack: 10
+Top element of the stack now: 10
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: 10
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((a)+(10))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+((a)$T21($T20))
+Stack count now (should be 0):0
+Element hit: b
+The element pushed to the stack: b
+Top element of the stack now: b
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: a
+The element pushed to the stack: a
+Top element of the stack now: a
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: a
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((b)+(a))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: 10
+The element pushed to the stack: 10
+Top element of the stack now: 10
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: 10
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+(((b)+(a))+(10))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+(((b)$T22(a))$T24($T23))
+Stack count now (should be 0):0
+Element hit: 0
+The element pushed to the stack: 0
+Top element of the stack now: 0
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Element hit: -
+The element pushed to the stack: -
+Top element of the stack now: -
+Stack Count: 1
+Element hit: 10
+The element pushed to the stack: 10
+Top element of the stack now: 10
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: 10
+The parent to be joined to: -
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((0)-(10))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+(($T25)$T27($T26))
+Stack count now (should be 0):0
+Element hit: 1.0
+The element pushed to the stack: 1.0
+Top element of the stack now: 1.0
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+The inorder traversal of the overall tree: 
+(1.0)
+Stack count now (should be 0):0
+Element hit: 2.0
+The element pushed to the stack: 2.0
+Top element of the stack now: 2.0
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+The inorder traversal of the overall tree: 
+(2.0)
+Stack count now (should be 0):0
+Element hit: 3.14159
+The element pushed to the stack: 3.14159
+Top element of the stack now: 3.14159
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+The inorder traversal of the overall tree: 
+(3.14159)
+Stack count now (should be 0):0
+Element hit: z
+The element pushed to the stack: z
+Top element of the stack now: z
+Stack Count: 1
+Element hit: /
+The element pushed to the stack: /
+Top element of the stack now: /
+Stack Count: 1
+Element hit: 2.0
+The element pushed to the stack: 2.0
+Top element of the stack now: 2.0
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: 2.0
+The parent to be joined to: /
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((z)/(2.0))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+((z)$T32($T31))
+Stack count now (should be 0):0
+Element hit: z
+The element pushed to the stack: z
+Top element of the stack now: z
+Stack Count: 1
+Element hit: /
+The element pushed to the stack: /
+Top element of the stack now: /
+Stack Count: 1
+Element hit: y
+The element pushed to the stack: y
+Top element of the stack now: y
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: y
+The parent to be joined to: /
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((z)/(y))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+((z)$T33(y))
+Stack count now (should be 0):0
+
+Expression stack count at entry: 0
+Element hit: x
+The element pushed to the stack: x
+Top element of the stack now: x
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: y
+The element pushed to the stack: y
+Top element of the stack now: y
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: no
+factorRecognized value:1
+The child to be joined: y
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((x)+(y))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: z
+The element pushed to the stack: z
+Top element of the stack now: z
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: z
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+(((x)+(y))+(z))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: /
+The element pushed to the stack: /
+Top element of the stack now: /
+Stack Count: 1
+Element hit: z
+The element pushed to the stack: z
+Top element of the stack now: z
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: z
+The parent to be joined to: /
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((((x)+(y))+(z))/(z))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+((((x)$T34(y))$T35(z))$T36(z))
+Stack count now (should be 0):0
+Element hit: t
+The element pushed to the stack: t
+Top element of the stack now: t
+Stack Count: 1
+Element hit: *
+The element pushed to the stack: *
+Top element of the stack now: *
+Stack Count: 1
+Element hit: t
+The element pushed to the stack: t
+Top element of the stack now: t
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: t
+The parent to be joined to: *
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((t)*(t))
+Stack Count: 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+((t)$T37(t))
+Stack count now (should be 0):0
+
+Expression stack count at entry: 0
+Element hit: t
+The element pushed to the stack: t
+Top element of the stack now: t
+Stack Count: 1
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: z
+The element pushed to the stack: z
+Top element of the stack now: z
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: no
+factorRecognized value:1
+The child to be joined: z
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((t)+(z))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: t
+The element pushed to the stack: t
+Top element of the stack now: t
+Stack Count: 2
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 2
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: t
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+(((t)+(z))+(t))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: t
+The element pushed to the stack: t
+Top element of the stack now: t
+Stack Count: 2
+Element hit: /
+The element pushed to the stack: /
+Top element of the stack now: /
+Stack Count: 2
+Element hit: 2.0
+The element pushed to the stack: 2.0
+Top element of the stack now: 2.0
+Stack Count: 3
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 3
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: 2.0
+The parent to be joined to: /
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((t)/(2.0))
+Stack Count: 2
+Move ok value: yes
+factorRecognized value:0
+The child to be joined: /
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((((t)+(z))+(t))+((t)/(2.0)))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: z
+The element pushed to the stack: z
+Top element of the stack now: z
+Stack Count: 2
+Element hit: /
+The element pushed to the stack: /
+Top element of the stack now: /
+Stack Count: 2
+Element hit: 4.0
+The element pushed to the stack: 4.0
+Top element of the stack now: 4.0
+Stack Count: 3
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 3
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: 4.0
+The parent to be joined to: /
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((z)/(4.0))
+Stack Count: 2
+Move ok value: yes
+factorRecognized value:0
+The child to be joined: /
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+(((((t)+(z))+(t))+((t)/(2.0)))+((z)/(4.0)))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: z
+The element pushed to the stack: z
+Top element of the stack now: z
+Stack Count: 2
+Element hit: /
+The element pushed to the stack: /
+Top element of the stack now: /
+Stack Count: 2
+Element hit: 5.0
+The element pushed to the stack: 5.0
+Top element of the stack now: 5.0
+Stack Count: 3
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 3
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: 5.0
+The parent to be joined to: /
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((z)/(5.0))
+Stack Count: 2
+Move ok value: yes
+factorRecognized value:0
+The child to be joined: /
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((((((t)+(z))+(t))+((t)/(2.0)))+((z)/(4.0)))+((z)/(5.0)))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: z
+The element pushed to the stack: z
+Top element of the stack now: z
+Stack Count: 2
+Element hit: /
+The element pushed to the stack: /
+Top element of the stack now: /
+Stack Count: 2
+Element hit: 6.0
+The element pushed to the stack: 6.0
+Top element of the stack now: 6.0
+Stack Count: 3
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 3
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: 6.0
+The parent to be joined to: /
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((z)/(6.0))
+Stack Count: 2
+Move ok value: yes
+factorRecognized value:0
+The child to be joined: /
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+(((((((t)+(z))+(t))+((t)/(2.0)))+((z)/(4.0)))+((z)/(5.0)))+((z)/(6.0)))
+Stack Count: 1
+Getting out of checkStack().
+Element hit: +
+The element pushed to the stack: +
+Top element of the stack now: +
+Stack Count: 1
+Element hit: z
+The element pushed to the stack: z
+Top element of the stack now: z
+Stack Count: 2
+Element hit: /
+The element pushed to the stack: /
+Top element of the stack now: /
+Stack Count: 2
+Element hit: 7.0
+The element pushed to the stack: 7.0
+Top element of the stack now: 7.0
+Stack Count: 3
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 3
+Move ok value: yes
+factorRecognized value:1
+The child to be joined: 7.0
+The parent to be joined to: /
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((z)/(7.0))
+Stack Count: 2
+Move ok value: yes
+factorRecognized value:0
+The child to be joined: /
+The parent to be joined to: +
+After the move up is complete
+The inorder traversal of the recently joined nodes...
+((((((((t)+(z))+(t))+((t)/(2.0)))+((z)/(4.0)))+((z)/(5.0)))+((z)/(6.0)))+((z)/(7.0)))
+Stack Count: 1
+Getting out of checkStack().
+Factor recognized. Calling checkstack func.
+The stack count value in checkStack(): 1
+Getting out of checkStack().
+Stack count after supposedly popping the last element: 0
+ABOUT TO ENTER TRAVERSAL
+The inorder traversal of the overall tree: 
+((((((((t)$T38(z))$T39(t))$T42((t)$T41($T40)))$T45((z)$T44($T43)))$T48((z)$T47($T46)))$T51((z)$T50($T49)))$T54((z)$T53($T52)))
+Stack count now (should be 0):0
+;IR code
+;STOREI 1 $T1
+;STOREI $T1 a
+;STOREI 2 $T2
+;STOREI $T2 b
+;STOREI 10 $T3
+;STOREI $T3 c
+;STOREI 20 $T4
+;STOREI $T4 d
+;WRITEI a
+;WRITEI b
+;WRITEI c
+;WRITEI d
+;ADDI a b $T5
+;STOREI $T5 a
+;WRITEI a
+;MULTI a c $T6
+;STOREI $T6 b
+;WRITEI b
+;STOREI 0 $T7
+;SUBI $T7 a $T8
+;ADDI $T8 b $T9
+;STOREI $T9 c
+;WRITEI c
+;STOREI 0 $T10
+;SUBI $T10 d $T11
+;STOREI $T11 d
+;WRITEI d
+;ADDI a b $T12
+;ADDI d c $T13
+;MULTI $T12 $T13 $T14
+;ADDI a b $T15
+;ADDI $T15 c $T16
+;SUBI $T14 $T16 $T17
+;ADDI $T17 d $T18
+;DIVI $T18 a $T19
+;STOREI $T19 a
+;WRITEI a
+;STOREI 10 $T20
+;ADDI a $T20 $T21
+;STOREI $T21 a
+;WRITEI a
+;ADDI b a $T22
+;STOREI 10 $T23
+;ADDI $T22 $T23 $T24
+;STOREI $T24 b
+;WRITEI b
+;STOREI 0 $T25
+;STOREI 10 $T26
+;SUBI $T25 $T26 $T27
+;STOREI $T27 c
+;WRITEI c
+;STOREF 1.0 $T28
+;STOREF $T28 x
+;STOREF 2.0 $T29
+;STOREF $T29 y
+;STOREF 3.14159 $T30
+;STOREF $T30 z
+;WRITEF x
+;WRITEF z
+;WRITEF y
+;STOREF 2.0 $T31
+;DIVF z $T31 $T32
+;STOREF $T32 x
+;DIVF z y $T33
+;STOREF $T33 y
+;WRITEF x
+;WRITEF y
+;ADDF x y $T34
+;ADDF $T34 z $T35
+;DIVF $T35 z $T36
+;STOREF $T36 t
+;WRITEF t
+;MULTF t t $T37
+;STOREF $T37 t
+;WRITEF t
+;ADDF t z $T38
+;ADDF $T38 t $T39
+;STOREF 2.0 $T40
+;DIVF t $T40 $T41
+;ADDF $T39 $T41 $T42
+;STOREF 4.0 $T43
+;DIVF z $T43 $T44
+;ADDF $T42 $T44 $T45
+;STOREF 5.0 $T46
+;DIVF z $T46 $T47
+;ADDF $T45 $T47 $T48
+;STOREF 6.0 $T49
+;DIVF z $T49 $T50
+;ADDF $T48 $T50 $T51
+;STOREF 7.0 $T52
+;DIVF z $T52 $T53
+;ADDF $T51 $T53 $T54
+;STOREF $T54 t
+;WRITEF t
+;tiny code
+var d
+var b
+var c
+var a
+var t
+var z
+var y
+var x
+move 1 r1
+move r1 a
+move 2 r2
+move r2 b
+move 10 r3
+move r3 c
+move 20 r4
+move r4 d
+sys writei a
+sys writei b
+sys writei c
+sys writei d
+move a r5
+addi b r5
+move r5 a
+sys writei a
+move a r6
+muli c r6
+move r6 b
+sys writei b
+move 0 r7
+move r7 r8
+subi a r8
+move r8 r9
+addi b r9
+move r9 c
+sys writei c
+move 0 r10
+move r10 r11
+subi d r11
+move r11 d
+sys writei d
+move a r12
+addi b r12
+move d r13
+addi c r13
+move r12 r14
+muli r13 r14
+move a r15
+addi b r15
+move r15 r16
+addi c r16
+move r14 r17
+subi r16 r17
+move r17 r18
+addi d r18
+move r18 r19
+divi a r19
+move r19 a
+sys writei a
+move 10 r20
+move a r21
+addi r20 r21
+move r21 a
+sys writei a
+move b r22
+addi a r22
+move 10 r23
+move r22 r24
+addi r23 r24
+move r24 b
+sys writei b
+move 0 r25
+move 10 r26
+move r25 r27
+subi r26 r27
+move r27 c
+sys writei c
+move 1.0 r28
+move r28 x
+move 2.0 r29
+move r29 y
+move 3.14159 r30
+move r30 z
+sys writer x
+sys writer z
+sys writer y
+move 2.0 r31
+move z r32
+divr r31 r32
+move r32 x
+move z r33
+divr y r33
+move r33 y
+sys writer x
+sys writer y
+move x r34
+addr y r34
+move r34 r35
+addr z r35
+move r35 r36
+divr z r36
+move r36 t
+sys writer t
+move t r37
+mulr t r37
+move r37 t
+sys writer t
+move t r38
+addr z r38
+move r38 r39
+addr t r39
+move 2.0 r40
+move t r41
+divr r40 r41
+move r39 r42
+addr r41 r42
+move 4.0 r43
+move z r44
+divr r43 r44
+move r42 r45
+addr r44 r45
+move 5.0 r46
+move z r47
+divr r46 r47
+move r45 r48
+addr r47 r48
+move 6.0 r49
+move z r50
+divr r49 r50
+move r48 r51
+addr r50 r51
+move 7.0 r52
+move z r53
+divr r52 r53
+move r51 r54
+addr r53 r54
+move r54 t
+sys writer t

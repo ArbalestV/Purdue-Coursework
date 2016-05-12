@@ -1,0 +1,45 @@
+import java.util.*;
+
+
+public class SymbolTable {
+    private String scope;
+    private ArrayList<SymbolTableVariables> SymbolVarNames = new ArrayList<SymbolTableVariables>();
+    private HashMap<String, String> SymbolVarNamesHM = new HashMap<String, String>();
+    
+    public SymbolTable(String scope) {
+	this.scope = scope;
+    }
+    
+    
+    public void insertVariables(String variable_type, String variable_name, String string_value) {
+	String[] StringArray = variable_name.split(",");
+	for(int i = 0; i < StringArray.length; i++) {
+	    if(SymbolVarNamesHM.containsKey(StringArray[i])) {
+		System.out.println("DECLARATION ERROR " + StringArray[i] + "\r");
+		System.exit(0);
+	    }
+	    else {
+		SymbolTableVariables newObj = new SymbolTableVariables(StringArray[i], variable_type, string_value);
+		SymbolVarNames.add(newObj);
+		SymbolVarNamesHM.put(StringArray[i], variable_type);
+	    }
+	}
+    }
+    
+    public void printSymbolTable2() {
+	if (this.scope == "GLOBAL") {
+	    System.out.print("Symbol table " + this.scope + "\r\n");
+	    for(int i = 0; i < SymbolVarNames.size(); i++) {
+		SymbolVarNames.get(i).printSymbolVariable();
+	    }
+	}
+	else {
+	    System.out.println("Symbol table " + this.scope + "\r");
+	    for(int i = 0; i < SymbolVarNames.size(); i++) {
+		SymbolVarNames.get(i).printSymbolVariable();
+	    }
+	}
+	System.out.println();
+    }
+}
+

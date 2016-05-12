@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class createSymbolTable {
+    private static int blockCount = 1;
+    private static Stack<SymbolTable> SymbolTableStack = new Stack<SymbolTable>();
+    
+    public static void GlobalScopeTable() {
+	SymbolTableStack.push(new SymbolTable("GLOBAL"));
+    }
+    
+    public static void FunctionScopeTable(String functionName) {
+	SymbolTableStack.push(new SymbolTable(functionName));
+    }
+    
+    public static void BlockScopeTable() {
+	SymbolTableStack.push(new SymbolTable("BLOCK " + Integer.toString(blockCount++)));
+    }
+    
+    public static void insertVariable(String variable_type, String variable_name, String string_value) {
+	SymbolTable CurrentSymbolTable = SymbolTableStack.pop();
+	CurrentSymbolTable.insertVariables(variable_type, variable_name, string_value);
+	SymbolTableStack.push(CurrentSymbolTable);
+    }
+    
+    public static void printSymbolTable() {
+	SymbolTable CurrentSymbolTable = SymbolTableStack.pop();
+	CurrentSymbolTable.printSymbolTable2();
+	SymbolTableStack.push(CurrentSymbolTable);
+    }
+    
+    public static void popSymbolTable() {
+	SymbolTable CurrentSymbolTable = SymbolTableStack.pop();
+    }
+}

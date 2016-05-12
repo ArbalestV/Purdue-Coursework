@@ -1,0 +1,11 @@
+import org.antlr.v4.runtime.*;
+
+public class Micro {
+	public static void main(String[] args) {
+		ANTLRFileStream input = new ANTLRFileStream(args[0]);
+		MicroLexer lexer = new Microlexer(input);
+
+		tok = lexer.nextToken();
+
+	}
+}

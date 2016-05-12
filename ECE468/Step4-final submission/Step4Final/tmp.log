@@ -1,0 +1,345 @@
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+Out of init_statment
+PUSHING FOR LABELS
+IN COND
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+COND --> COMPOP
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+Stack Count is now: 2
+popped 1:1
+node1: 1 node2: !=
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: !=
+Root: != Right Child: 1 Left Child: enough
+ROOT: enough
+ROOT: 1
+Now back at Non-Leaf Node: !=
+End of condition
+in INCR_STATEMENT
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+Stack Count is now: 2
+popped 1:0
+node1: 0 node2: +
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+Out of Increment statment
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+Stack Count is now: 2
+popped 1:1
+node1: 1 node2: +
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: +
+Root: + Right Child: 1 Left Child: count
+ROOT: count
+ROOT: 1
+Now back at Non-Leaf Node: +
+EXPR -> factor
+Factor -> postfix_expr
+Factor -> postfix_expr
+factor complete
+MOVEOK: no
+factor recognized
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: no
+factor recognized
+end of expression
+Found nested expression
+factor complete
+MOVEOK: yes
+Stack Count is now: 2
+popped 1:+
+node1: + node2: *
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: *
+Root: * Right Child: + Left Child: 0.5
+ROOT: 0.5
+ROOT: +
+Root: + Right Child: / Left Child: approx
+ROOT: approx
+ROOT: /
+Root: / Right Child: approx Left Child: num
+ROOT: num
+ROOT: approx
+Now back at Non-Leaf Node: /
+Now back at Non-Leaf Node: +
+Now back at Non-Leaf Node: *
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+Stack Count is now: 2
+popped 1:newapprox
+node1: newapprox node2: -
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: -
+Root: - Right Child: newapprox Left Child: approx
+ROOT: approx
+ROOT: newapprox
+Now back at Non-Leaf Node: -
+WE WILL INSERT THE DUMMY NODE HERE.
+IN IF STATEMENT
+PUSHING IF LABELS
+IN COND
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+COND --> COMPOP
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+Stack Count is now: 2
+popped 1:0.0
+node1: 0.0 node2: >
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: >
+Root: > Right Child: 0.0 Left Child: diff
+ROOT: diff
+ROOT: 0.0
+Now back at Non-Leaf Node: >
+End of condition
+Finished conditionIF --> StmtList
+WE WILL INSERT THE DUMMY NODE HERE.
+IN IF STATEMENT
+PUSHING IF LABELS
+IN COND
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+Stack Count is now: 2
+popped 1:diff
+STACK IS EMPTY... EXITING TO AVOID ISSUES.
+factor recognized
+end of expression
+COND --> COMPOP
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+Stack Count is now: 2
+popped 1:tolerance
+node1: tolerance node2: <
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: <
+Root: < Right Child: tolerance Left Child: diff
+ROOT: diff
+ROOT: tolerance
+Now back at Non-Leaf Node: <
+End of condition
+Finished conditionIF --> StmtList
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+WE WILL INSERT THE DUMMY NODE HERE.
+IN IF STATEMENT
+PUSHING IF LABELS
+IN COND
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+COND --> COMPOP
+EXPR -> factor
+Factor -> postfix_expr
+Factor -> postfix_expr
+factor complete
+MOVEOK: no
+factor recognized
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: no
+factor recognized
+end of expression
+Found nested expression
+factor complete
+MOVEOK: yes
+Stack Count is now: 2
+popped 1:-
+node1: - node2: >
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: >
+Root: > Right Child: - Left Child: diff
+ROOT: diff
+ROOT: -
+Root: - Right Child: tolerance Left Child: 0.0
+ROOT: 0.0
+ROOT: tolerance
+Now back at Non-Leaf Node: -
+Now back at Non-Leaf Node: >
+End of condition
+Finished conditionIF --> StmtList
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+AST.incrIRnode
+INCRIRNODE
+ROOT: +
+Root: + Right Child: 0 Left Child: enough
+ROOT: enough
+ROOT: 0
+Now back at Non-Leaf Node: +
+TYPE LEFT CHILD: INT
+In Write statment
+Finished WRite statement
+In Write statment
+Finished WRite statement
+;IR code
+;STOREF 0.0001 $T1
+;STOREF $T1 tolerance
+;READF num
+;STOREF num $T2
+;STOREF $T2 approx
+;STOREI 0 $T3
+;STOREI $T3 count
+;STOREF 0.0 $T4
+;STOREF $T4 diff
+;STOREI 0 $T5
+;STOREI $T5 enough
+;LABEL label1
+;STOREI 1 $T6
+;EQ enough $T6 label3
+;STOREI 1 $T7
+;ADDI count $T7 $T8
+;STOREI $T8 count
+;STOREF 0.5 $T9
+;DIVF num approx $T10
+;ADDF approx $T10 $T11
+;MULTF $T9 $T11 $T12
+;STOREF $T12 newapprox
+;SUBF approx newapprox $T13
+;STOREF $T13 diff
+;STOREF 0.0 $T14
+;LE diff $T14 label4
+;GE diff tolerance label6
+;STOREI 1 $T15
+;STOREI $T15 enough
+;JUMP label7
+;LABEL label6
+;LABEL label7
+;JUMP label5
+;LABEL label4
+;STOREF 0.0 $T16
+;SUBF $T16 tolerance $T17
+;LE diff $T17 label8
+;STOREI 1 $T18
+;STOREI $T18 enough
+;JUMP label9
+;LABEL label8
+;LABEL label9
+;JUMP label5
+;LABEL label5
+;STOREF newapprox $T19
+;STOREF $T19 approx
+;LABEL label2
+;STOREI 0 $T20
+;ADDI enough $T20 $T21
+;STOREI $T21 enough
+;JUMP label1
+;LABEL label3
+;WRITEF approx
+;WRITES space
+;WRITEI count
+;WRITES eol

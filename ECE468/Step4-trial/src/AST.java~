@@ -1,0 +1,177 @@
+import java.util.*;
+public class AST {
+    public static String rootequals; //since AST is only called from assignments, ':=' will always be the root. This will be called accordingly from the grammar file
+    public static String leftChild; //for an AST since it is only initialized during an assignment statement, we will have have the left child as an identifier. We will be called accordingly from the grammar file
+    public static ASTnode rightChild; //the right child could be either an identifier/literal, or another node which would essentially be a subtree. We will declare a different data structure ASTnode for this purpose
+    public static Stack<ASTnode> nodestackframe = new Stack<ASTnode>(); //the right child will essentially be a node, consisting of successive left and right children of nodes. Thus, we need to keep pushing it onto the stack, so that we know which stage of the right subtree we are in
+    //public static Iterator<ASTnode> iter = nodestackframe.iterator();
+    public static String operatorSeen = "no"; //to distinguish between a := b and a := b + c
+    public static int stackCount;
+    public static String moveOK = "yes";
+    public static int factorRecognized = 0;
+    public static int insideExprCount = 0;
+
+    public static int checkIfJustOneNode() { //to check if the right child of the := contains 1 node
+	if (rightChild.leftChild == null) {
+	    return 1;
+	}
+	else {
+	    return 0;
+	}
+    }
+
+    public static void setAST(String root, String left) {
+	stackCount = 0;
+	rootequals = root;
+	leftChild = left;
+	rightChild = null;
+    }
+
+    public static void createTerminalNode(String text) {
+      
+	//System.out.println("IN TERMINAL");
+	ASTnode node = new ASTnode(text, null, null); //create the terminal node. leftchild and rightchild will both be null
+	
+	nodestackframe.push(node);
+	//System.out.println("Top element of the stack now: " + nodestackframe.peek().text);
+	//printStackCurr();
+	stackCount++;
+	System.out.println("The element pushed to the stack: " + node.text);
+	System.out.println("Top element of the stack now: " + nodestackframe.peek().text);
+	System.out.println("Stack Count: "+stackCount);
+	insideExprCount++;
+    }
+    
+    public static void createNonTerminalNode(String text) {
+	//System.out.println("IN NON TERMINAL");
+	ASTnode node = new ASTnode(text, nodestackframe.pop(), null); //create the non-terminal node. rightchild will both be null initially, but will be updated along the way. leftchild can be gotten by popping the current node in the stack
+	nodestackframe.push(node); //push the newly created node into the stack
+	operatorSeen = "yes";
+        System.out.println("The element pushed to the stack: " + node.text);
+	System.out.println("Top element of the stack now: " + nodestackframe.peek().text);
+	System.out.println("Stack Count: "+stackCount);
+	insideExprCount++;
+	//printStackCurr();
+    }
+
+    public static void popFinalNode() { //this function will essentially return the final node in the stack, which will contain the entire right child of the expression as a binary tree
+	/*if(stackCount != 1) {
+	    moveRightChildUp();
+	    }*/
+	rightChild = nodestackframe.pop();//assign to the right child
+	//System.out.println("AT THE END. WILL PRINT THE FINAL CONTENTS OF STACK.");
+	/*
+	System.out.println("Temporarily checking the root right child content...");
+	System.out.println("RightChild Text = " + rightChild.text);
+	System.out.println("Left of Right =" + rightChild.leftChild.text);
+	System.out.println("Right of Right =" + rightChild.rightChild.text);
+	*/
+	stackCount--;
+	System.out.println("Stack count after supposedly popping the last element: " + stackCount);
+	operatorSeen = "no";
+	
+    }
+    
+
+    public static void checkStack() {
+	System.out.println("The stack count value in checkStack(): " + stackCount);
+	if (moveOK == "yes") {
+	    while (stackCount != 1) {
+		//System.out.println("And forth.");
+		moveRightChildUp();
+		//factorRecognized = 0;
+	    }
+	}
+	else {//not move ok
+	    moveRightChildUp();
+	}
+	System.out.println("Getting out of checkStack().");
+    }
+    
+    public static void dontMove(int move) {
+	if(move == 1) {
+	    moveOK = "no";
+	}
+	else {
+	    moveOK = "yes";
+	}
+    }
+	
+    public static void moveRightChildUp() { //this function will move up one level the right child
+	//System.out.println("Move Right Child Up");
+	//System.out.println("operator seen: "+operatorSeen);
+	if (insideExprCount == 1){
+	    factorRecognized = 0;
+	}
+	    if(moveOK == "no"  && factorRecognized != 1) {
+		//System.out.println("Back.");
+		return;
+	    }
+	    else{
+		System.out.println("Move ok value: " + moveOK);
+		System.out.println("factorRecognized value:" + factorRecognized);
+		if (operatorSeen == "no") { //only one terminal node was present then just return
+		    //printStackCurr();
+		    //System.out.println("Top element of the stack now: " + nodestackframe.peek().text);
+		    //System.out.println("Stack Count: "+stackCount);
+		    return;
+		}
+		else { //at least moving up needs to be done
+		    ASTnode right = nodestackframe.pop(); //get the right node
+		    System.out.println("The child to be joined: " + right.text); 
+		    ASTnode parent = nodestackframe.pop(); //get the parent. They are always going to be the topmost two
+		    System.out.println("The parent to be joined to: " + parent.text);
+		    parent.rightChild = right; //make the assignment
+		    System.out.println("After the move up is complete");
+		    System.out.println("The inorder traversal of the recently joined nodes...");
+		    inorderTraversal(parent);
+		    nodestackframe.push(parent); //now push the parent right back to the stack
+		    //System.out.println("Top element of the stack now: " + nodestackframe.peek().text);
+		    //printStackCurr();
+		    factorRecognized = 0;
+		    stackCount--;
+		    System.out.println("\nStack Count: " + stackCount);
+		    return;
+		}
+	    }
+	
+    }
+    
+    public static void print() { //print using inorder traversal ->called only from grammar file
+	//System.out.println("Printing in Print");
+	/*
+	System.out.println("Temporarily checking the root right child content...");
+	System.out.println("RightChild Text = " + rightChild.text);
+	System.out.println("Left of Right =" + rightChild.leftChild.text);
+	System.out.println("Right of Right =" + rightChild.rightChild.text);
+	*/
+	//System.out.println("The inorder traversal...");
+        inorderTraversal(rightChild); //print starting from the right child
+	System.out.print("\n");
+	System.out.println("Stack count now (should be 0):" + Integer.toString(stackCount));
+    }
+
+    public static void inorderTraversal(ASTnode curr) {
+	if (curr == null) {
+	    //System.out.print(")");
+	    return;
+	}
+	System.out.print("(");
+	inorderTraversal(curr.leftChild);
+	//System.out.print("(");
+	System.out.print(curr.text);
+	inorderTraversal(curr.rightChild);
+	//System.out.print("end");
+	System.out.print(")");
+	//System.out.print(")");
+	
+    }
+	
+    public static void printStackCurr() {
+	
+	ASTnode temp = nodestackframe.pop();
+	inorderTraversal(temp);
+	nodestackframe.push(temp);
+    }
+	
+}

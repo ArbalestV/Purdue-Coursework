@@ -1,0 +1,155 @@
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+assign_expr --> popFinal
+Out of init_statment
+PUSHING FOR LABELS
+IN COND
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+COND --> COMPOP
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: !=
+Root: != Right Child: 1 Left Child: enough
+ROOT: enough
+ROOT: 1
+Now back at Non-Leaf Node: !=
+End of condition
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: +
+Root: + Right Child: 1 Left Child: count
+ROOT: count
+ROOT: 1
+Now back at Non-Leaf Node: +
+EXPR -> factor
+Factor -> postfix_expr
+Factor -> postfix_expr
+factor complete
+MOVEOK: no
+factor recognized
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: no
+factor recognized
+end of expression
+Found nested expression
+factor complete
+MOVEOK: yes
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: *
+Root: * Right Child: + Left Child: 0.5
+ROOT: 0.5
+ROOT: +
+Root: + Right Child: / Left Child: approx
+ROOT: approx
+ROOT: /
+Root: / Right Child: approx Left Child: num
+ROOT: num
+ROOT: approx
+Now back at Non-Leaf Node: /
+Now back at Non-Leaf Node: +
+Now back at Non-Leaf Node: *
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+assign_expr --> popFinal
+ROOT: -
+Root: - Right Child: newapprox Left Child: approx
+ROOT: approx
+ROOT: newapprox
+Now back at Non-Leaf Node: -
+IN IF STATEMENT
+PUSHING IF LABELS
+IN COND
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+factor recognized
+end of expression
+COND --> COMPOP
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes
+in move ok yes. Stack Count = 1
+factor recognized
+end of expression
+ROOT: >
+Root: > Right Child: 0.0 Left Child: diff
+ROOT: diff
+ROOT: 0.0
+Now back at Non-Leaf Node: >
+End of condition
+Finished conditionIF --> StmtList
+IN IF STATEMENT
+PUSHING IF LABELS
+IN COND
+EXPR -> factor
+Factor -> postfix_expr
+factor complete
+MOVEOK: yes

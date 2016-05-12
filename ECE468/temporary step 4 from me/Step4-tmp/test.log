@@ -1,0 +1,32 @@
+In factor production: Factor prefix:  Postfix expression: 1
+AT THE END. WILL PRINT THE FINAL CONTENTS OF STACK.
+1 
+In factor production: Factor prefix:  Postfix expression: 2
+AT THE END. WILL PRINT THE FINAL CONTENTS OF STACK.
+2 
+In factor production: Factor prefix:  Postfix expression: 10
+AT THE END. WILL PRINT THE FINAL CONTENTS OF STACK.
+10 
+In factor production: Factor prefix:  Postfix expression: 20
+AT THE END. WILL PRINT THE FINAL CONTENTS OF STACK.
+20 
+In factor production: Factor prefix:  Postfix expression: a
+In factor production: Factor prefix:  Postfix expression: b
+After factor finishes, printing the subexpression...
+a 
++ 
+b 
+AT THE END. WILL PRINT THE FINAL CONTENTS OF STACK.
+a 
++ 
+b 
+In factor production: Factor prefix: a* Postfix expression: c
+After factor finishes, printing the subexpression...
+a 
+* 
+c 
+AT THE END. WILL PRINT THE FINAL CONTENTS OF STACK.
+a 
+* 
+c 
+In factor production: Factor prefix:  Postfix expression: 0
