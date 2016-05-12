@@ -1,0 +1,25 @@
+(define (greater-than m n)
+ (cond ((zero? m) #f)
+       ((zero? n) #t)
+       (else (greater-than (- m 1) (- n 1)))))
+
+(define (sort l)
+ (cond
+  ((= (length l) 0)
+   l)
+  ((= (length l) 1)
+   l)
+  ((= (length l) 2)
+   (case (greater-than (first l) (second l))
+    ((#f) l)
+    ((#t) (append (list (second l)) (list (first l))))))
+  ;;inductive case
+  (else
+   (let ((rest-sorted (sort (rest l))))
+    ;;(display rest-sorted)
+    ;;(display newline)
+    (case (greater-than (first l) (first rest-sorted))
+     ((#f) (append (list (first l)) rest-sorted))
+     ((#t) (append (list (first rest-sorted))
+		   (sort (append (list (first l)) (rest rest-sorted))))))))))
+				

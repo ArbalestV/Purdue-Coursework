@@ -1,0 +1,62 @@
+(truth-tables-match? (boolean-simplify '(and (or (and (or (or (and a b c e (not (not (not c))))) (and d e f)))) (or (not (not d)) e))) '(and (or (and (or (or (and a b c e (not (not (not c))))) (and d e f)))) (or (not (not d)) e)))
+>>Error: Proposition not in truth assignment
+
+
+(truth-tables-match? '(and (or (and (or (or (and a b c e (not (not (not c))))) (and d e f)))) (or (not (not d)) e)) (boolean-simplify '(and (or (and (or (or (and a b c e (not (not (not c))))) (and d e f)))) (or (not (not d)) e))))
+#F
+
+-- thus if the order is reversed, the type of output message changes.
+
+(boolean-simplify '(and (or (and (or (or (and a b c e (not (not (not c))))) (and d e f)))) (or (not (not d)) e)))
+(AND D F E (OR E D))
+
+
+
+
+
+
+--- new issue - 
+(boolean-simplify '(or (and (or (or (not (not c)) (or (and b (not (not f)))) (not (or (and b (not (not f)))))) (and f e g)))))
+(OR C (NOT (AND B (NOT (NOT F)))) (AND F B) (AND E G F))
+
+> (boolean-simplify '(or (not (not c)) (or (and b (not (not f)))) (not (or (and b (not (not f)))))))
+(OR (AND F B) (NOT (AND B (NOT (NOT F)))) C)
+
+> (boolean-simplify '(or (and (or (or (not (not c)) (or (and b (not (not f))) (not (or (and b (not (not f)))))) (and f e g))))))
+(OR (AND F B) (NOT (AND B (NOT (NOT F)))) (AND E G F) C)
+
+> (boolean-simplify '(or (and b (not (not f))) (not (or (and b (not (not f)))))))
+(OR (NOT (AND B (NOT (NOT F)))) (AND F B))
+> (boolean-simplify '(or (and a b) (not (and a b))))
+(OR (NOT (AND A B)) (AND B A))
+
+--basically not hitting the #t return case
+
+> (boolean-simplify '(or (not a) a))
+#T
+> (boolean-simplify '(or (not (and a)) (and a)))
+#T
+> (boolean-simplify '(or (not (and a b)) (and a b)))
+(OR (AND B A) (NOT (AND A B))) --currently debugging for 
+
+
+-----------------------------------------------
+(boolean-simplify '(and (and (not (not b)) c) (not (and (not (not b)) c))))
+(AND B C (NOT (AND (NOT (NOT B)) C)))
+> (boolean-simplify '(or (and (and (and c d) (and d e f)) (or d e f)) (or d e f) (not (or d e f))))
+(OR D F E (NOT (OR D E F)) (AND E F D C (OR E F D)))
+ ---maybe it depends on the way i have called my functions, which is not entirely wrong
+
+-------------------------------------------------
+
+
+
+
+last test cases - 
+(truth-tables-match? '(and (or c d f)) (boolean-simplify '(or (and c d f))))
+#F
+> (boolean-simplify '(or (or (and a c b) (or c d f) (not (and a c b))) (and a d f) (or d f e)))
+#T
+> (boolean-simplify '(or (and (and a c b) (or c d f) (not (and a c b))) (and a d f) (or d f e)))
+(OR D E F (AND D F A))
+> (truth-tables-match? '(or (and (and a c b) (or c d f) (not (and a c b))) (and a d f) (or d f e)) (boolean-simplify '(or (and (and a c b) (or c d f) (not (and a c b))) (and a d f) (or d f e))))

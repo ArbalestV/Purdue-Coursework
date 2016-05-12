@@ -1,0 +1,17 @@
+(define (f x)
+ (display "x=")
+ (write x)
+ (newline)
+ (+ (g x) 1))
+
+(define (g y)
+ (display "y=")
+ (write y)
+ (newline)
+ (+ (h y) 1))
+
+(define (h z)
+ (display "z=")
+ (write z)
+ (newline)
+ (/ 1 0))
