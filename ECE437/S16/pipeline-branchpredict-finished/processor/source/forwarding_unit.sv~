@@ -1,0 +1,9 @@
+`include "cpu_types_pkg.vh"
+`include "forwarding_unit_if.vh"
+import cpu_types_pkg::*;
+module forwarding_unit (
+			forwarding_unit_if.fu fuif
+			);
+   assign fuif.forward_A = (fuif.rs_EX == fuif.wsel_M) ? 2'b01 : ( (fuif.rs_EX == fuif.wsel_WB) ? 2'b10 : 2'b00);
+   assign fuif.forward_B = (fuif.is_ITYPE == 1'b1) ? 2'b00 : ( (fuif.rt_EX == fuif.wsel_M) ? 2'b01 : ( (fuif.rs_EX == fuif.wsel_WB) ? 2'b10 : 2'b00) );
+endmodule // forwarding_unit
