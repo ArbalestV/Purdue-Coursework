@@ -1,0 +1,30 @@
+/********************************************
+ * David Larson
+ * Pranjit Kalita
+ * ECE 437 Section 6
+ * Module: hazard_unit.sv
+ *******************************************/
+
+//includes
+`include "branch_unit_if.vh"
+//packages
+
+module hazard_unit
+(
+  hazard_unit_if.hu huif
+)
+
+  /* declarations
+  logic     ex_memread, nop;
+  regbits_t de_regRs, de_regRt, ex_regRt;
+  */
+
+  always_comb
+    begin
+       nop = 1'b0;       
+       if ( ex_memread && ((ex_regRt == de_regRt) ||
+			   (ex_regRt == de_regRs))   ) begin
+	  nop = 1'b1;
+       end
+    end
+endmodule // hazard_unit

@@ -1,0 +1,35 @@
+/****************************************************
+ * Module: forwarding_unit.sv
+ * Date  : 10/4/15
+ * *************************************************/
+
+`include "forwarding_unit_if.vh"
+
+module forwarding_unit
+(
+ forwarding_unit_if.fu fuif
+);
+
+  /*
+  modport fu (
+    input de_regRt, de_regRs, mem_regRd, wb_regRd, mem_memRead, wb_memRead,
+    output aluDatSel1, aluDatSel2
+  );
+  */
+
+   always_comb
+     begin
+	aluDatSel1 = 1'b0;
+	aluDatSel2 = 1'b0;
+	
+	if ( fuif.de_regRt == fuif.mem_regRd || fuif.de_regRt == wb_regRd ) begin
+	end
+	if ( fuif.de_regRs == fuif.mem_regRd || fuif.de_regRs == wb_regRd ) begin
+	end
+	if ( mem_memRead ) begin
+	end
+	if ( wb_memRead ) begin
+	end
+     end
+   
+endmodule

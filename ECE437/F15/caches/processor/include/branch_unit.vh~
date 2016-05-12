@@ -1,0 +1,4 @@
+`ifndef BRANCH_UNIT_VH
+'define BRANCH_UNIT_VH
+
+interface branch_unit_if;

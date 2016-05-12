@@ -1,0 +1,39 @@
+/********************************************
+ * David Larson
+ * Pranjit Kalita
+ * ECE 437 Section 6
+ * Module: branch_unit.sv
+ *******************************************/
+
+//includes
+`include "branch_unit_if.vh"
+//packages
+
+module branch_unit
+(
+ branch_unit_if.bu buif
+)
+  /*  Declarations
+  logic        br, flush_de;
+  word_t       rs, rt;
+  opcode_t     instrOp;
+  logic [15:0] imm, brTgt;
+  */
+
+  assign buif.brTgt = buif.imm;
+   
+  always_comb
+    begin
+       br = 1'b0;
+       flush_de = 1'b0;
+       if ( buif.instrOp == BEQ && rs == rt ) begin
+	  br = 1'b1;
+	  flush_de = 1'b1;
+       end
+       if ( buif.instrOp == BNE && rs != rt ) begin
+	  br = 1'b1;
+	  flush_de = 1'b1;
+       end
+    end // always_comb begin
+   
+endmodule // branch_unit

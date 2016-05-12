@@ -1,0 +1,26 @@
+`ifndef FORWARDING_UNIT_IF_VH
+`define FORWARDING_UNIT_IF_VH
+
+`include "cpu_types_pkg.vh"
+
+interface forwarding_unit_if;
+
+import cpu_types_pkg::*;
+
+  //declarations
+  regbits_t de_regRt, de_regRs, mem_regRd, wb_regRd;
+  logic     mem_memRead, wb_memRead, aluDatSel1, aluDatSel2;
+  
+  //ports
+  modport fu (
+    input de_regRt, de_regRs, mem_regRd, wb_regRd, mem_memRead, wb_memRead,
+    output aluDatSel1, aluDatSel2
+  );
+  modport tb (
+    input  aluDatSel1, aluDatSel2,
+    output de_regRt, de_regRs, mem_regRd, wb_regRd, mem_memRead, wb_memRead
+  );
+
+endinterface
+
+`endif

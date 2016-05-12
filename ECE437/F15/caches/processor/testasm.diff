@@ -1,0 +1,61 @@
+processing file asmFiles/allop_s.asm (1 of 33)
+--- memsim.hex	2016-03-16 18:00:45.849131904 -0400
++++ memcpu.hex	2016-03-16 18:00:45.822131209 -0400
+@@ -43,18 +43,19 @@
+ :04002A00AF82004859
+ :04002B00FFFFFFFFD5
+ :0401F4000000000304
+-:0401F5000000000402
++:0401F500000007D02F
+ :0401F6000000000203
+-:0401F700FFFFFFFC0B
++:0401F700000007D825
+ :0401F800FFFFFFFE08
+-:0401F9000000000101
+-:0401FD00FFFFFFFE03
++:0401F900000007E01B
++:0401FB00000007E811
++:0401FD00000007F007
+ :0401FE00FFFFFFFD03
+-:0401FF00FFFFFFFF00
++:0401FF00000007F8FD
+ :0402000000000009F1
+ :040201000000000CED
+ :0402020000000008F0
+-:0402030000410000B6
++:0402030000000808E7
+ :0402050000000001F4
+ :0402060000000042B2
+ :040C40000000000AA6
+processing file asmFiles/check_slt.asm (2 of 33)
+processing file asmFiles/ch-normal.asm (3 of 33)
+processing file asmFiles/count_days2_s.asm (4 of 33)
+processing file asmFiles/count_days.asm (5 of 33)
+processing file asmFiles/count_days_s.asm (6 of 33)
+processing file asmFiles/dontTest.asm (7 of 33)
+processing file asmFiles/dummy1.asm (8 of 33)
+processing file asmFiles/dummy2.asm (9 of 33)
+processing file asmFiles/dummy.asm (10 of 33)
+processing file asmFiles/fib.asm (11 of 33)
+processing file asmFiles/fibo_s.asm (12 of 33)
+processing file asmFiles/independent_s.asm (13 of 33)
+processing file asmFiles/mergesort.asm (14 of 33)
+processing file asmFiles/mult2_s.asm (15 of 33)
+processing file asmFiles/mult.asm (16 of 33)
+processing file asmFiles/mult_procedure2_s.asm (17 of 33)
+processing file asmFiles/mult_procedure.asm (18 of 33)
+processing file asmFiles/mult_procedure_s.asm (19 of 33)
+processing file asmFiles/mult_s.asm (20 of 33)
+processing file asmFiles/search.asm (21 of 33)
+processing file asmFiles/simple_s.asm (22 of 33)
+processing file asmFiles/test.branchjump1.asm (23 of 33)
+processing file asmFiles/test.chBEQ.asm (24 of 33)
+processing file asmFiles/test.dhMEM.asm (25 of 33)
+processing file asmFiles/test.dhRAW.asm (26 of 33)
+processing file asmFiles/test.j.asm (27 of 33)
+processing file asmFiles/test.jr.asm (28 of 33)
+processing file asmFiles/test.jump.asm (29 of 33)
+processing file asmFiles/test.ldst1.asm (30 of 33)
+processing file asmFiles/test.ldst2.asm (31 of 33)
+processing file asmFiles/test.loadstore.asm (32 of 33)
+processing file asmFiles/test.rtype.asm (33 of 33)
