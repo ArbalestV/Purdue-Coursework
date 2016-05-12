@@ -1,0 +1,60 @@
+`include "cpu_types_pkg.vh"
+`include "coherence_control_if.vh"
+
+`timescale 1 ns / 1 ns
+import cpu_types_pkg::*;
+
+module coherence_controller_tb;
+   
+   parameter PERIOD = 10;
+   logic CLK = 0;
+   logic nRST;
+
+   always #(PERIOD / 2) CLK++;
+
+   coherence_control_if cohif();
+   coherence_control DUT (CLK, nRST, cohif);
+   test PROG (CLK, nRST, cohif);
+
+endmodule // coherence_controller_tb
+
+program test(
+	     input logic CLK,
+	     output logic nRST,
+	     coherence_control_if cohif
+	     );
+
+   parameter PERIOD = 10;
+
+   initial
+     begin
+	//system reset
+	nRST = 1'b0;
+	cohif.cctrans_0 = 1'b0;
+	cohif.cctrans_1 = 1'b0;
+	cohif.ccwrite_0 = 1'b0;
+	cohif.ccwrite_1 = 1'b0;
+
+	nRST = 1'b1;
+	
+	@(posedge CLK);
+	
+	//Test 1 - D0 requests a read
+	cohif.cctrans_0 = 1'b1;
+	cohif.cctrans_1 = 1'b0;
+
+	@(posedge CLK);
+
+	//cohif.ccwait_1 should be asserted since it is the servicer
+	assert(cohif.ccwait_1 == 1)
+	  $display("Correct! ccwait_1 should be asserted!");
+else
+  $display("Failed! ccwait_1 should not be 0");
+
+
+	@(posedge CLK);
+	@(posedge CLK);
+	@(posedge CLK);
+
+     end // initial begin
+endprogram // test

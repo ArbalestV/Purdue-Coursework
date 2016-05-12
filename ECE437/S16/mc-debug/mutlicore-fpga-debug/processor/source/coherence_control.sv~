@@ -1,0 +1,3 @@
+`include "cpu_types_pkg.vh"
+`include "coherence_control_if.vh"
+import cpu_types_pkg::*;
