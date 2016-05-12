@@ -1,0 +1,27 @@
+`ifndef FORWARDING_UNIT_IF_VH
+ `define FORWARDING_UNIT_IF_VH
+
+ `include "cpu_types_pkg.vh"
+
+interface forwarding_unit_if;
+   import cpu_types_pkg::*;
+
+   regbits_t rs_EX, rt_EX, wsel_M, wsel_WB;
+   logic [1:0] forward_A, forward_B;
+   logic       is_ITYPE;
+
+
+   modport fu (
+	       input rs_EX, rt_EX, wsel_M, wsel_WB, is_ITYPE,
+	       output forward_A, forward_B
+	       );
+   
+   modport tb (	     
+	       input forward_A, forward_B,
+	       output rs_EX, rt_EX, wsel_M, wsel_WB, is_ITYPE
+	       );
+endinterface // forwarding_unit_if
+
+`endif //  `ifndef FORWARDING_UNIT_IF_VH
+
+   
