@@ -1,0 +1,367 @@
+# vsim -c -do "run -all; exit;" -L altera_mf_ver -L altera_ver -L cycloneive_ver -wlf system_tb.wlf work.system_tb 
+# Start time: 17:59:40 on Mar 16,2016
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading work.system_tb
+# Loading work.cpu_types_pkg
+# Loading work.system_if
+# Loading work.test
+# Loading work.system
+# Loading work.cpu_ram_if
+# Loading work.pipeline
+# Loading work.datapath_cache_if
+# Loading work.cache_control_if
+# Loading work.datapath
+# Loading work.alu_if
+# Loading work.register_file_if
+# Loading work.control_unit_if
+# Loading work.hazard_unit_if
+# Loading work.branch_unit_if
+# Loading work.forwarding_unit_if
+# Loading work.hazard_detection_unit_if
+# Loading work.alu_sv_unit
+# Loading work.alu
+# Loading work.register_file_sv_unit
+# Loading work.register_file
+# Loading work.control_unit
+# Loading work.hazard_unit_sv_unit
+# Loading work.hazard_unit
+# Loading work.branch_unit
+# Loading work.forwarding_unit
+# Loading work.hazard_detection_unit
+# Loading work.program_counter
+# Loading work.caches
+# Loading work.memory_control
+# Loading work.ram
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# run -all
+# Starting Processor.
+# Cycle no -          0
+# Cycle no -          1
+# Cycle no -          2
+# Cycle no -          3
+# Cycle no -          4
+# Cycle no -          5
+# Cycle no -          6
+# Cycle no -          7
+# Cycle no -          8
+# Cycle no -          9
+# Cycle no -         10
+# Cycle no -         11
+# Cycle no -         12
+# Cycle no -         13
+# Cycle no -         14
+# Cycle no -         15
+# Cycle no -         16
+# Cycle no -         17
+# Cycle no -         18
+# Cycle no -         19
+# Cycle no -         20
+# Cycle no -         21
+# Cycle no -         22
+# Cycle no -         23
+# Cycle no -         24
+# Cycle no -         25
+# Cycle no -         26
+# Cycle no -         27
+# Cycle no -         28
+# Cycle no -         29
+# Cycle no -         30
+# Cycle no -         31
+# Cycle no -         32
+# Cycle no -         33
+# Cycle no -         34
+# Cycle no -         35
+# Cycle no -         36
+# Cycle no -         37
+# Cycle no -         38
+# Cycle no -         39
+# Cycle no -         40
+# Cycle no -         41
+# Cycle no -         42
+# Cycle no -         43
+# Cycle no -         44
+# Cycle no -         45
+# Cycle no -         46
+# Cycle no -         47
+# Cycle no -         48
+# Cycle no -         49
+# Cycle no -         50
+# Cycle no -         51
+# Cycle no -         52
+# Cycle no -         53
+# Cycle no -         54
+# Cycle no -         55
+# Cycle no -         56
+# Cycle no -         57
+# Cycle no -         58
+# Cycle no -         59
+# Cycle no -         60
+# Cycle no -         61
+# Cycle no -         62
+# Cycle no -         63
+# Cycle no -         64
+# Cycle no -         65
+# Cycle no -         66
+# Cycle no -         67
+# Cycle no -         68
+# Cycle no -         69
+# Cycle no -         70
+# Cycle no -         71
+# Cycle no -         72
+# Cycle no -         73
+# Cycle no -         74
+# Cycle no -         75
+# Cycle no -         76
+# Cycle no -         77
+# Cycle no -         78
+# Cycle no -         79
+# Cycle no -         80
+# Cycle no -         81
+# Cycle no -         82
+# Cycle no -         83
+# Cycle no -         84
+# Cycle no -         85
+# Cycle no -         86
+# Cycle no -         87
+# Cycle no -         88
+# Cycle no -         89
+# Cycle no -         90
+# Cycle no -         91
+# Cycle no -         92
+# Cycle no -         93
+# Cycle no -         94
+# Cycle no -         95
+# Cycle no -         96
+# Cycle no -         97
+# Cycle no -         98
+# Cycle no -         99
+# Cycle no -        100
+# Cycle no -        101
+# Cycle no -        102
+# Cycle no -        103
+# Cycle no -        104
+# Cycle no -        105
+# Cycle no -        106
+# Cycle no -        107
+# Cycle no -        108
+# Cycle no -        109
+# Cycle no -        110
+# Cycle no -        111
+# Cycle no -        112
+# Cycle no -        113
+# Cycle no -        114
+# Cycle no -        115
+# Cycle no -        116
+# Cycle no -        117
+# Cycle no -        118
+# Cycle no -        119
+# Cycle no -        120
+# Cycle no -        121
+# Cycle no -        122
+# Cycle no -        123
+# Cycle no -        124
+# Cycle no -        125
+# Cycle no -        126
+# Cycle no -        127
+# Cycle no -        128
+# Cycle no -        129
+# Cycle no -        130
+# Cycle no -        131
+# Cycle no -        132
+# Cycle no -        133
+# Cycle no -        134
+# Cycle no -        135
+# Cycle no -        136
+# Cycle no -        137
+# Cycle no -        138
+# Cycle no -        139
+# Cycle no -        140
+# Cycle no -        141
+# Cycle no -        142
+# Cycle no -        143
+# Cycle no -        144
+# Cycle no -        145
+# Cycle no -        146
+# Cycle no -        147
+# Cycle no -        148
+# Cycle no -        149
+# Cycle no -        150
+# Cycle no -        151
+# Cycle no -        152
+# Cycle no -        153
+# Cycle no -        154
+# Cycle no -        155
+# Cycle no -        156
+# Cycle no -        157
+# Cycle no -        158
+# Cycle no -        159
+# Cycle no -        160
+# Cycle no -        161
+# Cycle no -        162
+# Cycle no -        163
+# Cycle no -        164
+# Cycle no -        165
+# Cycle no -        166
+# Cycle no -        167
+# Cycle no -        168
+# Cycle no -        169
+# Cycle no -        170
+# Cycle no -        171
+# Cycle no -        172
+# Cycle no -        173
+# Cycle no -        174
+# Cycle no -        175
+# Cycle no -        176
+# Cycle no -        177
+# Cycle no -        178
+# Cycle no -        179
+# Cycle no -        180
+# Cycle no -        181
+# Cycle no -        182
+# Cycle no -        183
+# Cycle no -        184
+# Cycle no -        185
+# Cycle no -        186
+# Cycle no -        187
+# Cycle no -        188
+# Cycle no -        189
+# Cycle no -        190
+# Cycle no -        191
+# Cycle no -        192
+# Cycle no -        193
+# Cycle no -        194
+# Cycle no -        195
+# Cycle no -        196
+# Cycle no -        197
+# Cycle no -        198
+# Cycle no -        199
+# Cycle no -        200
+# Cycle no -        201
+# Cycle no -        202
+# Cycle no -        203
+# Cycle no -        204
+# Cycle no -        205
+# Cycle no -        206
+# Cycle no -        207
+# Cycle no -        208
+# Cycle no -        209
+# Cycle no -        210
+# Cycle no -        211
+# Cycle no -        212
+# Cycle no -        213
+# Cycle no -        214
+# Cycle no -        215
+# Cycle no -        216
+# Cycle no -        217
+# Cycle no -        218
+# Cycle no -        219
+# Cycle no -        220
+# Cycle no -        221
+# Cycle no -        222
+# Cycle no -        223
+# Cycle no -        224
+# Cycle no -        225
+# Cycle no -        226
+# Cycle no -        227
+# Cycle no -        228
+# Cycle no -        229
+# Cycle no -        230
+# Cycle no -        231
+# Cycle no -        232
+# Cycle no -        233
+# Cycle no -        234
+# Cycle no -        235
+# Cycle no -        236
+# Cycle no -        237
+# Cycle no -        238
+# Cycle no -        239
+# Cycle no -        240
+# Cycle no -        241
+# Cycle no -        242
+# Cycle no -        243
+# Cycle no -        244
+# Cycle no -        245
+# Cycle no -        246
+# Cycle no -        247
+# Cycle no -        248
+# Cycle no -        249
+# Cycle no -        250
+# Cycle no -        251
+# Cycle no -        252
+# Cycle no -        253
+# Cycle no -        254
+# Cycle no -        255
+# Cycle no -        256
+# Cycle no -        257
+# Cycle no -        258
+# Cycle no -        259
+# Cycle no -        260
+# Cycle no -        261
+# Cycle no -        262
+# Cycle no -        263
+# Cycle no -        264
+# Cycle no -        265
+# Cycle no -        266
+# Cycle no -        267
+# Cycle no -        268
+# Cycle no -        269
+# Cycle no -        270
+# Cycle no -        271
+# Cycle no -        272
+# Cycle no -        273
+# Cycle no -        274
+# Cycle no -        275
+# Cycle no -        276
+# Cycle no -        277
+# Cycle no -        278
+# Cycle no -        279
+# Cycle no -        280
+# Cycle no -        281
+# Cycle no -        282
+# Cycle no -        283
+# Cycle no -        284
+# Cycle no -        285
+# Cycle no -        286
+# Cycle no -        287
+# Cycle no -        288
+# Cycle no -        289
+# Cycle no -        290
+# Cycle no -        291
+# Cycle no -        292
+# Cycle no -        293
+# Cycle no -        294
+# Cycle no -        295
+# Cycle no -        296
+# Cycle no -        297
+# Cycle no -        298
+# Cycle no -        299
+# Cycle no -        300
+# Cycle no -        301
+# Cycle no -        302
+# Cycle no -        303
+# Cycle no -        304
+# Cycle no -        305
+# Cycle no -        306
+# Cycle no -        307
+# Cycle no -        308
+# Cycle no -        309
+# Cycle no -        310
+# Halted at 6240 time and ran for        311 cycles.
+# Starting memory dump.
+# Finished memory dump.
+# End time: 17:59:41 on Mar 16,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
