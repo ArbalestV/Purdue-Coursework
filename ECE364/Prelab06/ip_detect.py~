@@ -1,0 +1,34 @@
+#! /usr/bin/env python3.4
+#
+# $Author$:
+# $Date$:
+# $HeadURL$:
+
+import os
+import math
+import sys
+import re
+
+if __name__ == "__main__":
+    f = open(sys.argv[1],"r")
+    for lines in f:
+        cnt = lines.strip()
+        cont =  lines.split(':')
+        cont[1] = cont[1].replace("\n", "")
+        #print cont
+        pattern = r"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+        #print cont[0]
+        if re.match(pattern, cont[0]):
+            #print "Vaild IP address"
+            print cont[1]
+            pat2 = r"^([3][2][7][J)"
+            if re.match(pat2, cont[1]):
+                pat3 = r"^([1-1023])"
+                if re.match(pat3, cont[1]):
+                    print cnt + " - " + "Valid (root privileges required)"
+                else:
+                    print cnt + " - " + "Valid"
+            else:
+                print cnt + " - " + "Invalid Port Number"
+        else:
+            print cnt + " - " + "Invalid IP address"

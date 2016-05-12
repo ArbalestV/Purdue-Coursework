@@ -1,0 +1,4 @@
+# PyCharm failed to generate skeletons for these modules.
+# These skeletons will be re-generated automatically
+# when a newer module version or an updated generator becomes available.
+/usr/lib64/python2.6/site-packages/dmidecodemod.so = 1.136 1371731977000

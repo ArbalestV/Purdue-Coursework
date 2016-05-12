@@ -1,0 +1,108 @@
+    def putMessage(self, string, mode = 'H', key = None):
+        """Embeds given message into the image specified while constructing the object. Returns true if successful.
+
+        Keyword arguments:
+        string -- message to be embedded
+        mode -- specifies whether message is to be embedded using horizintally scan (default) or vertical scan
+        key -- (optional) password to encrypt the message, no encryption if not specified"""
+
+        if len(string) == 0:
+            raise ValueError('No message to embed.')
+        if self.im.mode == 'L':
+            if len(string) * 8 > (self.im.size[0] * self.im.size[1] - 55): #message bit count more than pixel count
+                raise ValueError('Specified message too long to embed.')
+        elif self.im.mode == 'RGB':
+            if len(string) * 8 > (3 * self.im.size[0] * self.im.size[1] - 55):
+                raise ValueError('Specified message is too long to embed.')
+            
+        if key:
+            if len(key) not in (16, 24, 32):
+                raise ValueError('Encryption key must be 16, 24 or 32 characters long.')
+            else:
+                string += '\xff'*(16 - (len(string) % 16)) #message padded to ensure length is a multiple of 16 (required for encryption) 
+                string = AES.new(key, AES.MODE_ECB).encrypt(string)
+        
+        self.length = len(string) #length of message (4 bytes)
+
+        if mode == 'H':
+            self._putMessageHorizontal(string)
+        elif mode == 'V':
+            self._putMessageVertical(string)
+        else:
+            raise ValueError('H and V are the only allowable scanning modes.')
+        
+        return True
+
+    def _putMessageHorizontal(self, string):
+        bytelist = list(self.im.getdata())
+        if (self.im.mode == 'RGB'):
+            bytelist = list(chain.from_iterable(bytelist)) #list of RGB tuples flattened
+        
+        stx = BitVector(intVal = Steganography.STX, size = 8) #embedding ASCII STX character
+        for i in range(8):
+            bv = BitVector(intVal = bytelist[i], size = 8)
+            bv[7] = stx[i]
+            bytelist[i] = bv.int_val()
+
+        length = BitVector(intVal = self.length, size = 32) #embedding length of message
+        for i in range(32):
+            bv = BitVector(intVal = bytelist[8 + i], size = 8)
+            bv[7] = length[i]
+            bytelist[8 + i] = bv.int_val()
+        
+        for i, char in enumerate(string, start = 5): #embedding message
+            input = BitVector(intVal = ord(char), size = 8)
+            for j, bit in enumerate(input):
+                bv = BitVector(intVal = bytelist[i*8 + j], size = 8)
+                bv[7] = bit
+                bytelist[i*8 + j] = bv.int_val()
+
+        if (self.im.mode == 'L'):
+            self.im.putdata(bytelist)
+        elif (self.im.mode == 'RGB'): #flattened list restructred to list of RGB tuples
+            self.im.putdata(list(izip(*[islice(bytelist, i, None, 3) for i in range(3)])))
+
+        self.im.save(self.outpath)
+
+    def _putMessageVertical(self, string):
+        x, y = 0, 0 #next available location in (implicit) pixel array
+        maxX, maxY = self.im.size
+        bytelist = list(self.im.getdata())
+        if (self.im.mode == 'RGB'):
+            bytelist = list(chain.from_iterable(bytelist)) #list of RGB tuples flattened
+         
+        stx = BitVector(intVal = Steganography.STX, size = 8) #embedding ASCII STX characted
+        for i in range(8):
+            bv = BitVector(intVal = bytelist[x + maxX * y], size = 8)
+            bv[7] = stx[i]
+            bytelist[x + maxX * y] = bv.int_val()
+            y = (y + 1) % maxY
+            if y == 0:
+                x += 1
+        
+        length = BitVector(intVal = self.length, size = 32) #embedding length of message
+        lsbits = []
+        for i in range(32):
+            bv = BitVector(intVal = bytelist[x + maxX * y], size = 8)
+            bv[7] = length[i]
+            bytelist[x + maxX * y] = bv.int_val()
+            y = (y + 1) % maxY
+            if y == 0:
+                x += 1
+                
+        for char in string: #embedding message
+            input = BitVector(intVal = ord(char), size = 8)
+            for bit in input:
+                bv = BitVector(intVal = bytelist[x + maxX * y], size = 8)
+                bv[7] = bit
+                bytelist[x + maxX * y] = bv.int_val()
+                y = (y + 1) % maxY
+                if y == 0:
+                    x += 1
+        
+        if (self.im.mode == 'L'):
+            self.im.putdata(bytelist)
+        elif (self.im.mode == 'RGB'): #flattened list restructred to list of RGB tuples
+            self.im.putdata(list(izip(*[islice(bytelist, i, None, 3) for i in range(3)])))
+        
+        self.im.save(self.outpath)

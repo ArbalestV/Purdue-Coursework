@@ -1,0 +1,63 @@
+Agent pid 9976
+Terminal is dumb
+ee364c10 on ee207lnx18.ecn.purdue.edu -- x86_64 Mon Feb 23 22:24:16 EST 2015
+SVN Repository is  svn+ssh://ece364sv@ecegrid-thin1/home/ecegrid/a/ece364sv/svn/S15/students/ee364c10
+stdin: is not a tty
+Set-up environment for ECE364
+GNOME_KEYRING_SOCKET=/tmp/keyring-ziGLSw/socket
+SSH_AUTH_SOCK=/tmp/keyring-ziGLSw/socket.ssh
+
+(polkit-gnome-authentication-agent-1:10044): GLib-GObject-WARNING **: cannot register existing type `_PolkitError'
+
+(polkit-gnome-authentication-agent-1:10044): GLib-CRITICAL **: g_once_init_leave: assertion `initialization_value != 0' failed
+
+(process:10080): GLib-WARNING **: goption.c:2132: ignoring no-arg, optional-arg or filename flags (8) on option of type 0
+
+(process:10080): GLib-WARNING **: goption.c:2132: ignoring no-arg, optional-arg or filename flags (8) on option of type 0
+
+(process:10080): GLib-WARNING **: goption.c:2132: ignoring no-arg, optional-arg or filename flags (8) on option of type 0
+Traceback (most recent call last):
+  File "/usr/share/system-config-printer/applet.py", line 20, in <module>
+    import cups
+ImportError: No module named cups
+Failed to play sound: File or data not found
+** Message: applet now removed from the notification area
+
+** (nm-applet:10073): WARNING **: get_all_cb: couldn't retrieve system settings properties: (2) The name org.freedesktop.NetworkManagerSystemSettings was not provided by any .service files.
+Initializing nautilus-gdu extension
+
+** (nm-applet:10073): WARNING **: fetch_connections_done: error fetching system connections: (2) The name org.freedesktop.NetworkManagerSystemSettings was not provided by any .service files.
+Initializing nautilus-open-terminal extension
+** Message: applet now embedded in the notification area
+** Message: applet now removed from the notification area
+
+(rhsm-icon:10066): libnotify-CRITICAL **: notify_notification_close: assertion `notification != NULL' failed
+
+(rhsm-icon:10066): GLib-GObject-CRITICAL **: g_object_unref: assertion `G_IS_OBJECT (object)' failed
+
+(gnome-power-manager:10041): GLib-GObject-CRITICAL **: g_object_unref: assertion `G_IS_OBJECT (object)' failed
+Shutting down nautilus-open-terminal extension
+Shutting down nautilus-gdu extension
+
+--- Hash table keys for warning below:
+--> ecnuser
+--> ee364c10
+--> l29
+--> Student C10 EE364
+--> inode/directory
+
+(nautilus:10036): Eel-WARNING **: "unique eel_ref_str" hash table still has 5 elements at quit time (keys above)
+
+(nautilus:10036): Eel-WARNING **: "nautilus-directory.c: directories" hash table still has 3 elements at quit time
+
+(polkit-gnome-authentication-agent-1:10044): polkit-gnome-1-WARNING **: Error enumerating temporary authorizations: Remote Exception invoking org.freedesktop.PolicyKit1.Authority.EnumerateTemporaryAuthorizations() on /org/freedesktop/PolicyKit1/Authority at name org.freedesktop.PolicyKit1: org.freedesktop.PolicyKit1.Error.Failed: Cannot determine session the caller is in
+gnome-settings-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+polkit-gnome-authentication-agent-1: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gnome-volume-control-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gdu-notification-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+rhsm-icon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+nm-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+bluetooth-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+evolution-alarm-notify: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gpk-update-icon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gnome-screensaver: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.

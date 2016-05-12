@@ -1,0 +1,39 @@
+#! /bin/bash
+#
+# $Author: ee364c10 $:
+# $Date: 2015-02-18 11:33:31 -0500 (Wed, 18 Feb 2015) $:
+# $HeadURL: svn+ssh://ece364sv@ecegrid-thin1/home/ecegrid/a/ece364sv/svn/S15/students/ee364c10/Lab05/sort.bash $:
+while getopts f:-: thisopt
+do
+        case $thisopt in
+          f)fn=$OPTARG
+	    if [[ ! -e $OPTARG ]]
+	    then
+	    echo "File does not exist."
+	    exit 1
+	    fi;;
+	    
+
+          -)val=$(echo $OPTARG  | cut -d'=' -f2)
+            if [[ -z $val ]]
+	    then
+		echo "Insufficient information."
+		exit 1
+	    elif [[ $val < 1 || $val > 4 ]]
+	    then
+		echo "Column $val does not exist."
+		exit 1
+	    else
+		echo "File Sorted."
+	    fi
+	    ;;
+          *)echo "Invalid arg";;
+        esac
+done
+exec 5> ${fn}.sorted
+exec 4< $fn
+echo $val
+echo $fn
+((v=$val+1))
+sort -k$v,$v $fn >&5
+exit 0

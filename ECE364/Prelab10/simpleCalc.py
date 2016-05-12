@@ -1,0 +1,509 @@
+#! /usr/local/bin/python3.4
+#
+# $Author: ee364c10 $
+# $Date: 2015-03-30 21:15:02 -0400 (Mon, 30 Mar 2015) $
+# $HeadURL: svn+ssh://ece364sv@ecegrid-thin1/home/ecegrid/a/ece364sv/svn/S15/students/ee364c10/Prelab10/simpleCalc.py $
+# Import PySide classes
+import os
+import sys
+import math
+import re
+from PySide.QtCore import *
+from PySide.QtGui import *
+
+from calculator import *
+
+class simpleCalc(QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(simpleCalc, self).__init__(parent)
+        self.setupUi(self)
+        self.displayStr = ''
+        self.currValue = float(0.0)
+        self.currStr = ''
+        self.op = float(0.0)
+        #self.op2 = float(0.0)
+        self.num_of_op = 0
+        self.lastOperator = ''
+        self.currDecimal = 0
+
+        #self.firstOperator = ''
+
+        self.refresh.clicked.connect(self.clickedRefresh)
+        self.equal.clicked.connect(self.clickedEqual)
+        self.seven.clicked.connect(self.clickedSeven)
+        self.eight.clicked.connect(self.clickedEight)
+        self.nine.clicked.connect(self.clickedNine)
+        self.six.clicked.connect(self.clickedSix)
+        self.five.clicked.connect(self.clickedFive)
+        self.four.clicked.connect(self.clickedFour)
+        self.three.clicked.connect(self.clickedThree)
+        self.two.clicked.connect(self.clickedTwo)
+        self.one.clicked.connect(self.clickedOne)
+        self.zero.clicked.connect(self.clickedZero)
+        self.dot.clicked.connect(self.clickedDot)
+        self.divide.clicked.connect(self.clickedDivide)
+        self.multiply.clicked.connect(self.clickedMultiply)
+        self.minus.clicked.connect(self.clickedMinus)
+        self.plus.clicked.connect(self.clickedPlus)
+        self.decimalDigits.currentIndexChanged[int].connect(self.clickedDecimal)
+        self.thousandsSeparator.stateChanged.connect(self.modifyThousands)
+        
+    def modifyThousands(self):
+        #print('in display thousands.')
+        isChecked = self.thousandsSeparator.isChecked()
+        if(isChecked):
+            #print('Before: ' + self.textOp.toPlainText())
+            tot = self.textOp.toPlainText()
+            #print(tot)
+            decimal = tot.split('.')[0]  
+            #print(decimal)
+            l = len(decimal)
+            #print('Length of decimal: ', l)
+            left = l
+            tmp = ''
+            decimal_part = ''
+            fractional_part = ''
+            if l <= 3: #if length is less than or equal to 3 for decimal part
+                if left == 1:
+                    tmp = decimal[0] + tmp
+                    #print(tmp)
+                elif left == 2:
+                    tmp = decimal[0:2] + tmp
+                    #print(tmp)
+                else:
+                    tmp = decimal[0:3] + tmp
+                    #print(tmp)
+            else: #if length of decimal is greater than 3, only then ','
+                for i in range(l-1, -1, -3):                    
+                    if i > 2:
+                        left = left - 3
+                        tmp = ',' + decimal[i - 2:i + 1] + tmp
+                        #print(tmp)
+                    else: #the length of decimal part is either 3 or 2 or 1 
+                        if left == 1:
+                            tmp = decimal[0] + tmp
+                            #print(tmp)
+                        elif left == 2:
+                            tmp = decimal[0:2] + tmp
+                            #print(tmp)
+                        else:
+                            tmp = decimal[0:3] + tmp
+                            #print(tmp)
+                
+            if self.currDecimal != 0:
+                nondecimal = tot.split('.')[1]
+                self.displayStr = tmp + '.' + nondecimal
+                #print('With non-zero decimal: ' + self.displayStr)
+                self.textOp.setText(self.displayStr)
+            else:
+                self.displayStr = tmp
+                #print('With no decimal: ' + self.displayStr)
+                self.textOp.setText(self.displayStr)
+        else: #unchecked for the thousands separator
+            #print('Before: ' + self.textOp.toPlainText())
+            self.displayStr = self.textOp.toPlainText().replace(',','')
+            #print('Removing the thousands place: ' + self.displayStr)
+            self.textOp.setText(self.displayStr)
+
+    def clickedDecimal(self):
+        #print('clicked decimal change.')
+        self.currDecimal = self.decimalDigits.currentIndex()
+        #print(self.currDecimal)
+        if self.currDecimal == 0:
+            tmp = "{0:.0f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        elif self.currDecimal == 1:
+            tmp = "{0:.1f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        elif self.currDecimal == 2:
+            tmp = "{0:.2f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        elif self.currDecimal == 3:
+            tmp = "{0:.3f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        elif self.currDecimal == 4:
+            tmp = "{0:.4f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        else:
+            tmp = "{0:.5f}".format(self.currValue)
+            self.textOp.setText(tmp)      
+        
+    def clickedRefresh(self):
+        self.displayStr = ''
+        self.currValue = float(0.0)
+        self.currStr = ''
+        self.op = float(0.0)
+        #self.op2 = float(0.0)
+        self.num_of_op = 0
+        self.lastOperator = ''
+        self.textOp.setText('0')
+
+        #self.firstOperator = ''
+        
+    def clickedOne(self):
+        if (self.lastCharOperator() == 1):
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                #print('after 8x1')
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                print('after 8x1')
+                self.lastOperator = '*'
+            else:
+                self.lastOperator = '/'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '1'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '1'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '1'
+        
+    def clickedTwo(self):
+        if (self.lastCharOperator() == 1):
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                self.lastOperator = '*'
+            else:
+                self.lastOperator = '/'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '2'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '2'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '2'
+
+    def clickedThree(self):
+        if (self.lastCharOperator() == 1):
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                self.lastOperator = '*'
+            else:
+                self.lastOperator = '/'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '3'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '3'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '3'
+        
+    def clickedFour(self):
+        if (self.lastCharOperator() == 1):
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                self.lastOperator = '*'
+            else:
+                self.lastOperator = '/'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '4'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '4'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '4'
+
+    def clickedFive(self):
+        if (self.lastCharOperator() == 1):
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                self.lastOperator = '*'
+            else:
+                self.lastOperator = '/'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '5'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '5'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '5'
+
+    def clickedSix(self):
+        if (self.lastCharOperator() == 1):
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                self.lastOperator = '*'
+            else:
+                self.lastOperator = '/'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '6'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '6'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '6'
+
+    def clickedSeven(self):
+        if (self.lastCharOperator() == 1):
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                self.lastOperator = '*'
+            else:
+                self.lastOperator = '/'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '7'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '7'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '7'
+
+    def clickedEight(self):
+        if (self.lastCharOperator() == 1):
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                self.lastOperator = '*'
+            else:
+                self.lastOperator = '/'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '8'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '8'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '8'
+
+    def clickedNine(self):
+        if (self.lastCharOperator() == 1):
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                self.lastOperator = '*'
+            else:
+                self.lastOperator = '/'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '9'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '9'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '9'
+
+    def clickedZero(self):
+        if (self.lastCharOperator() == 1):
+            num = float(self.displayStr[0:len(self.displayStr - 1)])
+            if (self.displayStr[len(self.displayStr) - 1] == '+'):
+                self.lastOperator = '+'
+            elif (self.displayStr[len(self.displayStr) - 1] == '-'):
+                self.lastOperator = '-'
+            elif (self.displayStr[len(self.displayStr) - 1] == '*'):
+                self.lastOperator = '*'
+            else:
+                self.display = 'ERROR!!!'
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '0'
+            self.textOp.setText(self.displayStr)
+        else:
+            if len(self.displayStr) < 12:
+                self.displayStr = self.displayStr + '0'
+            self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '0'
+
+    def clickedDot(self):
+        if len(self.displayStr) < 12:
+            self.displayStr = self.displayStr + '.'
+        self.textOp.setText(self.displayStr)
+        self.currStr = self.currStr + '.'
+
+    def clickedDivide(self):
+        #print(self.currStr)
+        self.num_of_op = self.num_of_op + 1
+        if self.num_of_op == 1: 
+            self.firstOperator = '/'
+            self.currValue = float(self.currStr)
+            #print('Current Value is: ' + str(self.currValue))
+            self.currStr = ''
+        else:
+            self.op = float(self.currStr)
+            self.currStr = ''
+            if self.lastOperator == '/':
+                self.currValue = self.currValue / self.op
+            elif self.lastOperator == '*':
+                self.currValue = self.currValue * self.op
+            elif self.lastOperator == '-':
+                self.currValue = self.currValue - self.op
+            else:
+                #print('Always going here...')
+                self.currValue = self.currValue + self.op
+        if len(self.displayStr) < 12:
+            self.displayStr = self.displayStr + '/'
+        self.textOp.setText(self.displayStr)
+
+    def clickedMultiply(self):
+        #print(self.currStr)
+        self.num_of_op = self.num_of_op + 1
+        if self.num_of_op  == 1: 
+            self.firstOperator = '*'
+            self.currValue = float(self.currStr)
+            self.currStr = ''
+        else:
+            self.op = float(self.currStr)
+            self.currStr = ''
+            if self.lastOperator == '/':
+                self.currValue = self.currValue / self.op
+            elif self.lastOperator == '*':
+                self.currValue = self.currValue * self.op
+            elif self.lastOperator == '-':
+                self.currValue = self.currValue - self.op
+            else:
+                #print('Always going here...')
+                self.currValue = self.currValue + self.op
+        if len(self.displayStr) < 12:
+            self.displayStr = self.displayStr + '*'
+        self.textOp.setText(self.displayStr)
+
+    def clickedMinus(self):
+        #print(self.currStr)
+        self.num_of_op = self.num_of_op + 1
+        if self.num_of_op  == 1: 
+            self.firstOperator = '-'
+            self.currValue = float(self.currStr)
+            self.currStr = ''
+        else:
+            self.op = float(self.currStr)
+            self.currStr = ''
+            if self.lastOperator == '/':
+                self.currValue = self.currValue / self.op
+            elif self.lastOperator == '*':
+                self.currValue = self.currValue * self.op
+            elif self.lastOperator == '-':
+                self.currValue = self.currValue - self.op
+            else:
+                #print('Always going here...')
+                self.currValue = self.currValue + self.op
+        if len(self.displayStr) < 12:
+            self.displayStr = self.displayStr + '-'
+        self.textOp.setText(self.displayStr)
+
+    def clickedPlus(self):
+        #print(self.currStr)
+        self.num_of_op = self.num_of_op + 1
+        if self.num_of_op  == 1: 
+            self.firstOperator = '+'
+            self.currValue = float(self.currStr)
+            self.currStr = ''
+        else:
+            self.op = float(self.currStr)
+            self.currStr = ''
+            if self.lastOperator == '/':
+                self.currValue = self.currValue / self.op
+            elif self.lastOperator == '*':
+                self.currValue = self.currValue * self.op
+            elif self.lastOperator == '-':
+                self.currValue = self.currValue - self.op
+            else:
+                #print('Always going here...')
+                self.currValue = self.currValue + self.op
+        if len(self.displayStr) < 12:
+            self.displayStr = self.displayStr + '+'
+        self.textOp.setText(self.displayStr)
+
+    def clickedEqual(self):
+        #print('in Equal function')
+        #print(self.currValue)
+        #print(self.currStr)
+        #print(self.lastOperator)
+        if self.lastOperator == '/':
+            #print('In divide')
+            self.currValue = self.currValue / float(self.currStr)
+        elif self.lastOperator == '*':
+            #print('In multiply')
+            self.currValue = self.currValue * float(self.currStr)
+        elif self.lastOperator == '-':
+            #print('In minus')
+            self.currValue = self.currValue - float(self.currStr)
+        else:
+            #print('In add')
+            self.currValue = self.currValue + float(self.currStr)
+        '''
+        elif self.lastOperator == '+':
+            self.currValue = self.currValue + float(self.currStr)
+        else:
+            #print('Always going here.')
+            #print('Printing the first operator: ' + self.firstOperator)
+            if self.firstOperator == '+':
+                self.currValue = self.currValue + float(self.currStr)
+            elif self.firstOperator == '-':
+                self.currValue = self.currValue - float(self.currStr)
+            elif self.firstOperator == '/':
+                self.currValue = self.currValue / float(self.currStr)
+            else:
+                self.currValue = self.currValue * float(self.currStr)
+        '''
+        #self.textOp.setText(str(self.currValue))
+        self.currDecimal = self.decimalDigits.currentIndex()
+        if self.currDecimal == 0:
+            tmp = "{0:.0f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        elif self.currDecimal == 1:
+            tmp = "{0:.1f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        elif self.currDecimal == 2:
+            tmp = "{0:.2f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        elif self.currDecimal == 3:
+            tmp = "{0:.3f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        elif self.currDecimal == 4:
+            tmp = "{0:.4f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        else:
+            tmp = "{0:.5f}".format(self.currValue)
+            self.textOp.setText(tmp)
+        #print(self.currValue)
+        #print(type(self.decimalDigits.currentIndex()))
+       
+    def lastCharOperator(self):
+        if (len(self.displayStr) >= 2):
+            if (self.displayStr[len(self.displayStr) - 1] == '+') or (self.displayStr[len(self.displayStr) - 1] == '-') or (self.displayStr[len(self.displayStr) - 1] == '*') or (self.displayStr[len(self.displayStr) - 1] == '/') :
+                return 1
+            else:
+                return 0
+        else:
+            return 0
+        
+currentApp = QApplication(sys.argv)
+currentForm = simpleCalc()
+currentForm.show()
+currentApp.exec_()
+        
+    
+        
+        
+        
+        
+        

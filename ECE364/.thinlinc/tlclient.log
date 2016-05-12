@@ -1,0 +1,73 @@
+2015-04-16T21:07:11: Log file created
+2015-04-16T21:07:11: ThinLinc client release 4.2.0 build 4356
+2015-04-16T21:07:26: SSH command: /opt/thinlinc/4.2.0/lib/tlclient/ssh -N -o GlobalKnownHostsFile=/dev/null -o UserKnownHostsFile=/dev/null -o PubkeyAuthentication=no -o CheckHostIP=no -o NumberOfPasswordPrompts=1 kalita@ecegrid -p 22 thinlinc-login master
+2015-04-16T21:07:26: SSH pid is 48900
+2015-04-16T21:07:27: ssh[E]: CONFIRM HOST KEY: ecegrid 128.46.4.82 22 AAAAB3NzaC1yc2EAAAABIwAAAQEAxCEaJwGYj1H2P95AMwDkl8cWIWvEZGgWC0UwMKinuMzBHR84hkYw08fa/v43VGa51vj8vUapKP3YDGUoarcU3u0Hlbs3qUxliX/jJtdoTBCz6VH4eVpF1lKNsaJsf9bZ8YuHftWzgHUFT9193C9vSoKZEPUoQqz+QTPNgGnH96gmmnDTUEvntkdHvnHoQoFo2G6PajGHKOw/t7UKpT3eGVv5gtzK0UgnrDldaKQYyVGR9ieDCTyzGqj96lLyoCx/sx0cjr5FgiVIdNXFTDJr5hOkFSr7+9kC2lB6YZoMfAcDZlqYjg0cbRniPG+No3+tIcIOqsFc4/PYEgvuqR+yxQ==
+2015-04-16T21:07:28: Host key previously known.
+2015-04-16T21:07:28: ssh[E]: NEXT AUTHMETHOD: none
+2015-04-16T21:07:28: ssh[E]: AUTH FAILURE
+2015-04-16T21:07:28: ssh[E]: NEXT AUTHMETHOD: password
+2015-04-16T21:07:28: ssh[E]: PASSWORD: kalita ecegrid
+2015-04-16T21:07:28: ssh[E]: AUTH SUCCESS
+2015-04-16T21:07:28: ssh[E]: CONNECTED
+2015-04-16T21:07:29: ssh[E]: THINLINC-LOGIN: HELLO 4.3.0
+2015-04-16T21:07:29: ssh[E]: THINLINC-LOGIN: CONNECTED MASTER
+2015-04-16T21:07:29: My hardware address is C81F66BD10E7
+2015-04-16T21:07:29: Calling XML-RPC method 'get_capabilities'
+2015-04-16T21:07:29: Calling XML-RPC method 'get_user_sessions'
+2015-04-16T21:07:29: Calling XML-RPC method 'new_session'
+2015-04-16T21:07:34: Process 48900 exited with code 0
+2015-04-16T21:07:34: SSH command: /opt/thinlinc/4.2.0/lib/tlclient/ssh -N -o GlobalKnownHostsFile=/dev/null -o UserKnownHostsFile=/dev/null -o PubkeyAuthentication=no -o CheckHostIP=no -o NumberOfPasswordPrompts=1 -o HostKeyAlgorithms=ssh-rsa,ssh-dss kalita@ecegrid-thin3.ecn.purdue.edu -p 22 -L 44612:127.0.0.1:5945 -R 5350:127.0.0.1:41720 -R 5355:127.0.0.1:58441 -R 5356:127.0.0.1:40984 -R 5354:127.0.0.1:33546 -R 5353:127.0.0.1:54334 thinlinc-login dummy
+2015-04-16T21:07:34: SSH pid is 1120
+2015-04-16T21:07:35: ssh[E]: CONFIRM HOST KEY: ecegrid-thin3.ecn.purdue.edu 128.46.4.85 22 AAAAB3NzaC1yc2EAAAABIwAAAQEAtG8OdKc2gThM4MBeLOJhMIQ+F/qsQ+urnTIP70oW2TVfgiFa1WsJPGEBpjabW6k1FqcOKbIcsWfqrA0uq0FuvqVOwpQuDNlO2qrTmy4vgBcDUzelHAJfCCuOtJKIQCcclAb8HsEVXsoXIpM+64eMNQV5Dx8NeO4LoKwkjqa6Mhl68Kl2Wfo2DyHnZTKHIqqTnW01hhL4Maw69xB1Bds+mmnAiUN78wOEfvNKuWMTmM2cTG3RzLq2Xj9GZLUwAQ367WQO4g6msQuIxoMAakFqR9fxghCivZUz+noDM9/T9N48FQZIQQCr0kPnQJbhwpBvHgvK1xdD0fcp/1/kWjCT/Q==
+2015-04-16T21:07:35: Given host key matches one in the acceptable list.
+2015-04-16T21:07:35: ssh[E]: NEXT AUTHMETHOD: none
+2015-04-16T21:07:35: ssh[E]: AUTH FAILURE
+2015-04-16T21:07:35: ssh[E]: NEXT AUTHMETHOD: password
+2015-04-16T21:07:35: ssh[E]: PASSWORD: kalita ecegrid-thin3.ecn.purdue.edu
+2015-04-16T21:07:35: ssh[E]: AUTH SUCCESS
+2015-04-16T21:07:35: ssh[E]: CONNECTED
+2015-04-16T21:07:35: ssh[E]: THINLINC-LOGIN: HELLO 4.3.0
+2015-04-16T21:07:35: ssh[E]: 
+2015-04-16T21:07:35: ssh[E]: COMMAND_EXITSTATUS: 0
+2015-04-16T21:07:35: VNC command: /opt/thinlinc/4.2.0/lib/tlclient/vncviewer -RemoteResize=1 -FullScreen -FullScreenAllMonitors=1 -FullscreenSystemKeys=1 -FullColour=1 -LowColourLevel=2 -AutoSelect=1 -CustomCompressLevel=0 -CompressLevel=2 -QualityLevel=8 -MenuKey=F8 -PasswordFile=/tmp/vncviewer5XPKEv -Shared=1 -DesktopSize=1440x900 -geometry=1436x820+2+51 127.0.0.1::44612
+2015-04-16T21:07:35: PulseAudio command: /opt/thinlinc/4.2.0/lib/tlclient/pulseaudio -L "module-esound-protocol-tcp listen=127.0.0.1 port=41720 cookie='/tmp/esdGraU9e'" -L "module-native-protocol-tcp listen=127.0.0.1 port=58441 cookie='/tmp/pulseaudioi9c9EY'" --fail=false -L module-simple-auto --fail=true -L module-rescue-streams -L module-always-sink -L module-suspend-on-idle --log-level=notice --no-dirs
+2015-04-16T21:07:36: PulseAudio pid is 1290
+2015-04-16T21:07:36: Smart card daemon command: /opt/thinlinc/4.2.0/lib/tlclient/pcsctun -b 127.0.0.1 -p 40984 -c /tmp/pcsctunQapZOI
+2015-04-16T21:07:36: smart card daemon pid is 1323
+2015-04-16T21:07:36: pulseaudio[E]: W: [pulseaudio] caps.c: Normally all extra capabilities would be dropped now, but that's impossible because this Pulseaudio was built without libcap support.
+2015-04-16T21:07:36: unfsd command: /opt/thinlinc/4.2.0/lib/tlclient/unfsd -d -e /tmp/unfsd3hFe4s -n 33546 -m 33546 -l 127.0.0.1 -t -p -s
+2015-04-16T21:07:36: unfsd pid is 1327
+2015-04-16T21:07:36: vncviewer pid is 1331
+2015-04-16T21:07:36: pulseaudio[E]: E: [pulseaudio] module-tunnel.c: Connection failed: Connection refused
+2015-04-16T21:07:36: Last line was repeated 1 time(s).
+2015-04-16T21:07:36: unfsd: UNFS3 unfsd 0.9.23 (C) 2009, Pascal Schmidt <unfs3-server@ewetel.net>
+2015-04-16T21:07:36: unfsd: /media/cdrom: ip 127.0.0.1 mask 255.255.255.255 options 24
+2015-04-16T21:07:36: vncviewer[E]: 
+2015-04-16T21:07:36: vncviewer[E]: ThinLinc Client 64-bit v4.2.0 (20140515)
+2015-04-16T21:07:36: vncviewer[E]: Built on May 15 2014 at 09:10:35
+2015-04-16T21:07:36: vncviewer[E]: Copyright (C) 1999-2013 TigerVNC Team and many others
+2015-04-16T21:07:36: vncviewer[E]: See included EULA.txt for licensing details.
+2015-04-16T21:07:36: vncviewer[E]: See http://www.cendio.com for information on ThinLinc.
+2015-04-16T21:07:36: vncviewer[E]: 
+2015-04-16T21:07:36: vncviewer[E]: Thu Apr 16 21:07:36 2015
+2015-04-16T21:07:36: vncviewer[E]:  CConn:       connected to host 127.0.0.1 port 44612
+2015-04-16T21:07:36: vncviewer[E]:  CConnection: Server supports RFB protocol version 3.8
+2015-04-16T21:07:36: vncviewer[E]:  CConnection: Using RFB protocol version 3.8
+2015-04-16T21:07:36: vncviewer[E]:  PlatformPixelBuffer: Using default colormap and visual, TrueColor, depth 24.
+2015-04-16T21:07:36: vncviewer[E]:  CConn:       Using pixel format depth 24 (32bpp) little-endian rgb888
+2015-04-16T21:07:36: vncviewer[E]:  CConn:       Using Tight encoding
+2015-04-16T21:07:36: vncviewer[E]:  CConn:       Enabling continuous updates
+2015-04-16T21:09:04: vncviewer[E]: 
+2015-04-16T21:09:04: vncviewer[E]: Thu Apr 16 21:09:04 2015
+2015-04-16T21:09:04: vncviewer[E]:  CConn:       Throughput 14872 kbit/s - changing to quality 6
+2015-04-16T21:09:04: vncviewer[E]:  CConn:       Using Tight encoding
+2015-04-16T21:09:07: vncviewer[E]: 
+2015-04-16T21:09:07: vncviewer[E]: Thu Apr 16 21:09:07 2015
+2015-04-16T21:09:07: vncviewer[E]:  CConn:       Throughput 16049 kbit/s - changing to quality 8
+2015-04-16T21:09:07: vncviewer[E]:  CConn:       Using Tight encoding
+2015-04-16T21:11:02: vncviewer[E]: 
+2015-04-16T21:11:02: vncviewer[E]: Thu Apr 16 21:11:02 2015
+2015-04-16T21:11:02: vncviewer[E]:  CConn:       End of stream
+2015-04-16T21:11:02: Process 1331 exited with code 0
+2015-04-16T21:11:03: Log file ended

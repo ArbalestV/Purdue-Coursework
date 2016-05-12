@@ -1,0 +1,22 @@
+#! /bin/bash
+#
+# $Author$: 
+# $Date$: 
+# $HeadURL$:
+while [[ ! $# == 0 ]]
+do
+    file=$1
+    #echo $file
+    if [[ -r $file ]]
+    then
+	#echo $file
+	echo "File $1 is readable"
+    else
+	if [[ ! -e $file ]]
+	then
+	    touch $file
+	fi
+    fi
+    shift
+done
+exit 0     

@@ -1,0 +1,199 @@
+#! /usr/local/bin/python3.4
+#
+# $Author$:
+# $Date$:
+# $HeadURL$:
+
+import os
+import math
+import sys
+import re
+
+class Point3D:
+    def __init__(self, x = 0.0, y = 0.0, z = 0.0):
+        self.x = float(x)
+        self.y = float(y)
+        self.z = float(z)
+    
+    def __str__(self):
+        return "(" + "%.2f" %self.x + ", " +  "%.2f" %self.y + ", " + "%.2f" %self.z + ")"
+        #return
+    
+    def distFrom(self, other):
+        x_d = (self.x - other.x) * (self.x - other.x)
+        #print x_d
+        y_d = (self.y - other.y) * (self.y - other.y)
+        #print y_d
+        z_d = (self.z - other.z) * (self.z - other.z)
+        #print z_d
+        return math.sqrt(x_d + y_d + z_d)
+    
+    def nearestPoint(self, points):
+        max_d = self.distFrom(points[0])
+        point = points[0]
+        #print "Beginning"
+        #print max_d
+        #print point
+        for i in range(1, len(points)):
+            d = self.distFrom(points[i])
+            #print d
+            #print points[i]
+            if d <= max_d:
+                point = points[i]
+                max_d = d
+        return point
+            
+    def clone(self):
+        self_clone = Point3D(self.x, self.y, self.z)
+        return self_clone
+
+    def __add__(self, other):
+        #print type(other)
+        if isinstance(other, Point3D):
+            p_add = Point3D(self.x + other.x, self.y + other.y, self.z + other.z)
+        else:
+             p_add = Point3D(self.x + other, self.y + other, self.z + other)
+        return p_add
+
+    #def __add__(self, a):
+    #    p_add = Point3D(self.x + a, self.y + a, self.z + a)
+    #    return p_add
+
+    def __radd__(self, a):
+        p_add = Point3D(self.x + a, self.y + a, self.z + a)
+        return p_add
+    
+    def __sub__(self, other):
+        if isinstance(other, Point3D):
+            p_add = Point3D(self.x - other.x, self.y - other.y, self.z - other.z)
+        else:
+             p_add = Point3D(self.x - other, self.y - other, self.z - other)
+        return p_add
+
+    def __rsub__(self, a):
+        p_sub = Point3D(self.x - a, self.y - a, self.z - a)
+        return p_sub
+    
+    def __neg__(self):
+        p_neg = Point3D(-self.x, -self.y, -self.z)
+        return p_neg
+
+    def __div__(self, other):
+        if isinstance(other, Point3D):
+            #print('jsjsjs')
+            p_div = Point3D(self.x / other.x, self.y / other.y, self.z / other.z)
+        else:
+            #print('jjjj')
+            p_div = Point3D(self.x / other, self.y / other, self.z / other)
+        return p_div
+
+    def __mul__(self, other):
+        if isinstance(other, Point3D):
+            #print('jsjsjs')
+            p_mul = Point3D(self.x * other.x, self.y * other.y, self.z * other.z)
+        else:
+            #print('jjjj')
+            p_mul = Point3D(self.x * other, self.y * other, self.z * other)
+        return p_mul
+
+    def __rmul__(self, a):
+        p_mul = Point3D(self.x * a, self.y * a, self.z * a)
+        return p_mul
+
+    def __lt__(self, other):
+        origin = Point3D()
+        dist_o_1 = self.distFrom(origin)
+        dist_o_2 = other.distFrom(origin)
+        if dist_o_1 < dist_o_2:
+            return True
+        else:
+            return False
+
+    def __le__(self, other):
+        origin = Point3D()
+        dist_o_1 = self.distFrom(origin)
+        dist_o_2 = other.distFrom(origin)
+        if dist_o_1 <= dist_o_2:
+            return True
+        else:
+            return False
+
+    def __gt__(self, other):
+        origin = Point3D()
+        dist_o_1 = self.distFrom(origin)
+        dist_o_2 = other.distFrom(origin)
+        if dist_o_1 > dist_o_2:
+            return True
+        else:
+            return False
+
+    def __ge__(self, other):
+        origin = Point3D()
+        dist_o_1 = self.distFrom(origin)
+        dist_o_2 = other.distFrom(origin)
+        if dist_o_1 >= dist_o_2:
+            return True
+        else:
+            return False
+
+    def __eq__(self, other):
+        if self.x == other.x and self.y == other.y and self.z == other.z:
+            return True
+        else:
+            return False
+    
+class PointSet(Point3D):
+    
+    def __hash__(self):
+        return hash(id(self))
+    def __eq__(self, x):
+        return x is self
+    def __ne__(self, x):
+        return x is not self
+    
+    def __init__(self, points = set()):
+        self.points = points
+        print len(self.points)
+    def addPoint(self, p):
+        self.points.add(p)
+    def count(self):
+        return len(self.points)
+
+
+p1 = Point3D(2.3, 3.2, 1.78)
+points = set()
+print points
+#points.add(p1)
+ps = PointSet()
+ps.addPoint(p1)
+#print ps.count
+
+
+#p = Point3D(2.1, 4.3, 7.9)
+#print type(p)
+#str(p)
+#print p
+#other = Point3D(23.3, 42.5, 8.9)
+#print other
+#print p.distFrom(other)
+#points = []
+#points.append(other)
+#other2 = Point3D(3.3, 4.5, 6.7)
+#points.append(other2)
+#other3 = Point3D(4.5, 3.3, 2.10)
+#points.append(other3)
+#print p.nearestPoint(points)
+#print other3.clone()
+#other4 = other + other3
+#print(other3 - other)
+#a = float(6.9)
+#b = 8.9
+#print b - other2
+#print a - other3
+#print other2 - b
+#print other3 - a
+#print -other2
+#print a * other
+#p2 = Point3D(2.3, 4.5, 4.6)
+#p3 = Point3D(24.3, 4.5, 4.6)
+#print p3 > p2

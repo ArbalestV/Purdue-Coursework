@@ -1,0 +1,57 @@
+#! /usr/bin/env python3.4
+#
+# $Author$:
+# $Date$:
+# $HeadURL$:
+import os
+import math
+import sys
+import re
+import os.path
+
+def genRep():
+    fi = open("rawGrades.xml", 'r')
+    fo = open("finalGrades.xml", 'w')
+    lst = []
+    fo.write("<?xml version=\"1.0\"?>")
+    fo.write("\n<students>\n")
+    for lines in fi:
+        #print(lines)
+        m = re.search("<([\w]+)>([\w\s:]+)([\w\s\[\]:,]+)<\/([\w]+)>", lines)
+        if m:
+            ID = m.group(1)
+            name = m.group(2)
+            course_grades = m.group(3)
+            #print(ID + ' ' + name + course_grades)
+            #tmp = course_grades.strip()
+            #print(tmp)
+            courses = course_grades.split(',')
+            #print(courses)
+            #print('\n')
+            d = {}
+            for i in courses:
+                tot = i.split(':')
+                cn = tot[0].lstrip(' [')
+                cs = tot[1].rstrip(']')
+                #print(cn + ' ' + cs)
+                d.update({cn: cs})
+            #print(d)
+            fo.write("   <student name=\"" + name + "\" id=\"" + ID + "\">\n")
+            for crs in d.keys():
+                grade = ''
+                if int(d[crs]) >= 90 and int(d[crs]) <= 100:
+                    grade = 'A'
+                elif int(d[crs]) >= 80 and int(d[crs]) <= 89:
+                    grade = 'B'
+                elif int(d[crs]) >= 70 and int(d[crs]) <= 79:
+                    grade = 'C'
+                elif int(d[crs]) >= 60 and int(d[crs]) <= 69:
+                    grade = 'D'
+                else:
+                    grade = 'F'
+                fo.write("      <ECE" + str(crs) + " score=\"" + d[crs] + "\" grade=\"" + grade + "\"/>\n")
+                #print("      <ECE" + str(crs) + " score=\"" + d[crs] + "\" grade=\"" + grade + "\"/>")
+            fo.write("   </student>\n")
+    fo.write("</students>\n")
+
+genRep()

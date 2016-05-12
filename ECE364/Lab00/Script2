@@ -1,0 +1,17 @@
+#! /bin/bash
+#
+# $Author: ee364c10 $ - 
+# $Date: 2015-01-13 17:13:55 -0500 (Tue, 13 Jan 2015) $ - 
+# $HeadURL: svn+ssh://ece364sv@ecegrid-thin1/home/ecegrid/a/ece364sv/svn/S15/students/ee364c10/Lab00/Script2 $ - 
+# $Revision: 71535 $ -
+Num_Of_Param=$#
+Param_Values=$@
+for ((I=$@; I > -1; I--))
+do
+  echo $I
+done
+
+exit 0
+
+ 
+

@@ -1,0 +1,291 @@
+__author__ = 'ee364c04'
+import os
+import sys
+import re
+import base64
+from PIL import Image
+class Message():
+
+    #Message Initialization important notes
+
+    def __init__(self,**kwargs):
+
+        self.filePath = ""
+        self.messageType = ""
+        self.xmlstring = ""
+        self.content = ""
+
+        numargs = len(kwargs)
+        if numargs == 0:
+            raise ValueError("No arguments provided!")
+
+        elif numargs == 1:
+
+            try:
+                self.xmlstring = kwargs['xmlString']
+            except KeyError:
+                raise ValueError("Parameter is not an xmlString!")
+            if self.xmlstring == "":
+                raise ValueError("xmlString is empty!")
+
+            regexp = "<message type=\"(?P<type>\w+)\""
+
+            extractedtype = re.search(regexp,self.xmlstring)
+            self.messageType = str(extractedtype.group('type'))
+
+            if self.messageType == "Text":
+                extracted = self.xmlstring.split("\n")
+                self.content = base64.b64decode(extracted[2])
+
+            elif self.messageType == "GrayImage":
+                splitxml = self.xmlstring.split("\n")
+                encoded = bytes(splitxml[2],"utf-8")
+                self.content = base64.b64decode(encoded) #"GREAT SUCCESS!"
+
+        elif numargs == 2:
+            regexp1 = "^b'(?P<message>.*)'"
+            try:
+                self.messageType = str(kwargs['messageType'])
+            except KeyError:
+                raise ValueError("second argument must be a messageType!")
+            if self.messageType != "Text" and self.messageType != "GrayImage" and self.messageType != "ColorImage":
+                raise ValueError("Message type not supported!")
+
+            try:
+                self.filePath = str(kwargs['filePath'])
+            except KeyError:
+                raise ValueError("first argument must be a filePath!")
+            if str(self.filePath) == "":
+                raise ValueError("filePath is empty!")
+            self.xmlstring += "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+            if self.messageType == "GrayImage":
+                myimage = Image.open(self.filePath)
+                pixellist = list(myimage.getdata())
+                pixels = myimage.load()
+                width, height = myimage.size
+                allpixels = []
+                for y in range(height):
+                    for x in range(width):
+                        cpixel = pixels[x, y]
+                        allpixels.append(cpixel)
+                imgsize = str(myimage.size).replace(' ','')#Removes the space  and parentheses between width and height when image.size is used
+                imgsize = imgsize.replace('(','')
+                imgsize = imgsize.replace(')','')
+                self.xmlstring += ("<message type=\"{}\" size=\"{}\" encrypted=\"False\">\n").format(self.messageType,imgsize)
+                pixarray = bytes(allpixels)
+                self.content = base64.b64encode(pixarray)
+                self.xmlstring += str(self.content)[2:-1] + '\n'
+                self.xmlstring += "</message>"
+
+            if self.messageType == "ColorImage":
+                myimage = Image.open(self.filePath)
+                pixellist = list(myimage.getdata())
+                width, height = myimage.size
+                redpix,greenpix,bluepix = zip(*pixellist)
+                rgbpix = bytes(redpix) + bytes(greenpix) + bytes(bluepix)
+                rgbencode = base64.b64encode(rgbpix)
+                imgsize = str(myimage.size).replace(' ','')#Removes the space  and parentheses between width and height when image.size is used
+                imgsize = imgsize.replace('(','')
+                imgsize = imgsize.replace(')','')
+                self.xmlstring += ("<message type=\"{}\" size=\"{}\" encrypted=\"False\">\n").format(self.messageType,imgsize)
+                self.xmlstring += str(rgbencode)[2:-1] + '\n'
+                self.xmlstring += "</message>"
+
+            elif self.messageType == "Text":
+                myfile = open(self.filePath)
+                for line in myfile:
+                    self.content += line
+                unencoded = str.encode(self.content)
+                #print(self.content)
+                self.content = base64.b64encode(unencoded)
+                extracted = re.search(regexp1,str(self.content))
+                #print(self.content)
+                self.xmlstring += ("<message type=\"{}\" size=\"{}\" encrypted=\"False\">\n").format(self.messageType,len(unencoded))
+                self.xmlstring += extracted.group('message') + '\n'
+                self.xmlstring += "</message>"
+                myfile.close()
+
+
+        else:
+            raise ValueError("Too many arguments!")
+
+    #getMessageSize important notes
+
+
+    def getMessageSize(self):
+        if self.xmlstring == "":
+            return 0
+        else:
+            return len(self.xmlstring)
+
+    #saveToTextFile important notes:
+    #If the message object was initially created without an xml passed into it, with just its filePath and MessageType, it will simply copy the text to the targetTextFilePath
+    #If the message object was initially created with an xml passed into it, this function parses the data from the xml, decodes it from base64, and saves the message to the targetTextFilePath
+    #If either an incorrect MessageType is detected (an image for example) or no data exists within the file at filePath passed in initially, this function raises an exception.
+
+    def saveToTextFile(self, targetTextFilePath):
+        writeto = open(targetTextFilePath,"w")
+        if self.xmlstring == "":
+            filesize = os.stat(self.filePath).st_size
+            if filesize == 0:
+                raise Exception("No data exists within the message!")
+            if self.messageType != "Text":
+                raise TypeError("Message is not of type Text!")
+            else:
+                myfile = open(self.filePath,"r")
+                for line in myfile:
+                    writeto.write(line)
+                myfile.close()
+        else:
+            if self.messageType == "Text":
+                writeto.write(self.content.decode())
+            else:
+                raise TypeError("Message is not of type Text!")
+        writeto.close()
+
+
+    #saveToImage important notes:
+    #If the message object was initially created without an xml passed into it, with just its filePath and MessageType, it will simply copy the Image to the targetImagePath
+    #If the message object was initially created with an xml passed into it, this function parses the data from the xml, decodes it from base64, and saves the image data to the targetImagePath
+    #If either an incorrect MessageType is detected (a text message for example) or no data exists within the file at filePath passed in initially, this function raises an exception.
+
+    def saveToImage(self,targetImagePath):
+        regexp = "size=\"(?P<width>\d+),(?P<height>\d+)\"" #ISOLATES THE ACTUAL VALUES WITHIN THE TUPLE, NOT THE TUPLE ITSELF
+        if self.xmlstring == "":
+            filesize = os.stat(self.filePath).st_size
+            if filesize == 0:
+                raise Exception("No data exists within the message!")
+            if self.messageType != "GrayImage" and self.messageType != "ColorImage":
+                raise TypeError("Message is not of type Image!")
+            else:
+                inputimg = Image.open(self.filePath)
+                inputimg.save(targetImagePath)
+        else:
+            if self.messageType == "GrayImage":
+                extractedsize = re.search(regexp,self.xmlstring)
+                width = int(extractedsize.group('width'))
+                height = int(extractedsize.group('height'))
+                extractedimage = Image.frombytes('L',(width,height), self.content)
+                extractedimage.save(targetImagePath)
+
+            elif self.messageType == "ColorImage":
+                extractedsize = re.search(regexp,self.xmlstring)
+                width = int(extractedsize.group('width'))
+                height = int(extractedsize.group('height'))
+                splitxml = self.xmlstring.split("\n")
+                encoded = bytes(splitxml[2],"utf-8")
+                decoded = base64.b64decode(encoded) #"GREAT SUCCESS!"
+                colorlength = int((len(decoded))/3)
+                rdecode = decoded[0:colorlength]
+                gdecode = decoded[colorlength:2*colorlength]
+                bdecode = decoded[2*colorlength:]
+                rgbdata = []
+                for i in range(colorlength):
+                    rgbdata.append((rdecode[i], gdecode[i], bdecode[i]))
+                extractedimage = Image.new('RGB',(width,height))
+                extractedimage.putdata(rgbdata)
+                extractedimage.save(targetImagePath)
+
+            else:
+                 raise TypeError("Message is not of type Image!")
+
+    #getXmlString important notes:
+
+
+    def getXmlString(self):
+        #regexp1 = "^b'(?P<message>.*)'" #REGEX for isolating the base64 message within the b'<message>' format
+        #filesize = os.stat(self.filePath).st_size
+        if self.xmlstring == "":
+            raise Exception("No data exists within Message!")
+        return(self.xmlstring)
+
+class Steganography:
+
+    def __init__(self, imagePath, direction="horizontal"):
+        if direction != "horizontal" and direction != "vertical":
+            raise ValueError("Direction must be horizontal or vertical!")
+        self.imagePath = imagePath
+        self.direction = direction
+        self.image = Image.open(imagePath)
+        if self.image.mode is not 'L':
+            raise TypeError("This function can only embed messages within grayscale images!")
+        width,height = self.image.size
+        self.maxsize = ((width*height)/8)
+
+    def embedMessageInMedium(self, message, targetImagePath):
+        file = open("bogus.txt","w")
+        if message.getMessageSize() > self.maxsize:
+            raise ValueError("source image is of insufficient size to embed this message!")
+        print(message.xmlstring)
+
+        newpixdata = []
+        newmsgdata = []
+        width,height = self.image.size
+        pixeldata = list(self.image.getdata())
+        #pixeldata is just a list of integers, then cast as bytes, which you can get an image through getbytes()
+
+        immutable = bytes(pixeldata)
+        if(self.direction == "horizontal"):
+            encoded = message.xmlstring.encode("utf-8")
+            for byte in encoded:
+                newbyte = '{0:08b}'.format(byte)
+                newmsgdata.append(newbyte)
+
+            newmsgdata = ''.join(newmsgdata)
+
+            i=0
+            for y in range(height):
+                for x in range(width):
+                    if i >= len(newmsgdata):
+                        newpixdata.append(immutable[i])
+                    elif newmsgdata[i] == "0":
+                        newpixdata.append(immutable[i] & 254)
+                    elif newmsgdata[i] == "1":
+                        newpixdata.append(immutable[i] | 1)
+                    i+=1
+
+        elif(self.direction == "vertical"):
+
+            encoded = message.xmlstring.encode("utf-8")
+            for byte in encoded:
+                newbyte = '{0:08b}'.format(byte)
+                newmsgdata.append(newbyte)
+            newmsgdata = ''.join(newmsgdata)
+            i=0
+            for y in range(height):
+                for x in range(width):
+                    newpixdata.append(immutable[i])
+                    i+=1
+            i=0
+            for x in range(width):
+                for y in range(height):
+                    if i >= len(newmsgdata):
+                        pass
+                    elif newmsgdata[i] == "0":
+                        newpixdata[x+(y*width)]=(immutable[x+(y*width)] & 254)
+                    elif newmsgdata[i] == "1":
+                        newpixdata[x+(y*width)]=(immutable[x+(y*width)] | 1)
+                    i+=1
+        newdata = bytes(newpixdata)
+        newimage = Image.frombytes('L',(width,height),newdata)
+        newimage.save(targetImagePath)
+
+#Shorttexthorizontal
+# medium = Steganography('files/mona.png')
+# message = Message(filePath='files/small.txt', messageType='Text')
+# message.getXmlString()
+# medium.embedMessageInMedium(message, "shorttext.png")
+#
+# source = Image.open("mona.png")
+# test1 = Image.open("shorttext.png")
+# test2 = Image.open("mona_small_h.png")
+# sourcedata = list(source.getdata())
+# pixeldata1 = list(test1.getdata())
+# pixeldata2 = list(test2.getdata())
+#
+# print("source")
+# print(sourcedata)
+# print("1")
+# print(pixeldata1)
+# print("2")
+# print(pixeldata2)

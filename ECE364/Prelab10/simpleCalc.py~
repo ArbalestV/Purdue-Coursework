@@ -1,0 +1,33 @@
+# Import PySide classes
+
+import sys
+from PySide.QtCore import *
+from PySide.QtGui import *
+
+from ExperimentWindow import *
+
+class simpleCalc(QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(simpleCalc, self).__init__(parent)
+        self.setupUi(self)
+        
+        self.refresh.clicked.connect(self.clickedRefresh)
+        self.equal.clicked.connect(self.clickedEqual)
+        self.seven.clicked.connect(self.clickedSeven)
+        self.eight.clicked.connect(self.clickedEight)
+        self.six.clicked.connect(self.clickedSix)
+        self.five.clicked.connect(self.clickedFive)
+        self.four.clicked.connect(self.clickedFour)
+        self.three.clicked.connect(self.clickedThree)
+        self.two.clicked.connect(self.clickedTwo)
+        self.one.clicked.connect(self.clickedOne)
+        self.zero.clicked.connect(self.clickedZero)
+        self.dot.clicked.connect(self.clickedDot)
+        self.divide.clicked.connect(self.clickedDivide)
+        self.multiply.clicked.connect(self.clickedMultiply)
+        self.minus.clicked.connect(self.clickedMinus)
+        self.plus.clicked.connect(self.clickedPlus)
+        self.plus.clicked.equal(self.clickedEqual)
+        self.thousandsSeparator.stateChanged.connect(self.modifyThousands)
+        
+        

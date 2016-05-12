@@ -1,0 +1,39 @@
+1. A class is an interface of sorts describing the type of a particular thing, whereas an object is a specific instance/example of that class. The class has states and functionalities and an object describes the particular values of those states and their individual functionalities with respect to the object.
+
+2. A member variable is a state relative to the particular class where it is defined whereas a regular variable is a variable without being member state of any class.
+
+3. A member function is a function relative to the particular class where it is defined whereas a regular variable is a function without being member state of any class. A member function has to be called with a class object whereas a regular function can be called independently. Member functions require a self argument inorder to refer to the particulae object that is calling it. This ensures that the proper object is calling the function.
+
+4. Inheritance expresses the ISA relationship. Composition expresses the HAS-A relationship. ISA means that one class essentially is a type of the base class, with additional characteristics whereas a HAS-A relationship applies only to one class in relationship to its member variables.
+
+5. The purpose of the constructor is to instantiate an object and initialize its member variabls.
+
+6. __init__ is uses to call a constructor. The constructor is called only once during the lifetime of an object.
+
+
+7. 	num = 0
+	for i in range (1.0:1.0:11:0):
+	for j in range (1.0:1.0:11:0):
+		P[num] = Point2D(i, j)
+		num = num + 1
+
+8. def print(self):
+	print('{},{}'.format(self.x).format(self.y))
+
+9. class MyPoint2D(Point2D):
+	def __init__(Point2D):
+		Point2D.__init__(self, x, y)
+	def get_max_coord(self):
+		if (self.x > self.y):
+			return self.x
+		else:
+			return self.y
+	def get_min_coord(self):
+		if (self.x < self.y):
+			return self.x
+		else:
+			return self.y
+
+
+
+   

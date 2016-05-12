@@ -1,0 +1,278 @@
+
+#! /usr/local/bin/python3.4
+#
+# $Author:$
+# $Date:$
+# $HeadURL:$
+import os
+import sys
+import math
+import re
+import BitVector
+from BitVector import *
+from PIL import Image
+from Steganography import *
+import base64
+from PySide.QtCore import *
+from PySide.QtGui import *
+from NewSteganography import *
+from SteganographyGUI import *
+
+class SteganographyBrowser(QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):#constructor function
+        super(SteganographyBrowser, self).__init__(parent)
+        self.setupUi(self)
+        self.directorySelected = ''#the variable to hold the directory selected by the user
+        self.imgFiles = []#the list variable to hold all the image files in the directory
+        self.imgType = [] #the list of tuples to store which image has what kind of embedded message
+        self.topLevel = []#the top level file names in the tree widget
+        self.subLevel = []#the file names below the sub level
+        self.getFolder()
+    
+        self.fileTreeWidget.currentItemChanged.connect(self.newImageSelected)#the signal to be executed once a new image is selected
+        self.btnExtract.clicked.connect(self.extractMessage) #the signal to be executed when the extract message button is clicked
+        self.btnWipeMedium.clicked.connect(self.wipeMed) #the signal to be executed when the wipe medium button is clicked
+
+    def wipeMed(self):#the function that will wipe the medium
+        #now, we will pop up a QMessageBox dialog asking the user to confirm their action. 
+        msgBox = QMessageBox()
+        msgBox.setText('Wiping the medium will remove all the contents from the medium.')
+        msgBox.setInformativeText('Are you sure you want to proceed?')
+        msgBox.setStandardButtons(QMessageBox.Yes | QMessageBox.No) #yes or no option provided to the user
+        ret = msgBox.exec_() #to see what the user enters
+        #print(type(ret))
+
+        if (ret == 65536): #i.e, the user selects the No option
+            #just go back and return from the function
+            return
+
+        else: #i.e, the user selects the Yes option
+
+            #clear the message display unit for both image and text, whichever is applicable
+            scene = QtGui.QGraphicsScene()
+            scene.clear()
+            self.viewMessage.setScene(scene)
+            self.txtMessage.clear()
+
+
+            self.btnWipeMedium.setEnabled(False) #disable the wipe medium button
+
+            #create a new NewSteg obj with any direction of rasterization, it does not matter since wiping the medium will essentially work for all the pixels. Thus for our purposes, we will use 'horizontal' as direction of rasterization. 'vertical' would also work just fine.
+            self.grpMessage.setDisabled(True) #diaable the stacked widget to display message
+            path = self.directorySelected + '/' + self.fileTreeWidget.currentItem().text(0) #get the current image file
+            stegobj = NewSteganography(path, 'horizontal') #create a NewSteg obj with horizontal rasterization
+            stegobj.wipeMedium() #call the function to wipe the medium
+            '''
+            if (self.btnExtract.isDown() == False): #if the message has not been extracted, then we don't have to clear the Graphics View or Text Edit portion
+                #create a new NewSteg obj with any direction of rasterization, it does not matter since wiping the medium will essentially work for all the pixels. Thus for our purposes, we will use 'horizontal' as direction of rasterization. 'vertical' would also work just fine.
+                self.grpMessage.setDisabled(True) #diaable the stacked widget to display message
+                path = self.directorySelected + '/' + self.fileTreeWidget.currentItem().text(0) #get the current image file
+                stegobj = NewSteganography(path, 'horizontal') #create a NewSteg obj with horizontal rasterization
+                stegobj.wipeMedium() #call the function to wipe the medium
+                 
+            else: #if the message has been extracted, then we will have to clear the Graphics View or the Line Edit depending on the type of message, and then proceed to wipe the medium
+                
+                typeOfMsg = self.fileTreeWidget.currentItem().child(0).text(0) #get the type of message corresponding to the medium
+                if (typeOfMsg == 'ColorImage') or (typeOfMsg == 'GrayImage'):#if it is a form of image that is embedded
+                    #self.viewMessage.resetCachedContent() #clear the contents
+                    scene = QGraphicsScene()
+                    self.viewMessage.setScene(scene)
+                else: #if text
+                    self.txtMessage.setPlainText('') #clear the contents
+                
+                #self.grpMessage.setDisabled(True) #diaable the stacked widget to display message
+                #create a new NewSteg obj with any direction of rasterization, it does not matter since wiping the medium will essentially work for all the pixels. Thus for our purposes, we will use 'horizontal' as direction of rasterization. 'vertical' would also work just fine.
+                path = self.directorySelected + '/' + self.fileTreeWidget.currentItem().text(0) #get the current image file
+                stegobj = NewSteganography(path, 'horizontal') #create a NewSteg obj with horizontal rasterization
+                stegobj.wipeMedium() #call the function to wipe the medium
+            '''
+            #self.imgToMsgType() #call the function that maps each image to the kind of message, if applicable
+            #self.populateTreeWidget() #call the function to make the tree widget 
+
+
+
+
+
+    def extractMessage(self): #the function to extract the message
+        #print(self.stackMessage.currentIndex())
+        #self.stackMessage.setCurrentIndex(1)
+        #first of all, if it reaches this position then we know that the medium embeds a message, otherwise Extract Message button will be disabled. So, our first order of business will be figure out if the message embedded is Text or Image (Gray/Color), and then set the StackWidget frame to Text or Graphics accordingly
+        self.grpMessage.setDisabled(False) #enable the stacked widget to display message
+        typeOfMsg = self.fileTreeWidget.currentItem().child(0).text(0) #get the type of message corresponding to the medium
+        if (typeOfMsg == 'ColorImage') or (typeOfMsg == 'GrayImage'):#if it is a form of image that is embedded
+            self.stackMessage.setCurrentIndex(0)#then work in the graphics view
+            #now that we have set to graphics view, we have to get the message out and display it on the frame
+            #first of all, make a NewSteganography object with imagePath as the current image file that is chosen and a direction as horizontal. If horizontal produces a None message from extraction, then try vertical rasterization.
+            path = self.directorySelected + '/' + self.fileTreeWidget.currentItem().text(0) #get the current image file
+            stegobj = NewSteganography(path, 'horizontal') #create a NewSteg obj with horizontal rasterization
+            msg = stegobj.extractMessageFromMedium()
+            targetPath = 'putMsg.png' #the target path where the message will be stored, this will be deleted eventually
+            if (msg is None): #basically horizontal rasterization did not work
+                stegobj = NewSteganography(path, 'vertical') #create a NewSteg obj with vertical rasterization
+                msg2 = stegobj.extractMessageFromMedium() #now this will have produced a message
+                msg2.saveToTarget(targetPath) #put the message in the target path image file
+            else: #horizontal rasterization worked
+                msg.saveToTarget(targetPath) #put the message in the target path image file
+            #now, its time to put the message in the Graphics View widget
+            scene = QGraphicsScene()
+            scene.addPixmap(QPixmap(targetPath))
+            self.viewMessage.setScene(scene)
+            self.viewMessage.fitInView(self.viewMessage.sceneRect(), QtCore.Qt.KeepAspectRatio) #put the image in the Graphics View widget and fit it to scale such that no scrolling is required
+            os.remove(targetPath)#remove the message file created
+        else: #if it is a text
+            self.stackMessage.setCurrentIndex(1)#the work in the line edit 
+            #first of all, make a NewSteganography object with imagePath as the current image file that is chosen and a direction as horizontal. If horizontal produces a None message from extraction, then try vertical rasterization.
+            path = self.directorySelected + '/' + self.fileTreeWidget.currentItem().text(0) #get the current image file
+            stegobj = NewSteganography(path, 'horizontal') #create a NewSteg obj with horizontal rasterization
+            msg = stegobj.extractMessageFromMedium()
+            targetPath = 'putMsg.txt' #the target path where the message will be stored, this will be deleted eventually
+            if (msg is None): #basically horizontal rasterization did not work
+                stegobj = NewSteganography(path, 'vertical') #create a NewSteg obj with vertical rasterization
+                msg2 = stegobj.extractMessageFromMedium() #now this will have produced a message
+                msg2.saveToTarget(targetPath) #put the message in the target path image file
+            else: #horizontal rasterization worked
+                msg.saveToTarget(targetPath) #put the message in the target path image file
+            f = open(targetPath, 'r') #open the target file text file for reading from
+            txt = f.read() #read all the contents of the file
+            self.txtMessage.setPlainText(txt) #write the message contents to the text editor's contents
+            os.remove(targetPath)#remove the message file created
+        self.btnExtract.setEnabled(False) #disable the extract message button
+
+    def newImageSelected(self):#this function will show the message of the medium image selected
+        #print(self.fileTreeWidget.currentItem().text(0))
+
+        #clear the message display unit for both image and text, whichever is applicable
+        scene = QtGui.QGraphicsScene()
+        scene.clear()
+        self.viewMessage.setScene(scene)
+        self.txtMessage.clear()
+
+
+
+        path = self.directorySelected + '/' + self.fileTreeWidget.currentItem().text(0)
+        self.grpMedium.setDisabled(False) #enable the widgets under message display
+        currImg = self.fileTreeWidget.currentItem().text(0)#the current image file name
+        #print(self.imgType)
+        for i in range(len(self.imgType)): #traverse through all the image files
+            #print(self.imgType[i])
+            #print(self.imgType[i][0])
+            if (self.imgType[i][0] == currImg): #when you get the current image
+                if(self.imgType[i][1][0] == False):#if no embedded message
+                    self.btnExtract.setEnabled(False) #disable the extract message button
+                    self.btnWipeMedium.setEnabled(False) #disable the wipe medium button
+                else:
+                    self.btnExtract.setEnabled(True) #enable the extract message button
+                    self.btnWipeMedium.setEnabled(True) #enable the wipe medium button
+                break #come out of the for loop
+        scene = QGraphicsScene()
+        scene.addPixmap(QPixmap(path))
+        self.viewMedium.setScene(scene)
+        self.viewMedium.fitInView(self.viewMedium.sceneRect(), QtCore.Qt.KeepAspectRatio) #put the image in the Graphics View widget and fit it to scale such that no scrolling is required
+        
+
+    def getFolder(self): #the function to pop up a dialog box asking the user for a folder to select that contains image files within
+        dialog = QtGui.QFileDialog() #make an object of QFileDialog
+        dialog.setFileMode(QtGui.QFileDialog.Directory) #set mode to directory
+        dialog.setOption(QtGui.QFileDialog.ShowDirsOnly) #only show the directories, not files
+        self.directorySelected = dialog.getExistingDirectory(self, 'Choose a directory that has image files.', os.path.curdir) #start from the current folder you're running the app from, then navigate
+        #print(directory)
+        if (self.directorySelected == ''):#basically if nothing is selected, then close and exit the application
+            sys.exit()
+        else:#now that the user has selected a directory, start the application
+            #print(self.directorySelected)
+            self.beginApp() #start the application
+
+    def beginApp(self): #the function that starts the application
+        #disable all the widgets
+        #self.fileTreeWidget.setEnabled(True)
+        #self.viewMedium.setDisabled(True)
+        #self.btnExtract.setEnabled(False)
+        #self.btnWipeMedium.setEnabled(False)
+        #self.lblImageMessage.setEnabled(False)
+        #self.viewMessage.setDisabled(True)
+        #self.lblTextMessage.setEnabled(False)
+        #self.txtMessage.setDisabled(True)
+        self.grpMedium.setDisabled(True)
+        self.grpMessage.setDisabled(True)
+        #now that we have disabled all the widgets except for the TreeWidget, our next course of action would be to scan through the contents of the directory selected by the user and display the image files in the tree widget in the form required
+        self.getImageFiles()#get the image files in the directory in a list format, stored in the self.imgFiles list of the class
+        #print(self.imgFiles)
+        #now that we have the list of image files, we have to check which ones have message embedded within them, and if they do, is it 'Text' or 'GrayImage' or 'ColorImage'
+        #for this purpose, I will make a data structure that has two items in a tuple, the first item being the name of the file, and the other being the tuple returned by calling the checkIfMessageExists() function ont he image path
+        self.imgToMsgType() #call the function that maps each image to the kind of message, if applicable
+        #print(self.imgType)
+        #now that we have the image files and their types of embedded messages, now it is time to populate the TreeWidget class, with name of file at the top level, followed by the type of embedded message at it's sub-level
+        self.populateTreeWidget() #call the function to make the tree widget 
+
+    def populateTreeWidget(self): #the function to populate the tree widget
+        self.fileTreeWidget.setColumnCount(1) #since only one column
+        for i in range(0, len(self.imgType)): #for the entire list of tuples mapping medium image to type of message embedded
+            topLevel = QTreeWidgetItem(self.fileTreeWidget) #top level -> name of the image file
+            #print(self.fileTreeWidget.topLevelItemCount)
+            topLevel.setText(0, self.imgType[i][0]) #name of the file
+            if (self.imgType[i][1][0] == False): #if no embedded image
+                br = QBrush() #create a brush object to store the color
+                br.setColor(Qt.blue) #set color to blue
+                topLevel.setForeground(0, br) #set the color to blue for the item
+                self.topLevel.append(topLevel)
+            else: #if there is an embedded image
+                br = QBrush() #create a brush object to store the color
+                br.setColor(Qt.red) #set color to red
+                topLevel.setForeground(0, br) #set the color to blue for the item
+                subLevel = QTreeWidgetItem(topLevel) #make the sub-level file that essentially is the type of message embedded
+                subLevel.setText(0, self.imgType[i][1][1]) #get the type of message embedded
+                br2 = QBrush() #create a brush object to store the color
+                br2.setColor(Qt.green) #set color to blue
+                subLevel.setForeground(0, br2) #set the color to blue for the item
+                #subLevel.setColor(0, QColor("green")) #set the color to green
+                self.topLevel.append(topLevel)
+                self.subLevel.append(subLevel)
+        self.fileTreeWidget.setCurrentItem(None)
+        
+    def imgToMsgType(self): #the function that maps each image to the kind of message, if applicable
+        path = self.directorySelected + '/' #the target image path woth the directory path that will be appended to each image file
+        for i in self.imgFiles: #for all the image files 
+            #for each image, since we don't know the kind of rasterization, we will first try with horizontal, then vertical, otherwise if both return false, we will return false
+            imagePath = path + i #the image path
+            #print(imagePath)
+            hor_res = tuple #to store the result of horizontal rasterization
+            ver_res = tuple #to store the result of horizontal rasterization
+            newstegobj = NewSteganography(imagePath, 'horizontal')
+            hor_res = newstegobj.checkIfMessageExists()
+            if (hor_res[0] == True): #if horizontally rasterized and message exists
+                tup = tuple
+                tup = (i, hor_res) #make the tuple that maps the image name to the type of embedded message
+                self.imgType.append(tup) #append to the list that stores for all the image files information about type of message embedded
+                continue #go on to the next image file
+            else: #either not horizontally rasterized or no message at all, we will now check for vertical rasterization
+                newstegobj = NewSteganography(imagePath, 'vertical')
+                ver_res = newstegobj.checkIfMessageExists()
+                if (ver_res[0] == True): #if vertically rasterized and message exists
+                    tup = tuple
+                    tup = (i, ver_res) #make the tuple that maps the image name to the type of embedded message
+                    self.imgType.append(tup) #append to the list that stores for all the image files information about type of message embedded
+                else: #neither horizontal nor vertical => no message embedded
+                    tup = tuple
+                    tup = (i, ver_res) #make the tuple that maps the image name to the type of embedded message
+                    self.imgType.append(tup) #append to the list that stores for all the image files information about type of message embedded
+                continue #go on to the next image file
+            #print(self.imgType)
+            #print('dkdkkkd')
+    
+    def getImageFiles(self): #the function to get all the image files within the directory the user selects
+        files = os.listdir(self.directorySelected)#to get all the files within the directory selected by the user
+        #imgFiles = [] #to get only the image files among all the files
+        #print(files)
+        for f in files: #for every file in the directory
+            if (f.endswith('.png')) or (f.endswith('.jpg')) or (f.endswith('.tif')) or (f.endswith('.gif')) or (f.endswith('.bmp')):#if image file
+                self.imgFiles.append(f) #append to the image files list
+        #print(imgFiles)
+        #return imgFiles
+            
+            
+
+currentApp = QApplication(sys.argv)
+stegBrowser = SteganographyBrowser()
+stegBrowser.show()
+currentApp.exec_()
+        

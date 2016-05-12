@@ -1,0 +1,39 @@
+#! /bin/bash
+#
+# $Author$:
+# $Date$:
+# $HeadURL$:
+while getopts f:-: thisopt
+do
+        case $thisopt in
+          f)fn=$OPTARG
+	    if [[ ! -e $OPTARG ]]
+	    then
+	    echo "File does not exist."
+	    exit 1
+	    fi;;
+	    
+
+          -)val=$(echo $OPTARG  | cut -d'=' -f2)
+            if [[ -z $val ]]
+	    then
+		echo "Insufficient information."
+		exit 1
+	    elif [[ $val < 1 || $val > 4 ]]
+	    then
+		echo "Column $val does not exist."
+		exit 1
+	    else
+		echo "File Sorted."
+	    fi
+	    ;;
+          *)echo "Invalid arg";;
+        esac
+done
+exec 5> ${fn}.sorted
+exec 4< $fn
+echo $val
+echo $fn
+((v=$val+1))
+sort -k$v,$v $fn >&5
+exit 0

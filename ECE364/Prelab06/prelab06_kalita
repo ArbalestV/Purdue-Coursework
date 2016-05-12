@@ -1,0 +1,31 @@
+1. expr = r" A{2,5} "
+   input = " AAA AAAAAA "
+   re.search(expr, input)
+
+2. re.sub(r"[0-9]+\.[0-9]+", "float", "12.35")
+
+3. t = re.subn(r"[0-9]+\.[0-9]+", "float", "12.35")
+   print t[1]
+
+4. expr = r"[\d-]+"
+   lst = re.findall(expr, "hello 56 73 95 34 bye.")
+   sum = 0
+   for i in range(0, len(lst)):
+     sum = sum + int(lst[i])
+   avg = sum / len(lst)
+   print avg
+
+5. re.sub(r"EE461", "EE461", "This is EE364 checking EE364 EE364.", 1)
+
+6. pattern = r"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+   m = re.match(pattern, "128.210.011.007")
+
+7. re.search("e", input, re.I) -> searches for the letter "e" or "E" in the string input
+
+   re.match("(.*)(is a)(.*)", input) -> tries to match the string input with the substring "is a" anywhere in between or in either border.
+   
+   re.match("(?P.*)(?Pis a)(?P.*)", input) -> same thing as before except no name was given. The name would've been given to each group had ?P been followed by <GROUPNAME>
+
+   re.search("(I){1}(like){10,}(you){1,2}", input) -> checks to see if the string input contains the word "I" exactly once, followed by "like" at least 10 times, followed by the word "you" once or twice.
+
+   

@@ -1,0 +1,11 @@
+
+[Print Settings]
+number-up=1
+reverse=false
+print-pages=all
+output-uri=file:///home/ecegrid/a/ee364c10/Prelab07/prelab07_c10.pdf
+output-file-format=pdf
+collate=false
+printer=Print to File
+page-set=all
+scale=100

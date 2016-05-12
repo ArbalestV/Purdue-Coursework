@@ -1,0 +1,71 @@
+#! /usr/bin/env python3.4
+
+"""
+Script samples for ECE 364.
+"""
+
+__version__ = '1.0.0'
+__author__ = "Pranjit Kalita"
+__date__ = '2015-January-30'
+
+import os
+import math
+import sys
+
+def addNumbers():
+    #compute the sum of numbers between 0 and 1000
+    sum_a = 0
+    for i in range(0, 1001):
+        #print i
+        sum_a = sum_a + i    
+    return sum_a
+  
+def addMultiplesOf(num):
+    #compute the sum of multiples of num between 0 and 1000
+    sum_m = 0
+    max_m = (1000 / num)
+    #print max_m
+    for i in range(0, max_m + 1):
+        tmp = i * num
+        #print tmp
+        sum_m = sum_m + tmp
+    return sum_m
+ 
+def getDigitalSum(string):
+    #compute sum of digits of a string 
+    number = int(string)
+    #print number
+    sum_dig = 0
+    while (number != 0):
+        digit = number % 10
+        #print digit
+        number = number / 10
+        sum_dig = sum_dig + digit
+    return sum_dig
+ 
+def getNumberFrequency(num):
+    #frequency of a digit in a string
+    str_num = str(num)
+    string = "The value of Pi is 3 . 1 4 1 5 9 2 6 5 3 5 8 9 7 9 3 2 3 8 4 6 2 6 4 3 3 8 3 2 7 9 5 0 2 8 8 4 1 9 7 1 6 9 3 9 9 3 7 5 1 0 5 8 2 0 9 7 4 9 4 4 5 9 2 3 0 7 8 1 6 4 0 6 2 8 6 2 0 8 9 9 8 6 2 8 0 3 4 8 2 5 3 4 2 1 1 7 0 6 7 9 8 2 1 4 8 0 8 6 5 1 3 2 8 2 3 0 6 6 4 7 0 9 3 8 4 4 6 0 9 5 5 0 5 8 2 2 3 1 7 2 5 3 5 9 4 0 8 1 2 8 4 8 1"
+    len_str = len(string)
+    freq = 0
+    for i in range(0, len_str):
+        if str_num == string[i]:
+            freq = freq + 1
+
+    return freq
+
+if __name__ == "__main__":
+    sum_a = addNumbers()
+    print sum_a
+    num = int(input("Enter a number whose multiple's sum is required:"))
+    sum_m = addMultiplesOf(num)
+    print sum_m
+    sum_to_be_calc = raw_input("Enter a string with numbers whose digits' sum needs to be calculated: ")
+    sum_digital = getDigitalSum(sum_to_be_calc)
+    print sum_digital
+    num_c = int(input("Enter a number whose frequency in the string is required:"))
+    freq = getNumberFrequency(num_c)
+    print freq
+    
+

@@ -1,0 +1,142 @@
+#! /usr/bin/env python3.4
+#
+# $Author$:
+# $Date$:
+# $HeadURL$:
+import os
+import math
+import sys
+import re
+
+class Entry:
+    def __init__(self, k = 0, v = ''):
+        if type(k) != int or type(v) != str:
+            raise TypeError('Either k or v not int or str, respectively')
+        self.key = k
+        self.value = v
+        
+    def __str__(self):
+        ret = "(" + str(self.key) + ": " + self.value + ")" 
+        return ret
+    
+    def __hash__(self):
+        t = (self.key, self.value)
+        return hash(t)
+
+class Lookup:
+    def __init__(self, name):
+        if name == '':
+           raise ValueError('Name cannot be initialized to empty.')
+        self._name = name
+        self._entrySet = set()
+    
+    def __str__(self):
+        entries = len(self._entrySet)
+        formatted_entries = "{0:02d}".format(entries)
+        ret = "[" + "\"" + self._name + "\": " + str(formatted_entries) + " Entries]"
+        return ret
+    
+    def addEntry(self, entry):
+        for items in self._entrySet:
+            if items.key == entry.key:
+                raise ValueError('Entry already exists')
+        self._entrySet.add(entry)
+
+    def updateEntry(self, entry):
+        status = 0
+        for items in self._entrySet:
+            if items.key == entry.key:
+                status = 1
+                items.value = entry.value
+        if status == 0:
+            raise KeyError('Item does not exist in the typed dictionary.')
+
+    def addOrUpdateEntry(self, entry):
+        exist = 0
+        for item in self._entrySet:
+            if item.key == entry.key:
+                exist = 1
+                self.updateEntry(entry)
+                break
+        if exist == 0:
+            self.addEntry(entry)
+            
+    def removeEntry(self, entry):
+        exist =0
+        for item in self._entrySet:
+            if item.key == entry.key:
+                exist = 1
+                del self._entrySet[entry.key]
+                break
+        if exist ==0:
+            raise KeyError('The entry to be deleted does not exist.')
+        
+    def getEntry(self, key):
+        exist = 0
+        for item in self._entrySet:
+            if item.key == key:
+                exist = 1
+                return item
+        if exist == 0:
+            raise KeyError('Item with given ket DNE.')
+        
+    def addOrUpdateFromDictionary(self, someDict):
+        for sd_item in someDict._entrySet:
+            '''
+            exist = 0
+            for item in self._entrySet:
+                if sd_item.key == item.key:
+                    exist = 1
+                    self.updateEntry(sd_item)
+            if exist == 0:
+                self.addEntry'''
+            self.addOrUpdateEntry(sd_item)
+            
+    def getAsDictionary(self):
+        d = {}
+        for item in self._entrySet:
+            d.update({item.key:item.value})
+        return d
+    
+    def getKeys(self):
+        k_lst = []
+        for item in self._entrySet:
+            k_lst.append(item.key)
+        k_lst = sorted(k_lst)
+        return k_lst
+    
+    def getValues(self):
+        v_lst = []
+        for item in self._entrySet:
+            v_lst.append(item.value)
+        k_lst = sorted(v_lst)
+        return v_lst
+    
+    def getElementCount(self):
+        tot = 0
+        for item in self._entrySet:
+            tot = tot + 1
+        return tot
+
+'''
+def test_cases():
+    test0 = Entry(22,"test")   
+    test1 = Lookup("entryTest")
+    test2 = Entry(49, "test2_test")
+    test3 = Entry(49, "test3_test")
+    test4 = Entry(48, "test4_test")
+    test1.addEntry(test2)
+    test1.addEntry(test0)
+    test1.updateEntry(test3)
+    #test1.updateEntry(test4)
+    test1.addOrUpdateEntry(test4)
+    var_2 = test1.getKeys()
+    print (var_2)
+    var_3 = test1.getValues()
+    print (var_3)
+    print(test1.getElementCount())
+    print(test1.getEntry(int(48)))
+    print(test1)
+    print(test1.getAsDictionary())
+test_cases()
+'''

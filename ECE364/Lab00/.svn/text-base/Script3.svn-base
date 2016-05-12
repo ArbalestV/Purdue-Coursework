@@ -1,0 +1,21 @@
+#! /bin/bash
+#
+# $Author$ - 
+# $Date$ - 
+# $HeadURL$ - 
+# $Revision$ -
+Num_Of_Param=$#
+Param_Values=$@
+for ((I=$@; I > -1; I--))
+do
+let a=$I%3
+if (($a == 0))
+then
+  echo $I
+fi
+done
+
+exit 0
+
+ 
+

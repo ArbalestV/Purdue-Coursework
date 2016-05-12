@@ -1,0 +1,101 @@
+set -o emacs
+
+#=============================================================================
+# Here are the key bindings...  Change them to your liking.
+#=============================================================================
+__DELETE=''
+__HOME=''
+__END=''
+__PGUP=''
+__PGDN=''
+__INSERT=''
+__F1=''
+__F2=''
+__F3=''
+__F4=''
+__F5=''
+__F6=''
+__F7=''
+__F8=''
+__F9=''
+__F10=''
+__F11=''
+__F12=''
+
+
+_kbd_mode=0
+function cursor_keys {
+   if (( _kbd_mode == 0 )) 
+   then
+      case "${.sh.edchar}" in
+            '') if [[ ${.sh.edcol} == 0 && "${.sh.edtext}" == "" ]] 
+                  then
+                     .sh.edchar='exit
+'
+                  fi;;
+         $'\E[A') .sh.edchar='';;        # Up arrow
+         $'\E[B') .sh.edchar='';;        # Down arrow
+         $'\E[C') .sh.edchar='';;        # Right
+         $'\E[D') .sh.edchar='';;        # Left
+
+         $'\t')   .sh.edchar=$'\E\E';;     # Tab for file completion
+
+         $'\E[1') .sh.edchar=''            # Function keys 1-8 prefix
+                  _kbd_mode=1;;
+
+         $'\E[2') .sh.edchar=''            # Function keys 9-12 & Insert prefix
+                  _kbd_mode=2;;
+
+         $'\E[3') .sh.edchar=''            # Delete key prefix
+		  _kbd_save="${__DELETE}"
+                  _kbd_mode=99;;
+
+         $'\E[H') .sh.edchar="${__HOME}";; # Home
+         $'\E[F') .sh.edchar="${__END}";;  # End
+
+         $'\E[5') _kbd_save="${__PGUP}"    # Page Up
+                  _kbd_mode=99
+                  .sh.edchar='';;
+         $'\E[6') _kbd_save="${__PGDN}"    # Page Down
+                  _kbd_mode=99
+                  .sh.edchar='';;
+
+      esac
+   elif (( _kbd_mode == 1 ))  
+   then
+      case "${.sh.edchar}" in
+         1) _kbd_save="${__F1}";;
+         2) _kbd_save="${__F2}";;
+         3) _kbd_save="${__F3}";;
+         4) _kbd_save="${__F4}";;
+         5) _kbd_save="${__F5}";;
+         7) _kbd_save="${__F6}";;
+         8) _kbd_save="${__F7}";;
+         9) _kbd_save="${__F8}";;
+      esac
+      _kbd_mode=99
+      .sh.edchar=''
+   elif (( _kbd_mode == 2 )) 
+   then
+      if [[ "${.sh.edchar}" == '~' ]] 
+      then
+         .sh.edchar="${__INSERT}"
+         _kbd_mode=0
+      else
+         case "${.sh.edchar}" in
+            0) _kbd_save="${__F9}";;
+            1) _kbd_save="${__F10}";;
+            3) _kbd_save="${__F11}";;
+            4) _kbd_save="${__F12}";;
+         esac
+         _kbd_mode=99
+         .sh.edchar=''
+      fi
+   elif (( _kbd_mode == 99 )) 
+   then
+      .sh.edchar=${_kbd_save}
+      _kbd_mode=0
+   fi
+}
+
+trap 'cursor_keys' KEYBD

@@ -1,0 +1,50 @@
+#! /bin/bash
+#
+# $Author: ee364c10 $:
+# $Date: 2015-01-20 02:29:27 -0500 (Tue, 20 Jan 2015) $:
+# $HeadURL: svn+ssh://ece364sv@ecegrid-thin1/home/ecegrid/a/ece364sv/svn/S15/students/ee364c10/Prelab01/svncheck.bash $:
+if [[ ! $# == 1 ]]
+then
+    echo "One filename needed. Exiting!"
+    exit 0
+fi
+file=$1
+#exec 4< $1 #file being opened for reading
+while read file
+do
+    #echo $file
+    sym=$(command svn status ${file} | cut -d' ' -f1)
+    echo $sym
+    if [[ $sym == "?" ]] #file not in svn
+    then
+	#check if the file exists
+	#the file does not exist in the directory
+	if [[ ! -e $file ]]
+	then
+	    echo "Error: File $file appears to not exist here or in svn."
+	    exit 0
+	fi #end of file not existing block
+	#the file exists in the directory and not in svn
+	#check if the file is executable
+	if [[ ! -x $file ]] #file is not executable
+	then
+	    read -p "Do you want to make this file executable (y/n) ?" reply
+	    if [[ $reply == "y" ]] #the user responds yes
+	    then
+		command chmod +x ${file} #make the file executable by command
+	    fi
+	fi #end of executable block
+	#now, add the file to svn
+	command svn add ${file}
+    fi #end of file NOT in svn block
+    
+    #now file IS in svn
+    #check if the file is executable
+    if [[ ! -x $file ]] #file is not executable
+    then
+	command svn propset svn:executable ON ${file} #perform the given commmand
+    fi #end of file not executable block 
+
+done < $1
+command svn commit -m "Auto-committing code"
+exit 0

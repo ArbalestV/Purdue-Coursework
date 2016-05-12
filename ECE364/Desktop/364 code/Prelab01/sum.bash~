@@ -1,0 +1,3 @@
+#! /bin/bash
+Num_Of_Param=$#
+Param_Values=$@

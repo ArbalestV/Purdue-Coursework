@@ -1,0 +1,75 @@
+Agent pid 9162
+Terminal is dumb
+ee364c10 on ee215lnx14.ecn.purdue.edu -- x86_64 Fri Mar 6 19:02:13 EST 2015
+SVN Repository is  svn+ssh://ece364sv@ecegrid-thin1/home/ecegrid/a/ece364sv/svn/S15/students/ee364c10
+stdin: is not a tty
+Set-up environment for ECE364
+GNOME_KEYRING_SOCKET=/tmp/keyring-jDDzTI/socket
+SSH_AUTH_SOCK=/tmp/keyring-jDDzTI/socket.ssh
+Traceback (most recent call last):
+  File "/usr/share/system-config-printer/applet.py", line 20, in <module>
+    import cups
+ImportError: No module named cups
+
+(process:9264): GLib-WARNING **: goption.c:2132: ignoring no-arg, optional-arg or filename flags (8) on option of type 0
+
+(process:9264): GLib-WARNING **: goption.c:2132: ignoring no-arg, optional-arg or filename flags (8) on option of type 0
+
+(process:9264): GLib-WARNING **: goption.c:2132: ignoring no-arg, optional-arg or filename flags (8) on option of type 0
+
+(polkit-gnome-authentication-agent-1:9246): GLib-GObject-WARNING **: cannot register existing type `_PolkitError'
+
+(polkit-gnome-authentication-agent-1:9246): GLib-CRITICAL **: g_once_init_leave: assertion `initialization_value != 0' failed
+** Message: applet now removed from the notification area
+
+** (nm-applet:9247): WARNING **: get_all_cb: couldn't retrieve system settings properties: (2) The name org.freedesktop.NetworkManagerSystemSettings was not provided by any .service files.
+
+** (nm-applet:9247): WARNING **: fetch_connections_done: error fetching system connections: (2) The name org.freedesktop.NetworkManagerSystemSettings was not provided by any .service files.
+Failed to play sound: File or data not found
+Initializing nautilus-open-terminal extension
+Initializing nautilus-gdu extension
+
+** (gnome-panel:9217): CRITICAL **: panel_applet_frame_change_background: assertion `PANEL_IS_WIDGET (GTK_WIDGET (frame)->parent)' failed
+** Message: applet now embedded in the notification area
+** Message: applet now removed from the notification area
+
+(rhsm-icon:9274): libnotify-CRITICAL **: notify_notification_close: assertion `notification != NULL' failed
+
+(rhsm-icon:9274): GLib-GObject-CRITICAL **: g_object_unref: assertion `G_IS_OBJECT (object)' failed
+Window manager warning: Received a _NET_WM_MOVERESIZE message for 0x4400090 (Slide 1); these messages lack timestamps and therefore suck.
+Window manager warning: Received a _NET_WM_MOVERESIZE message for 0x4400090 (Slide 1); these messages lack timestamps and therefore suck.
+Window manager warning: Received a _NET_WM_MOVERESIZE message for 0x4400090 (Slide 1); these messages lack timestamps and therefore suck.
+Window manager warning: Received a _NET_WM_MOVERESIZE message for 0x1600003 (Terminal); these messages lack timestamps and therefore suck.
+Window manager warning: Received a _NET_WM_MOVERESIZE message for 0x42000a3 (emacs@ee21); these messages lack timestamps and therefore suck.
+1425687718701	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+Window manager warning: Received a _NET_WM_MOVERESIZE message for 0x4a000a3 (emacs@ee21); these messages lack timestamps and therefore suck.
+Window manager warning: Received a _NET_WM_MOVERESIZE message for 0x4e000a3 (emacs@ee21); these messages lack timestamps and therefore suck.
+
+(gnome-power-manager:9237): GLib-GObject-CRITICAL **: g_object_unref: assertion `G_IS_OBJECT (object)' failed
+Shutting down nautilus-gdu extension
+Shutting down nautilus-open-terminal extension
+
+--- Hash table keys for warning below:
+--> l29
+--> ecnuser
+--> inode/directory
+--> Student C10 EE364
+--> ee364c10
+
+(nautilus:9219): Eel-WARNING **: "unique eel_ref_str" hash table still has 5 elements at quit time (keys above)
+
+(nautilus:9219): Eel-WARNING **: "nautilus-directory.c: directories" hash table still has 4 elements at quit time
+
+(polkit-gnome-authentication-agent-1:9246): polkit-gnome-1-WARNING **: Error enumerating temporary authorizations: Remote Exception invoking org.freedesktop.PolicyKit1.Authority.EnumerateTemporaryAuthorizations() on /org/freedesktop/PolicyKit1/Authority at name org.freedesktop.PolicyKit1: org.freedesktop.PolicyKit1.Error.Failed: Cannot determine session the caller is in
+gnome-settings-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+bluetooth-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gdu-notification-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gpk-update-icon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gnome-screensaver: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+evolution-alarm-notify: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+polkit-gnome-authentication-agent-1: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+nm-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gnome-volume-control-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+rhsm-icon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+gnome-panel: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+firefox: Fatal IO error 17 (File exists) on X server :0.0.

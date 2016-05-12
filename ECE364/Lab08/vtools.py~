@@ -1,0 +1,12 @@
+import os
+import math
+import sys
+import re
+
+def is_valid_name(identifier):
+    if re.search(r"^([\w]+)$", identifier):
+        print('Valid identifier')
+        return True
+    else:
+        print('Invalid Identifier')
+        return False

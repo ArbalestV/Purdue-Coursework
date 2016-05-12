@@ -1,0 +1,30 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="vcs">
+      <project id="Lab11" values="svn" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="Lab11" values="PythonConfigurationType" />
+    </group>
+    <group name="svn working copy format">
+      <project id="Lab11" values="1.6" />
+    </group>
+    <group name="py-interpreter">
+      <project id="Lab11" values="Python 3.4.1" />
+    </group>
+    <group name="file-type">
+      <project id="Lab11" values="HTML,XML,PLAIN_TEXT,UNKNOWN,Qt UI file,Native,Python,Images" />
+    </group>
+    <group name="module type">
+      <project id="Lab11" values="PYTHON_MODULE" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="execute.PythonConfigurationType.Run" count="3" />
+      <entry feature="ide.settings.Appearance" count="1" />
+      <entry feature="ide.settings.Project_Interpreter" count="1" />
+      <entry feature="ideaapp.started" count="1" />
+    </counts>
+  </component>
+</application>

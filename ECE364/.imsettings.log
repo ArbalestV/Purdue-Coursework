@@ -1,0 +1,166 @@
+imsettings information
+==========================
+Is DBus enabled: yes
+Is imsettings enabled: yes
+Is GTK+ supported: yes
+Is Qt supported: no
+DESKTOP_SESSION: gnome
+DISABLE_IMSETTINGS: 
+IMSETTINGS_DISABLE_DESKTOP_CHECK: 
+DBUS_SESSION_BUS_ADDRESS: unix:abstract=/tmp/dbus-Y1qot2HRw8,guid=94b6465cf3010d4d0b5f6ed200005d0a
+GTK_IM_MODULE: 
+QT_IM_MODULE: xim
+XMODIFIERS: @im=none
+IMSETTINGS_MODULE: none
+IMSETTINGS_INTEGRATE_DESKTOP: yes
+
+
+IM-Settings-Daemon[9272]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[9272]: INFO: Current IM is: none
+
+IM-Settings-Daemon[20785]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[20785]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 21228, id: 13, time: 2015-03-10T00:31:13.857117Z
+IM-Settings-Daemon[20785]: INFO: Current IM is: IBus
+IM-Settings-Daemon[20785]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[37616]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[37616]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 38359, id: 13, time: 2015-03-22T22:22:39.795955Z
+IM-Settings-Daemon[37616]: INFO: Current IM is: IBus
+IM-Settings-Daemon[37616]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[889]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[889]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 1190, id: 13, time: 2015-03-24T02:57:11.800033Z
+IM-Settings-Daemon[889]: INFO: Current IM is: IBus
+IM-Settings-Daemon[889]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[17477]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[17477]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 18273, id: 13, time: 2015-03-24T03:19:52.548867Z
+IM-Settings-Daemon[17477]: INFO: Current IM is: IBus
+IM-Settings-Daemon[17477]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[31424]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[31424]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 32274, id: 13, time: 2015-03-24T17:16:53.862066Z
+IM-Settings-Daemon[31424]: INFO: Current IM is: IBus
+IM-Settings-Daemon[31424]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[6825]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[6825]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 7413, id: 13, time: 2015-03-24T17:17:15.809695Z
+IM-Settings-Daemon[6825]: INFO: Current IM is: IBus
+IM-Settings-Daemon[6825]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[5204]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[5204]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 5987, id: 13, time: 2015-03-25T04:25:37.895636Z
+IM-Settings-Daemon[5204]: INFO: Current IM is: IBus
+IM-Settings-Daemon[5204]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[32071]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[32071]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 33733, id: 13, time: 2015-03-25T13:15:44.132125Z
+IM-Settings-Daemon[32071]: INFO: Current IM is: IBus
+IM-Settings-Daemon[32071]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[2382]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[2382]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 3592, id: 13, time: 2015-03-28T19:00:09.203637Z
+IM-Settings-Daemon[2382]: INFO: Current IM is: IBus
+IM-Settings-Daemon[2382]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[22409]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[22409]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 23177, id: 13, time: 2015-03-28T19:28:33.295790Z
+IM-Settings-Daemon[22409]: INFO: Current IM is: IBus
+IM-Settings-Daemon[22409]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[17053]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[17053]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 18040, id: 13, time: 2015-03-28T19:57:17.549667Z
+IM-Settings-Daemon[17053]: INFO: Current IM is: IBus
+IM-Settings-Daemon[17053]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[22021]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[22021]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 23095, id: 13, time: 2015-03-28T21:23:11.222087Z
+IM-Settings-Daemon[22021]: INFO: Current IM is: IBus
+IM-Settings-Daemon[22021]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[11277]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[11277]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 11733, id: 13, time: 2015-04-01T13:30:02.471453Z
+IM-Settings-Daemon[11277]: INFO: Current IM is: IBus
+IM-Settings-Daemon[11277]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[8057]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[8057]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 8690, id: 13, time: 2015-04-03T02:42:02.680615Z
+IM-Settings-Daemon[8057]: INFO: Current IM is: IBus
+IM-Settings-Daemon[8057]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[14558]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[14558]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 15253, id: 13, time: 2015-04-04T17:24:01.027659Z
+IM-Settings-Daemon[14558]: INFO: Current IM is: IBus
+IM-Settings-Daemon[14558]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[36129]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[36129]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 36524, id: 13, time: 2015-04-09T01:40:33.995254Z
+IM-Settings-Daemon[36129]: INFO: Current IM is: IBus
+IM-Settings-Daemon[36129]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[37961]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[37961]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 38425, id: 13, time: 2015-04-09T04:46:47.731301Z
+IM-Settings-Daemon[37961]: INFO: Current IM is: IBus
+IM-Settings-Daemon[37961]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[5067]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[5067]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 5632, id: 13, time: 2015-04-16T02:05:31.425251Z
+IM-Settings-Daemon[5067]: INFO: Current IM is: IBus
+IM-Settings-Daemon[5067]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[47264]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[47264]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 47750, id: 13, time: 2015-04-16T23:45:23.504516Z
+IM-Settings-Daemon[47264]: INFO: Current IM is: IBus
+IM-Settings-Daemon[47264]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[11805]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[11805]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 12436, id: 13, time: 2015-04-17T04:17:22.865184Z
+IM-Settings-Daemon[11805]: INFO: Current IM is: IBus
+IM-Settings-Daemon[11805]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[1216]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[1216]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 1822, id: 13, time: 2015-04-20T01:00:29.184441Z
+IM-Settings-Daemon[1216]: INFO: Current IM is: IBus
+IM-Settings-Daemon[1216]: INFO: Stopped Main process for IBus with the status 0: pid 1822
+
+IM-Settings-Daemon[8933]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[8933]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 9649, id: 13, time: 2015-04-20T03:13:19.426398Z
+IM-Settings-Daemon[8933]: INFO: Current IM is: IBus
+IM-Settings-Daemon[8933]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[7617]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[7617]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 8292, id: 13, time: 2015-04-20T08:09:23.195015Z
+IM-Settings-Daemon[7617]: INFO: Current IM is: IBus
+IM-Settings-Daemon[7617]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[25806]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[25806]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 26776, id: 13, time: 2015-04-20T18:33:52.049855Z
+IM-Settings-Daemon[25806]: INFO: Current IM is: IBus
+
+IM-Settings-Daemon[19609]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[19609]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 20782, id: 13, time: 2015-04-20T23:48:09.920466Z
+IM-Settings-Daemon[19609]: INFO: Current IM is: IBus
+IM-Settings-Daemon[19609]: INFO: Stopping Main Input Method process for IBus...
+IM-Settings-Daemon[25806]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[21524]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[21524]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 22120, id: 13, time: 2015-04-21T01:09:46.363593Z
+IM-Settings-Daemon[21524]: INFO: Current IM is: IBus
+IM-Settings-Daemon[21524]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[23987]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[23987]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 24582, id: 13, time: 2015-04-22T13:33:51.185487Z
+IM-Settings-Daemon[23987]: INFO: Current IM is: IBus
+IBus[24582]: 
+IBus[24582]: (ibus-daemon:24582): IBUS-CRITICAL **: ibus_proxy_call: assertion `priv->connection' failed
+IM-Settings-Daemon[23987]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[6002]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[6002]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 6602, id: 13, time: 2015-04-22T13:35:12.156046Z
+IM-Settings-Daemon[6002]: INFO: Current IM is: IBus
+IM-Settings-Daemon[6002]: INFO: Stopping Main Input Method process for IBus...
+
+IM-Settings-Daemon[18067]: WARNING **: Unable to monitor /home/ecegrid/a/ee364c10/.xinputrc: Error stating file '/home/ecegrid/a/ee364c10/.xinputrc': No such file or directory
+IM-Settings-Daemon[18067]: INFO: Started IBus: process: /usr/bin/ibus-daemon -r --xim, lang=en_US.UTF-8, pid: 18724, id: 13, time: 2015-05-11T02:00:42.939227Z
+IM-Settings-Daemon[18067]: INFO: Current IM is: IBus
+IM-Settings-Daemon[18067]: INFO: Stopping Main Input Method process for IBus...

@@ -1,0 +1,51 @@
+# encoding: utf-8
+# module _hashlib
+# from /usr/lib64/python2.6/lib-dynload/_hashlib.so
+# by generator 1.136
+# no doc
+# no imports
+
+# functions
+
+def new(*args, **kwargs): # real signature unknown
+    """
+    Return a new hash object using the named algorithm.
+    An optional string argument may be provided and will be
+    automatically hashed.
+    
+    The MD5 and SHA1 algorithms are always supported.
+    
+    An optional "usedforsecurity=True" keyword argument is provided for use in
+    environments that enforce FIPS-based restrictions.  Some implementations of
+    OpenSSL can be configured to prevent the usage of non-secure algorithms (such
+    as MD5).  If you have a non-security use for these algorithms (e.g. a hash
+    table), you can override this argument by marking the callsite as
+    "usedforsecurity=False".
+    """
+    pass
+
+def openssl_md5(*args, **kwargs): # real signature unknown
+    """ Returns a md5 hash object; optionally initialized with a string """
+    pass
+
+def openssl_sha1(*args, **kwargs): # real signature unknown
+    """ Returns a sha1 hash object; optionally initialized with a string """
+    pass
+
+def openssl_sha224(*args, **kwargs): # real signature unknown
+    """ Returns a sha224 hash object; optionally initialized with a string """
+    pass
+
+def openssl_sha256(*args, **kwargs): # real signature unknown
+    """ Returns a sha256 hash object; optionally initialized with a string """
+    pass
+
+def openssl_sha384(*args, **kwargs): # real signature unknown
+    """ Returns a sha384 hash object; optionally initialized with a string """
+    pass
+
+def openssl_sha512(*args, **kwargs): # real signature unknown
+    """ Returns a sha512 hash object; optionally initialized with a string """
+    pass
+
+# no classes
