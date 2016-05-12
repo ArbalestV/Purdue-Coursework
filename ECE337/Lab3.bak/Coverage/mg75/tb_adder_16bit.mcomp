@@ -1,0 +1,28 @@
+Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+-- Compiling module adder_1bit_15
+-- Compiling module adder_1bit_0
+-- Compiling module adder_1bit_1
+-- Compiling module adder_1bit_2
+-- Compiling module adder_1bit_3
+-- Compiling module adder_1bit_4
+-- Compiling module adder_1bit_5
+-- Compiling module adder_1bit_6
+-- Compiling module adder_1bit_7
+-- Compiling module adder_1bit_8
+-- Compiling module adder_1bit_9
+-- Compiling module adder_1bit_10
+-- Compiling module adder_1bit_11
+-- Compiling module adder_1bit_12
+-- Compiling module adder_1bit_13
+-- Compiling module adder_1bit_14
+-- Compiling module adder_16bit
+
+Top level modules:
+	adder_16bit
+Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+-- Compiling module tb_adder_16bit
+** Warning: source/tb_adder_16bit.sv(325): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: source/tb_adder_16bit.sv(385): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	tb_adder_16bit

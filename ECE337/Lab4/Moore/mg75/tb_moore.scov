@@ -1,0 +1,28 @@
+Coverage Report Summary Data by instance
+
+Total Coverage By Instance (filtered view): 67.8%
+
+Instance: /tb_moore/DUT
+Design Unit: work.moore
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       14        14         0     100.0
+    Branches                    19        19         0     100.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       5         5         0     100.0
+    Transitions                 11        11         0     100.0
+    Toggle Bins                 12        10         2      83.3
+
+Instance: /tb_moore
+Design Unit: work.tb_moore
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                      183       171        12      93.4
+    Branches                    24        12        12      50.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+    Toggle Bins                484        16       468       3.3
+

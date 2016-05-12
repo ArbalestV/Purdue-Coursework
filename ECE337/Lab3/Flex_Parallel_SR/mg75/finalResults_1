@@ -1,0 +1,53 @@
+
+
+
+
+Flex_Pts_Sr Results:
+Source Results:
+Total Score: 2.57/4.00
+Score breakdown by test case:
+ Results for basic test cases:
+  Test case 1: 0.2857/0.2857
+  Test case 2: 0.2857/0.2857
+  Test case 3: 0.2857/0.2857
+  Test case 4: 0.2857/0.2857
+  Test case 5: 0.0000/0.2857
+   Scaled Size Test FAILED
+  Test case 6: 0.0000/0.2857
+   Scaled Size Test FAILED
+  Test case 7: 0.0000/0.2857
+   Scaled Size Test FAILED
+  Test case 8: 0.2857/0.2857
+  Test case 9: 0.2857/0.2857
+  Test case 10: 0.2857/0.2857
+  Test case 11: 0.2857/0.2857
+  Test case 12: 0.0000/0.2857
+   LSB Test FAILED
+  Test case 13: 0.2857/0.2857
+  Test case 14: 0.0000/0.2857
+   LSB Test FAILED
+
+Mapped Results:
+Total Score: 2.57/4.00
+Score breakdown by test case:
+ Results for basic test cases:
+  Test case 1: 0.2857/0.2857
+  Test case 2: 0.2857/0.2857
+  Test case 3: 0.2857/0.2857
+  Test case 4: 0.2857/0.2857
+  Test case 5: 0.0000/0.2857
+   Scaled Size Test FAILED
+  Test case 6: 0.0000/0.2857
+   Scaled Size Test FAILED
+  Test case 7: 0.0000/0.2857
+   Scaled Size Test FAILED
+  Test case 8: 0.2857/0.2857
+  Test case 9: 0.2857/0.2857
+  Test case 10: 0.2857/0.2857
+  Test case 11: 0.2857/0.2857
+  Test case 12: 0.0000/0.2857
+   LSB Test FAILED
+  Test case 13: 0.2857/0.2857
+  Test case 14: 0.0000/0.2857
+   LSB Test FAILED
+

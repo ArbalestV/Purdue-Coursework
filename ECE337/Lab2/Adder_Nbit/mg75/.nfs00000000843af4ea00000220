@@ -1,0 +1,97 @@
+# //  ModelSim SE-64 10.1b Apr 26 2012 Linux 2.6.32-431.23.3.el6.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+vlog source/adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module adder_8bit
+# ** Error: source/adder_8bit.sv(17): near "endmodule": syntax error, unexpected endmodule, expecting ';' or ','
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog source/adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module adder_8bit
+# 
+# Top level modules:
+# 	adder_8bit
+vlog source/tb_adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module tb_adder_8bit
+# ** Error: source/tb_adder_8bit.sv(72): (vlog-2884) Out of bounds access.  Bit number 7 of part-select into 'tb_sum' is out of bounds.
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog source/tb_adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module tb_adder_8bit
+# ** Error: source/tb_adder_8bit.sv(43): Bit-select into 'tb_a' is out of bounds.
+# ** Error: source/tb_adder_8bit.sv(44): Bit-select into 'tb_a' is out of bounds.
+# ** Error: source/tb_adder_8bit.sv(45): Bit-select into 'tb_a' is out of bounds.
+# ** Error: source/tb_adder_8bit.sv(46): Bit-select into 'tb_a' is out of bounds.
+# ** Error: source/tb_adder_8bit.sv(51): Bit-select into 'tb_b' is out of bounds.
+# ** Error: source/tb_adder_8bit.sv(52): Bit-select into 'tb_b' is out of bounds.
+# ** Error: source/tb_adder_8bit.sv(53): Bit-select into 'tb_b' is out of bounds.
+# ** Error: source/tb_adder_8bit.sv(54): Bit-select into 'tb_b' is out of bounds.
+# ** Error: source/tb_adder_8bit.sv(80): (vlog-2884) Out of bounds access.  Bit number 7 of part-select into 'tb_sum' is out of bounds.
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog source/tb_adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module tb_adder_8bit
+# 
+# Top level modules:
+# 	tb_adder_8bit
+vlog source/adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module adder_8bit
+# 
+# Top level modules:
+# 	adder_8bit
+vlog source/adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module adder_8bit
+# ** Error: source/adder_8bit.sv(16): near "A": syntax error, unexpected IDENTIFIER, expecting ';' or ','
+# /package/eda/mg/modeltech_10.1b/modeltech/linux_x86_64/vlog failed.
+vlog source/adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module adder_8bit
+# 
+# Top level modules:
+# 	adder_8bit
+vlog source/tb_adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module tb_adder_8bit
+# 
+# Top level modules:
+# 	tb_adder_8bit
+vlog source/adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module adder_8bit
+# 
+# Top level modules:
+# 	adder_8bit
+vlog source/adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module adder_8bit
+# 
+# Top level modules:
+# 	adder_8bit
+vlog source/tb_adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module tb_adder_8bit
+# 
+# Top level modules:
+# 	tb_adder_8bit
+vlog source/adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module adder_8bit
+# 
+# Top level modules:
+# 	adder_8bit
+vlog source/tb_adder_8bit.sv
+# Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+# -- Compiling module tb_adder_8bit
+# 
+# Top level modules:
+# 	tb_adder_8bit

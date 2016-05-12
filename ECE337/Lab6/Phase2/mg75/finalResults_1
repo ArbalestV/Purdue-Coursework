@@ -1,0 +1,67 @@
+
+
+
+Source Results:
+Total Score: 71.40/72.00
+Score breakdown by test case:
+ Results for basic test cases:
+  Test case 1: 2.000/2.000
+  Test case 2: 3.000/3.000
+  Test case 3: 20.000/20.000
+  Test case 4: 11.000/11.000
+ Results for error test cases:
+  Test case 1: 6.000/6.000
+  Test case 2: 3.000/3.000
+  Test case 3: 6.000/6.000
+  Test case 4: 3.000/3.000
+  Test case 5: 6.000/6.000
+  Test case 6: 3.000/3.000
+ Results for tolerance/corner cases:
+  Test case 1: 2.000/2.000
+  Test case 2: 2.000/2.000
+  Test case 3: 1.400/2.000
+   DUT was listening to the master during the start byte for transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Correct DUT ACK value found for transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Correct value sent for data byte 1 in transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   DUT was listening to the master during the ACK phase for data byte 1 in transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Correct value sent for data byte 2 in transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   DUT was listening to the master during the ACK phase for data byte 2 in transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   DUT was listening to the master during the start byte for transmission 2 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Incorrect DUT ACK value found for transmission 2 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Incorrect value sent for data byte 1 in transmission 2 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   DUT was listening to the master during the ACK phase for data byte 1 in transmission 2 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+  Test case 4: 1.000/1.000
+  Test case 5: 2.000/2.000
+
+Mapped Results:
+Total Score: 71.40/72.00
+Score breakdown by test case:
+ Results for basic test cases:
+  Test case 1: 2.000/2.000
+  Test case 2: 3.000/3.000
+  Test case 3: 20.000/20.000
+  Test case 4: 11.000/11.000
+ Results for error test cases:
+  Test case 1: 6.000/6.000
+  Test case 2: 3.000/3.000
+  Test case 3: 6.000/6.000
+  Test case 4: 3.000/3.000
+  Test case 5: 6.000/6.000
+  Test case 6: 3.000/3.000
+ Results for tolerance/corner cases:
+  Test case 1: 2.000/2.000
+  Test case 2: 2.000/2.000
+  Test case 3: 1.400/2.000
+   DUT was listening to the master during the start byte for transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Correct DUT ACK value found for transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Correct value sent for data byte 1 in transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   DUT was listening to the master during the ACK phase for data byte 1 in transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Correct value sent for data byte 2 in transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   DUT was listening to the master during the ACK phase for data byte 2 in transmission 1 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   DUT was listening to the master during the start byte for transmission 2 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Incorrect DUT ACK value found for transmission 2 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   Incorrect value sent for data byte 1 in transmission 2 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+   DUT was listening to the master during the ACK phase for data byte 1 in transmission 2 in test case with Repeat START between Mulity-Byte Master Read and Single-Byte Master Read
+  Test case 4: 1.000/1.000
+  Test case 5: 2.000/2.000
+

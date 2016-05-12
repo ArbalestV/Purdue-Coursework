@@ -1,0 +1,28 @@
+Coverage Report Summary Data by instance
+
+Total Coverage By Instance (filtered view): 67.4%
+
+Instance: /tb_mealy/DUT
+Design Unit: work.mealy
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       13        13         0     100.0
+    Branches                    18        18         0     100.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       4         4         0     100.0
+    Transitions                  9         9         0     100.0
+    Toggle Bins                 10         8         2      80.0
+
+Instance: /tb_mealy
+Design Unit: work.tb_mealy
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                      167       155        12      92.8
+    Branches                    24        12        12      50.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+    Toggle Bins                484        16       468       3.3
+

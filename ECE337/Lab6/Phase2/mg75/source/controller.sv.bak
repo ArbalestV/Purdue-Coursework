@@ -1,0 +1,158 @@
+module controller
+  (
+    input wire clk,
+    input wire n_rst,
+    input wire stop_found,
+    input wire start_found,
+    input wire byte_received,
+    input wire ack_prep,
+    input wire check_ack,
+    input wire ack_done,
+    input wire rw_mode,
+    input wire address_match,
+    input wire sda_in,
+    output reg rx_enable,
+    output reg tx_enable,
+    output reg read_enable,
+    output reg [1:0] sda_mode,
+    output reg load_data
+    );
+    typedef enum logic [3:0] {IDLE, ADDRESS_RCV, ADDRESS_CHK, PREP_ACK_STATE, NACK, CHK_ACK_STATE, READ_STATE, TFR_DATA, TFR_OVER, MASTER_ACK, CHANGE_RDEN, MASTER_NACK} state_type;
+    state_type state, nextstate;
+    
+    always@(posedge clk, negedge n_rst)
+    begin
+      if (n_rst == 0) 
+      begin
+        state <= IDLE;
+      end
+      else begin
+        state <= nextstate;
+      end
+    end
+    
+    always @ (state) 
+    begin
+      rx_enable = 1'b0;
+      tx_enable = 1'b0;
+      read_enable = 1'b0;
+      sda_mode = 2'b00;
+      load_data = 1'b0;
+    case (state)
+      IDLE: begin
+      end
+      ADDRESS_RCV: begin
+        rx_enable = 1'b1;
+      end
+      ADDRESS_CHK: begin
+        rx_enable = 1'b0;
+      end
+      NACK: begin
+        sda_mode = 2'b10;
+      end
+      PREP_ACK_STATE: begin
+      end
+      CHK_ACK_STATE: begin
+        sda_mode = 2'b01;
+      end
+      READ_STATE: begin
+        load_data = 1'b1;
+      end
+      TFR_DATA: begin
+        sda_mode = 2'b11;
+        tx_enable = 1'b1;
+      end
+      TFR_OVER: begin
+      end
+      MASTER_ACK: begin
+        read_enable = 1'b1;
+      end
+      CHANGE_RDEN: begin
+        read_enable = 1'b0;
+      end
+      MASTER_NACK: begin
+      end
+    endcase
+  end
+  
+  always @ (state, stop_found, start_found, byte_received, ack_prep, check_ack, ack_done, rw_mode, address_match, sda_in) begin : Next_state
+    nextstate = IDLE;
+    case (state)
+      IDLE: begin
+        if(start_found == 1'b1)
+          nextstate = ADDRESS_RCV;
+        else
+          nextstate = IDLE;
+      end
+      ADDRESS_RCV: begin
+        if(byte_received == 1'b1)
+          nextstate = ADDRESS_CHK;
+        else
+          nextstate = ADDRESS_RCV;
+      end
+      ADDRESS_CHK: begin
+        if(rw_mode == 1 && address_match == 1)
+          nextstate = PREP_ACK_STATE;
+        else 
+          nextstate = NACK;
+      end
+      NACK: begin
+        if (ack_done == 1)
+          nextstate = IDLE;
+        else 
+          nextstate = NACK;
+      end
+      PREP_ACK_STATE: begin
+        if (ack_prep == 1)
+          nextstate = CHK_ACK_STATE;
+        else
+          nextstate = PREP_ACK_STATE;
+      end
+      CHK_ACK_STATE: begin
+        if (ack_done == 0)
+          nextstate = CHK_ACK_STATE;
+        else
+          nextstate = READ_STATE;
+      end
+      READ_STATE: begin
+        nextstate = TFR_DATA;
+      end
+      TFR_DATA: begin
+        if (ack_prep == 0) 
+          nextstate = TFR_DATA;
+        else
+          nextstate = TFR_OVER;
+      end   
+      TFR_OVER: begin
+        if (check_ack == 1 && sda_in == 1)
+          nextstate = MASTER_NACK;
+        else if (check_ack == 1 && sda_in == 0)
+          nextstate = MASTER_ACK;
+        else
+            nextstate = TFR_OVER;
+      end
+      MASTER_ACK: begin
+        if (ack_done == 0)
+          nextstate = CHANGE_RDEN;
+        else
+          nextstate = MASTER_ACK;
+      end
+      CHANGE_RDEN: begin
+        if (ack_done == 1)
+          nextstate = READ_STATE;
+        else
+          nextstate = CHANGE_RDEN;
+      end
+      MASTER_NACK: begin
+        if (ack_done == 1 && stop_found == 1)
+          nextstate = IDLE;
+        else if (ack_done == 1 && start_found == 1)
+          nextstate = ADDRESS_RCV;
+        else
+          nextstate = MASTER_NACK;
+        end
+      endcase
+    end
+    
+  endmodule
+      

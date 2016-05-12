@@ -1,0 +1,12 @@
+Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+-- Compiling module adder_8bit
+-- Compiling module adder_1bit
+-- Compiling module adder_nbit
+
+Top level modules:
+	adder_8bit
+Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+-- Compiling module tb_adder_8bit
+
+Top level modules:
+	tb_adder_8bit

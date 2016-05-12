@@ -1,0 +1,50 @@
+
+
+
+Source Results:
+Total Score: 30.00/30.00
+Score breakdown by test case:
+ Results for basic test cases:
+  Test case 1: 1.000/1.000
+  Test case 2: 1.000/1.000
+  Test case 3: 1.000/1.000
+  Test case 4: 2.000/2.000
+  Test case 5: 3.000/3.000
+  Test case 6: 4.000/4.000
+  Test case 7: 3.000/3.000
+ Results for error test cases:
+  Test case 1: 3.000/3.000
+  Test case 2: 2.000/2.000
+  Test case 3: 1.000/1.000
+  Test case 4: 2.000/2.000
+  Test case 5: 1.000/1.000
+ Results for tolerance/corner cases:
+  Test case 1: 1.000/1.000
+  Test case 2: 2.000/2.000
+  Test case 3: 1.000/1.000
+  Test case 4: 2.000/2.000
+
+Mapped Results:
+Total Score: 28.00/30.00
+Score breakdown by test case:
+ Results for basic test cases:
+  Test case 1: 1.000/1.000
+  Test case 2: 1.000/1.000
+  Test case 3: 1.000/1.000
+  Test case 4: 2.000/2.000
+  Test case 5: 3.000/3.000
+  Test case 6: 4.000/4.000
+  Test case 7: 3.000/3.000
+ Results for error test cases:
+  Test case 1: 3.000/3.000
+  Test case 2: 2.000/2.000
+  Test case 3: 1.000/1.000
+  Test case 4: 2.000/2.000
+  Test case 5: 1.000/1.000
+ Results for tolerance/corner cases:
+  Test case 1: 1.000/1.000
+  Test case 2: 0.000/2.000
+   Modwait glitched while DUT should have been active during glitch-free modwait test
+  Test case 3: 1.000/1.000
+  Test case 4: 2.000/2.000
+

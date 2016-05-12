@@ -1,0 +1,28 @@
+Coverage Report Summary Data by instance
+
+Total Coverage By Instance (filtered view): 87.0%
+
+Instance: /tb_scl_edge/DUT
+Design Unit: work.scl_edge
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                        9         9         0     100.0
+    Branches                     2         2         0     100.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+    Toggle Bins                 10        10         0     100.0
+
+Instance: /tb_scl_edge
+Design Unit: work.tb_scl_edge
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       27        25         2      92.5
+    Branches                     4         2         2      50.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+    Toggle Bins                 10        10         0     100.0
+

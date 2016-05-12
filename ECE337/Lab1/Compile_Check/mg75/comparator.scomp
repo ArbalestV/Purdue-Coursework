@@ -1,0 +1,7 @@
+Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+-- Compiling module comparator
+** Warning: source/comparator.sv(46): (vlog-2283) Extra semicolon in $unit (global) scope.
+** Warning: source/comparator.sv(46): (vlog-2284) Empty $unit scope found.
+
+Top level modules:
+	comparator

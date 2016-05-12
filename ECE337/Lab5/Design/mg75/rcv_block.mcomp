@@ -1,0 +1,20 @@
+Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+-- Compiling module start_bit_det
+-- Compiling module rcu
+-- Compiling module flex_counter_1
+-- Compiling module flex_counter_0
+-- Compiling module timer
+-- Compiling module flex_stp_sr_NUM_BITS9_SHIFT_MSB0
+-- Compiling module sr_9bit
+-- Compiling module stop_bit_chk
+-- Compiling module rx_data_buff
+-- Compiling module rcv_block
+
+Top level modules:
+	rcv_block
+Model Technology ModelSim SE-64 vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_rcv_block
+-- Compiling architecture TEST of tb_rcv_block

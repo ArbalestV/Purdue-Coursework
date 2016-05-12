@@ -1,0 +1,96 @@
+module rcu
+  (
+    input wire clk,
+    input wire n_rst,
+    input wire start_bit_detected,
+    input wire packet_done,
+    input wire framing_error,
+    output reg sbc_clear,
+    output reg sbc_enable,
+    output reg load_buffer,
+    output reg enable_timer
+    );
+  typedef enum logic [2:0] {IDLE, LOAD, PACKET_OVER, STOP_BIT_CHECKER, BUFFER_WRITE} state_type;
+  state_type state, nextstate;
+  
+  always_ff @ (posedge clk, negedge n_rst)
+  begin
+    if (n_rst == 0) 
+    begin
+      state <= IDLE;
+    end
+    else begin
+      state <= nextstate;
+    end
+  end
+  
+  always @ (state) //combinational block for outputs
+  begin
+    sbc_clear = 1'b0;
+    sbc_enable = 1'b0;
+    load_buffer = 1'b0;
+    enable_timer = 1'b0;
+    case (state)
+      IDLE: begin
+        sbc_clear = 1'b0;
+        sbc_enable = 1'b0;
+        load_buffer = 1'b0;
+        enable_timer = 1'b0;
+      end
+      LOAD: begin
+        sbc_clear = 1'b1;
+        sbc_enable = 1'b0;
+        load_buffer = 1'b0;
+        enable_timer = 1'b1;
+      end
+      PACKET_OVER: begin
+        sbc_clear = 1'b0;
+        sbc_enable = 1'b1;
+        load_buffer = 1'b0;
+        enable_timer = 1'b0;
+      end
+      STOP_BIT_CHECKER: begin
+        sbc_clear = 1'b0;
+        sbc_enable = 1'b0;
+        load_buffer = 1'b0;
+        enable_timer = 1'b0;
+      end
+      BUFFER_WRITE: begin
+        sbc_clear = 1'b0;
+        sbc_enable = 1'b0;
+        load_buffer = 1'b1;
+        enable_timer = 1'b0;
+      end
+    endcase
+  end
+  
+  always @ (state, start_bit_detected, packet_done, framing_error) begin : Next_State 
+    nextstate = IDLE;
+    case (state)
+      IDLE: begin
+        if (start_bit_detected == 0)
+          nextstate = IDLE;
+        else
+          nextstate = LOAD;
+        end
+      LOAD: begin
+        if (packet_done == 0)
+          nextstate = LOAD;
+        else
+          nextstate = PACKET_OVER;
+        end
+      PACKET_OVER: begin
+        nextstate = STOP_BIT_CHECKER;
+        end
+      STOP_BIT_CHECKER: begin
+        if (framing_error == 1)
+          nextstate = IDLE;
+        else
+          nextstate = BUFFER_WRITE;
+        end
+      BUFFER_WRITE: begin
+        nextstate = IDLE;
+        end
+      endcase
+    end
+  endmodule

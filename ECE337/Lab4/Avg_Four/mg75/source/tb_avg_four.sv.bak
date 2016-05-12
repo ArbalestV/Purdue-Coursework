@@ -1,0 +1,101 @@
+`timescale 1ns / 10ps
+module tb_avg_four();
+  reg tb_clk;
+  reg tb_n_reset;
+  reg [15:0] tb_sample_data;
+  reg tb_data_ready;
+  reg tb_one_k_samples;
+  reg tb_modwait;
+  reg [15:0] tb_avg_out;
+  reg err;
+  avg_four DUT (
+    .clk(tb_clk),
+    .n_reset(tb_n_reset),
+    .sample_data(tb_sample_data),
+    .data_ready(tb_data_ready),
+    .one_k_samples(tb_one_k_samples),
+    .modwait(tb_modwait),
+    .avg_out(tb_avg_out),
+    .err(tb_err)
+    );
+    
+    // basic test bench parameters
+
+	localparam	CLK_PERIOD	= 2.5; //clock period in ns
+	localparam	CHECK_DELAY = 1; //delay in ns
+	integer g; 
+	 // Clock generation block
+	always
+	begin
+		tb_clk = 1'b0;
+		#(CLK_PERIOD/2.0);
+		tb_clk = 1'b1;
+		#(CLK_PERIOD/2.0);
+	end
+  
+  initial begin 
+  @(negedge tb_clk);
+	tb_n_reset = 1'b0;//resetting the outputs to 0
+	#(1);
+	tb_n_reset = 1'b1;
+	for(p = 0; p < 4; p = p + 1)
+			begin		
+				tb_sample_data	= 1111010111110101;
+				tb_data_ready			= 1'b1;
+				
+				// Wait for DUT to start working on it
+				fork
+				begin : TIMEOUT_1
+					#(5 * CLK_PERIOD);
+					disable WAIT_MODWAIT_1;
+				end
+				
+				begin : WAIT_MODWAIT_1
+					@(posedge tb_modwait);
+					disable TIMEOUT_1;
+				end
+				join
+				
+				// Deactivate the data ready after waiting for the load state to finish
+				#(2 * CLK_PERIOD);
+				tb_data_ready = 1'b0;
+				
+				// Wait for processing to finish
+				fork
+				begin : TIMEOUT_2
+					#(PROCESSING_PERIOD);
+					disable WAIT_MODWAIT_2;
+				end
+				
+				begin : WAIT_MODWAIT_2
+					@(negedge tb_modwait);
+					end
+				join
+				
+				// Get away from a clock edge
+				#(CLK_PERIOD * 0.7);
+				
+				// Add some spacing between samples
+				#(5 * CLK_PERIOD);
+
+				// Done filtering each color portion of the pixel -> store full pixel to the file (LSB Format)
+				$fwrite(res_file, "%c", res_pixel_val[0]);
+				$fwrite(res_file, "%c", res_pixel_val[1]);
+				$fwrite(res_file, "%c", res_pixel_val[2]);
+			end
+			// Finished a row of pixels
+			// Skip past any padding bytes in the input file (get to the next row)
+			$fseek(in_file, num_pad_bytes, `SEEK_CUR);
+			// Add padding bytes to result file (advance it to the next row)
+			$fseek(res_file, num_pad_bytes, `SEEK_CUR);
+			// Ready to start working on the next row of pixels
+		end
+		// Done with pixel array section
+		// Done with input file
+		$fclose(in_file);
+		// Create end of file marker
+		$fwrite(res_file, "%c", 8'd0);
+		// Done with result file
+		$fclose(res_file);
+		$display("Done generating filtered file '%s' from input file '%s'", RESULT_FILENAME, INPUT_FILENAME);
+	end

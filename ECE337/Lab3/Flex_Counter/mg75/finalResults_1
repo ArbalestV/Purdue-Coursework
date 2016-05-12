@@ -1,0 +1,27 @@
+
+
+
+
+Tb_Flex_Counter Results:
+Source Results:
+Total Score: 0.81/2.00
+
+Mapped Results:
+Total Score: 1.55/2.00
+
+
+Flex_Counter Results:
+Source Results:
+Total Score: 3.67/4.00
+Score breakdown by test case:
+ Results for all test cases not completelly satisfied:
+  Test case 6: 0.000000/0.333333
+   Default Size Proper Rollover Control Test FAILED
+
+Mapped Results:
+Total Score: 3.67/4.00
+Score breakdown by test case:
+ Results for all test cases not completelly satisfied:
+  Test case 6: 0.000000/0.333333
+   Default Size Proper Rollover Control Test FAILED
+

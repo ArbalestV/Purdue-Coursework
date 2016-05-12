@@ -1,0 +1,15 @@
+My partner for this lab was Everett Berry, with who I had collaborated on the RTL timer homework and who will be one of my team members for the semester project.
+
+1. Rating Everett and myself
+Criterion 1: Everett - 5, myself - 5
+Criterion 2: Everett - 5, myself - 5
+Criterion 3: Everett - 5, myself - 5
+Criterion 4: Everett - 5, myself - 5
+
+2. Everett and I started work on this lab on Monday, and we began off by having a finished code for the Moore and Mealy designs of the first part of the lab. After we proceeded to the design, we individually made sure we understood what the design asked of us, and had come up with our transition diagrams for the states. After agreeing on the diagrams, we proceeded to write the code for the controller based on the FSM diagram. The code part we worked on ourselves although we were constantly helping each other for any doubts. We used to concult on the structure of things such as the output block, the sensitivity list, the variables that some states did or didn't depend on, etc. Finally we got our design to work. We focused solely on making sure the image filter is done properly, so we didn't exactly make our own test bench for the design. But we pretty much worked on our own code with frequent help from one another when they ran into an error condition or latch. Everett was very much more confident about the syntax of the code than I was, so it was helpful working with him. For eg: he would know exactly when to use reg and wire, and so on, whereas I would not be too confident sometimes.
+
+3. Everett and I met everyday from Monday to Wednesday to work on the design. Also, when we would work from our homes, we would stay in constant touch just to confirm any doubts we might have.
+
+4. Personally, I contributed just as much to the team effort as Everett like mentioned in response #2. We didn't have any clear division in the sense that he was responsible for one part of the design, me the other and so on. We would agree on a high level design first, then go on to code it. Obviously, during the code, we would help each other to fix any bugs or latch conditions and so forth. I am in a research project with him too, so this design was just another way we worked together by helping each other out. 
+
+5. One thing that I have learned from Everett over the various collaborations so far is the amount of confidence one ought to have. He doesn't second guess himself, he has that basic condfidence in himself. He is not afraid to go out there, write the code and then deal with the errors. Whereas I have always thought of the consequences before coding. Also, he has facilitated the understanding of reg and wire better. Similarly, I think I may have clarified some his doubts regarding blocking and non-blocking assignments that he had coming into this assignment.

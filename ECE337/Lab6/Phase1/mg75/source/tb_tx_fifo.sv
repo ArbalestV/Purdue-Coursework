@@ -1,0 +1,104 @@
+`timescale 1ns / 10ps
+module tb_tx_fifo();
+  reg clk;
+  reg n_rst;
+  reg read_enable;
+  reg [7:0] read_data;
+  reg fifo_empty;
+  reg fifo_full;
+  reg write_enable;
+  reg [7:0] write_data;
+  localparam	CLK_PERIOD	= 10;
+  reg [7:0] val;
+  tx_fifo DUT
+  (
+    .clk(clk),
+    .n_rst(n_rst),
+    .read_enable(read_enable),
+    .read_data(read_data),
+    .fifo_empty(fifo_empty),
+    .fifo_full(fifo_full),
+    .write_enable(write_enable),
+    .write_data(write_data)
+    );
+  // System Clock generation block
+	always
+	begin
+		clk = 1'b0;
+		#(CLK_PERIOD/2.0);
+		clk = 1'b1;
+		#(CLK_PERIOD/2.0);
+	end
+	initial begin
+	 // @(negedge tb_clk);
+	  n_rst = 1'b1;
+	  #(CLK_PERIOD/8.0);
+	  n_rst = 1'b0;//being reset
+	  #(CLK_PERIOD/8.0);
+	  n_rst = 1'b1;//now reset if off
+	  val = 0;
+	  write_data = 8'b00000001;
+	  write_enable = 1'b1;
+	  @(posedge clk);
+	  $display("Pushing.");
+	  write_enable = 1'b0;
+	  @(posedge clk);
+	  read_enable = 1'b1;
+	  @(posedge clk);
+	  $display("Popping.");
+	  read_enable = 1'b0;
+	  
+	  write_data = 8'b11111110;
+	  write_enable = 1'b1;
+	  @(posedge clk);
+	  $display("Pushing.");
+	  write_enable = 1'b0;
+	  @(posedge clk);
+	  read_enable = 1'b1;
+	  @(posedge clk);
+	  $display("Popping.");
+	  read_enable = 1'b0;
+	  
+	  write_data = 8'b10101010;
+	  write_enable = 1'b1;
+	  @(posedge clk);
+	  $display("Pushing.");
+	  write_enable = 1'b0;
+	  @(posedge clk);
+	  read_enable = 1'b1;
+	  @(posedge clk);
+	  $display("Popping.");
+	  read_enable = 1'b0;
+	  
+	  write_data = 8'b01010101;
+	  write_enable = 1'b1;
+	  @(posedge clk);
+	  $display("Pushing.");
+	  write_enable = 1'b0;
+	  @(posedge clk);
+	  read_enable = 1'b1;
+	  @(posedge clk);
+	  $display("Popping.");
+	  read_enable = 1'b0;
+	  
+	  while(!fifo_full)
+	  begin
+	    write_data = val;
+	    write_enable = 1'b1;
+	    @(posedge clk);
+	    $display("Pushing.");
+	    write_enable = 1'b0;
+	    @(posedge clk);
+	    val = val + 1;
+	   end
+	  while(!fifo_empty)
+	  begin
+	    read_enable = 1'b1;
+	    @(posedge clk);
+	    $display("Popping.");
+	    read_enable = 1'b0;
+	    @(posedge clk);
+	  end
+	  end 
+	endmodule
+	

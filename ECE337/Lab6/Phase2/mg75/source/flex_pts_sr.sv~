@@ -1,0 +1,54 @@
+// $Id: $
+// File name:   flex_pts_sr.sv
+// Created:     9/14/2014
+// Author:      Shubham Agrawal
+// Lab Section: 337-03
+// Version:     1.0  Initial Design Entry
+// Description: N-bit Parallel-to-Serial Shift Register
+
+module flex_pts_sr
+#(
+  parameter NUM_BITS = 4,
+  parameter SHIFT_MSB = 1
+)
+(
+  input wire clk, n_rst, shift_enable, load_enable,
+  input wire [NUM_BITS - 1:0] parallel_in,
+  output wire serial_out
+);
+  
+  wire [NUM_BITS - 1:0] rev_parallel_in, ins;
+  reg [NUM_BITS - 1:0] outs;
+  genvar i, ii;
+  
+  assign ins = SHIFT_MSB ? parallel_in : rev_parallel_in;
+  assign serial_out = outs[NUM_BITS - 1];
+  
+  generate
+    for (i = 0; i < NUM_BITS; i += 1) begin
+      assign rev_parallel_in[(NUM_BITS - 1) - i] = parallel_in[i];
+    end
+  endgenerate
+  
+  always @ (posedge clk, negedge n_rst) begin
+    if (n_rst == 0) outs[0] <= 1;
+    else begin
+      if (load_enable) outs[0] <= ins[0];
+      else if (shift_enable) outs[0] <= 0;
+      else outs[0] <= outs[0];
+    end
+  end
+  
+  generate
+    for (ii = 1; ii < NUM_BITS; ii += 1) begin
+      always @ (posedge clk, negedge n_rst) begin
+        if (n_rst == 0) outs[ii] <= 1;
+        else begin
+          if (load_enable) outs[ii] <= ins[ii];
+	  else if (shift_enable) outs[ii] <= outs[ii - 1];
+          else outs[ii] <= outs[ii];
+        end
+      end
+    end
+  endgenerate
+endmodule

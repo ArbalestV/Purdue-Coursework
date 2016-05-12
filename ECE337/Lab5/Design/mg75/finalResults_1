@@ -1,0 +1,81 @@
+
+
+
+Source Results:
+Total Score: 59.74/60.00
+Score breakdown by test case:
+ Results for basic test cases:
+  Test case 1: 1.000/1.000
+  Test case 2: 18.000/18.000
+  Test case 3: 8.000/8.000
+  Test case 4: 3.000/3.000
+ Results for error test cases:
+  Test case 1: 6.000/6.000
+  Test case 2: 2.000/2.000
+  Test case 3: 3.000/3.000
+  Test case 4: 2.000/2.000
+  Test case 5: 2.000/2.000
+  Test case 6: 1.000/1.000
+  Test case 7: 1.000/1.000
+  Test case 8: 1.000/1.000
+ Results for tolerance/corner cases:
+  Test case 1: 4.000/4.000
+  Test case 2: 2.000/2.000
+  Test case 3: 4.000/4.000
+  Test case 4: 1.740/2.000
+   Correct framing_error value found for packet 1 in test case with multiple slow packets
+   Correct data_ready value found for packet 1 of test case with multiple slow packets
+   Correct rx_data value found for packet 1 of test case with multiple slow packets
+   Correct overrun_error value found for packet 1 of test case with multiple slow packets
+   Correct framing_error value found for packet 2 in test case with multiple slow packets
+   Correct data_ready value found for packet 2 of test case with multiple slow packets
+   Correct rx_data value found for packet 2 of test case with multiple slow packets
+   Correct overrun_error value found for packet 2 of test case with multiple slow packets
+   Correct framing_error value found for packet 3 in test case with multiple slow packets
+   Correct data_ready value found for packet 3 of test case with multiple slow packets
+   Correct rx_data value found for packet 3 of test case with multiple slow packets
+   Correct overrun_error value found for packet 3 of test case with multiple slow packets
+   Correct framing_error value found for packet 4 in test case with multiple slow packets
+   Correct data_ready value found for packet 4 of test case with multiple slow packets
+   Incorrect rx_data value found for packet 4 of test case with multiple slow packets
+   Correct overrun_error value found for packet 4 of test case with multiple slow packets
+
+Mapped Results:
+Total Score: 59.74/60.00
+Score breakdown by test case:
+ Results for basic test cases:
+  Test case 1: 1.000/1.000
+  Test case 2: 18.000/18.000
+  Test case 3: 8.000/8.000
+  Test case 4: 3.000/3.000
+ Results for error test cases:
+  Test case 1: 6.000/6.000
+  Test case 2: 2.000/2.000
+  Test case 3: 3.000/3.000
+  Test case 4: 2.000/2.000
+  Test case 5: 2.000/2.000
+  Test case 6: 1.000/1.000
+  Test case 7: 1.000/1.000
+  Test case 8: 1.000/1.000
+ Results for tolerance/corner cases:
+  Test case 1: 4.000/4.000
+  Test case 2: 2.000/2.000
+  Test case 3: 4.000/4.000
+  Test case 4: 1.740/2.000
+   Correct framing_error value found for packet 1 in test case with multiple slow packets
+   Correct data_ready value found for packet 1 of test case with multiple slow packets
+   Correct rx_data value found for packet 1 of test case with multiple slow packets
+   Correct overrun_error value found for packet 1 of test case with multiple slow packets
+   Correct framing_error value found for packet 2 in test case with multiple slow packets
+   Correct data_ready value found for packet 2 of test case with multiple slow packets
+   Correct rx_data value found for packet 2 of test case with multiple slow packets
+   Correct overrun_error value found for packet 2 of test case with multiple slow packets
+   Correct framing_error value found for packet 3 in test case with multiple slow packets
+   Correct data_ready value found for packet 3 of test case with multiple slow packets
+   Correct rx_data value found for packet 3 of test case with multiple slow packets
+   Correct overrun_error value found for packet 3 of test case with multiple slow packets
+   Correct framing_error value found for packet 4 in test case with multiple slow packets
+   Correct data_ready value found for packet 4 of test case with multiple slow packets
+   Incorrect rx_data value found for packet 4 of test case with multiple slow packets
+   Correct overrun_error value found for packet 4 of test case with multiple slow packets
+

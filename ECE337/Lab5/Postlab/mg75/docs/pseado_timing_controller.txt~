@@ -1,0 +1,8 @@
+pseudo code for the timing controller of the Receiver block
+if (enable_timer == 0)
+	do nothing; packet_done = 0, shift_strobe = 0
+else //now shifting will occur
+	flex_counter(.clk(clk),.n_rst(n_rst),.count_enable(1),.clear(0),.rollover_val(10),.rollover_flag(shift_strobe)); //wait until 5 clock cycles
+	flex_Counter(.clk(clk), .n_rst(n_rst), .count_enable(shift_strobe), .clear(~packet_done), .rollover_val(9), .rollover_flag(packet_done)); 
+
+

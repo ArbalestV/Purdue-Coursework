@@ -1,0 +1,87 @@
+module flex_pts_sr
+#(
+  parameter NUM_BITS = 4,
+  parameter SHIFT_MSB = 1
+)
+(
+	input wire clk,
+	input wire n_rst,
+	input wire shift_enable,
+	input wire load_enable,
+	input wire [NUM_BITS-1:0] parallel_in,
+	output reg serial_out
+);
+//assign serial_in = 1'b1;
+reg [NUM_BITS-1:0] f, NEXT;
+integer i,k;
+//reg serial_out_tmp;
+
+always_comb  begin //reset is 1
+    if (SHIFT_MSB == 1'b0) begin
+     // if (shift_enable == 1'b0) begin
+        //NEXT<=f;
+      if (load_enable == 1'b0) begin
+          NEXT<=f;//next state of flip flops will be the original states since not loaded
+      end
+      else begin
+       // if (load_enable == 1'b0) begin
+          //NEXT<=f;//next state of flip flops will be the original states since not loaded
+          if (shift_enable == 1'b0) begin
+            NEXT<=f;
+          end
+        else begin//if load is enabled 
+          NEXT[NUM_BITS-1:0]<=parallel_in[NUM_BITS-1:0];//load the next state of the flip flops from the parallel inputs
+        end
+        //now that the flip flops have been loaded, we will perform an L-R shift
+        for(i = NUM_BITS-2; i >= 0; i = i - 1)
+          begin 
+            NEXT[i]<=f[i+1];//each flip flop is assigned to its preceding flip flop
+        end  //end of for loop   
+        //serial_out = f[0]; 
+      end //end of when shift enable is 1
+    end//end of SHIFT_MSB==1 else statement
+
+    else begin //SHIFT_MSB=0
+      if (load_enable == 1'b0) begin
+          NEXT<=f;//next state of flip flops will be the original states since not loaded
+      //if (shift_enable == 1'b0) begin
+       // NEXT<=f;
+      end
+      else begin
+        if (shift_enable == 1'b0) begin
+         NEXT<=f;
+        //if (load_enable == 1'b0) begin
+          //NEXT<=f;//next state of flip flops will be the original states since not loaded
+        end
+        else begin//if load is enabled 
+          NEXT[NUM_BITS-1:0]<=parallel_in[NUM_BITS-1:0];//load the next state of the flip flops from the parallel inputs
+        end
+        //now that the flip flops have been loaded, we will perform an L-R shift
+        for(k = 1; k <= NUM_BITS-1; k = k + 1)
+          begin 
+            NEXT[k]<=f[k-1];//each flip flop is assigned to its preceding flip flop
+        end  //end of for loop
+        //serial_out = f[NUM_BITS-1];
+      end   //end of when shift enable is 1  
+    end //end of SHIFT_MSB==0 else statement
+end//end of combinational block  
+always_comb begin
+  if (SHIFT_MSB == 1'b0) begin
+    serial_out = f[0];
+  end
+else begin
+  serial_out = f[NUM_BITS-1];
+end
+end
+always_ff @ (posedge clk, negedge n_rst) begin
+  if (n_rst == 0) begin
+    f[NUM_BITS-1:0] <= '1;
+  end
+  else begin
+    f <= NEXT;
+  end
+end
+
+
+//assign serial_out = serial_out_tmp;
+endmodule

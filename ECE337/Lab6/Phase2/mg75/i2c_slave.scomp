@@ -1,0 +1,23 @@
+Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+-- Compiling module i2c_slave
+-- Compiling module scl_edge
+-- Compiling module sda_sel
+-- Compiling module decode
+-- Compiling module tx_fifo
+-- Compiling module tx_sr
+-- Compiling module rx_sr
+-- Compiling module controller
+-- Compiling module timer
+-- Compiling module flex_counter
+-- Compiling module flex_stp_sr
+-- Compiling module flex_pts_sr
+
+Top level modules:
+	i2c_slave
+Model Technology ModelSim SE-64 vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading entity i2c_bus
+-- Compiling entity tb_i2c_slave
+-- Compiling architecture TEST of tb_i2c_slave

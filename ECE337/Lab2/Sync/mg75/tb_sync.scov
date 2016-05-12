@@ -1,0 +1,28 @@
+Coverage Report Summary Data by instance
+
+Total Coverage By Instance (filtered view): 49.8%
+
+Instance: /tb_sync/DUT
+Design Unit: work.sync
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       43        25        18      58.1
+    Branches                    25         9        16      36.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+    Toggle Bins                 36        24        12      66.6
+
+Instance: /tb_sync
+Design Unit: work.tb_sync
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       89        80         9      89.8
+    Branches                    18         9         9      50.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+    Toggle Bins                136        26       110      19.1
+

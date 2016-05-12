@@ -1,0 +1,6 @@
+Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+-- Compiling module comparator_DW01_cmp6_0
+-- Compiling module comparator
+** Error: (vlog-7) Failed to open library file "/home/ecegrid/a/mg75/ece337/Lab1/mapped_work/comparator" in read/write/execute mode.
+No such file or directory. (errno = ENOENT)
+** Error: mapped/comparator.v(131): Verilog Compiler exiting

@@ -1,0 +1,515 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+            Version G-2012.06 for RHEL64 -- May 30, 2012
+               Copyright (c) 1988-2012 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+dc_shell> dc_shell> Running PRESTO HDLC
+Searching for ./sync.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/libraries/syn/sync.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/dw/sim_ver/sync.sv
+Searching for ./source/sync.sv
+Searching for ./counter.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/libraries/syn/counter.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/dw/sim_ver/counter.sv
+Searching for ./source/counter.sv
+Searching for ./controller.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/libraries/syn/controller.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/dw/sim_ver/controller.sv
+Searching for ./source/controller.sv
+Searching for ./flex_counter.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/libraries/syn/flex_counter.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/dw/sim_ver/flex_counter.sv
+Searching for ./source/flex_counter.sv
+Searching for ./avg_four.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/libraries/syn/avg_four.sv
+Searching for /package/eda/synopsys/syn-G-2012.06/dw/sim_ver/avg_four.sv
+Searching for ./source/avg_four.sv
+Compiling source file ./source/sync.sv
+Compiling source file ./source/counter.sv
+Compiling source file ./source/controller.sv
+Compiling source file ./source/flex_counter.sv
+Compiling source file ./source/avg_four.sv
+Warning:  ./source/avg_four.sv:30: the undeclared symbol 'overflow' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ./source/avg_four.sv:30: The delay specification for net declaration is ignored. (VER-976)
+Presto compilation completed successfully.
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Loading db file '/package/eda/synopsys/syn-G-2012.06/libraries/syn/dw_foundation.sldb'
+1
+dc_shell> Loading db file '/package/eda/synopsys/syn-G-2012.06/libraries/syn/gtech.db'
+Loading db file '/package/eda/synopsys/syn-G-2012.06/libraries/syn/standard.sldb'
+  Loading link library 'osu05_stdcells'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'avg_four'.
+Information: Building the design 'sync'. (HDL-193)
+
+Inferred memory devices in process
+	in routine sync line 15 in file
+		'./source/sync.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        d_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    sync_out_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'controller'. (HDL-193)
+
+Statistics for case statements in always block at line 31 in file
+	'./source/controller.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            40            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 136 in file
+	'./source/controller.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           138            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine controller line 19 in file
+		'./source/controller.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'counter'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'datapath'. (HDL-193)
+Warning:  ./Course_IP_VHDL/Datapath/source/datapath.vhd:188: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 183 in file
+	'./Course_IP_VHDL/Datapath/source/datapath.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           188            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'flex_counter' instantiated from design 'counter' with
+	the parameters "10". (HDL-193)
+
+Inferred memory devices in process
+	in routine flex_counter_NUM_CNT_BITS10 line 47 in file
+		'./source/flex_counter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  rollover_flag_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|        f_reg        | Flip-flop |  10   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath_ctrl'. (HDL-193)
+
+Statistics for case statements in always block at line 58 in file
+	'./Course_IP_VHDL/Datapath/source/datapath_ctrl.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            65            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'regfile' instantiated from design 'datapath' with
+	the parameters "NUM_REG_ADDR_BITS=4,REG_SIZE_BITS=16". (HDL-193)
+
+Inferred memory devices in process
+	in routine regfile_NUM_REG_ADDR_BITS4_REG_SIZE_BITS16 line 65 in file
+		'./Course_IP_VHDL/Datapath/source/regfile.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      regs_reg       | Flip-flop |  256  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'alu' instantiated from design 'datapath' with
+	the parameters "DATA_SIZE_BITS=16". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'scalable_cla_addr' instantiated from design 'alu_DATA_SIZE_BITS16' with
+	the parameters "NUM_CLA_BLKS=4,CLA_BLK_SIZE_BITS=4". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'scalable_cla_block' instantiated from design 'scalable_cla_addr_NUM_CLA_BLKS4_CLA_BLK_SIZE_BITS4' with
+	the parameters "CLA_BLK_SIZE_BITS=4". (HDL-193)
+Presto compilation completed successfully.
+1
+dc_shell> dc_shell> Information: Uniquified 4 instances of design 'scalable_cla_block_CLA_BLK_SIZE_BITS4'. (OPT-1056)
+1
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> 1
+dc_shell> 1
+dc_shell> 1
+dc_shell> 1
+dc_shell> 1
+dc_shell> 1
+dc_shell> 1
+dc_shell> dc_shell> dc_shell> Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | G-2012.06-DWBB_201206.0 |     *     |
+| Licensed DW Building Blocks        | G-2012.06-DWBB_201206.0 |     *     |
+============================================================================
+
+
+Information: There are 25 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'scalable_cla_block_CLA_BLK_SIZE_BITS4_0'
+  Processing 'scalable_cla_addr_NUM_CLA_BLKS4_CLA_BLK_SIZE_BITS4'
+  Processing 'alu_DATA_SIZE_BITS16'
+  Processing 'regfile_NUM_REG_ADDR_BITS4_REG_SIZE_BITS16'
+  Processing 'datapath_ctrl'
+  Processing 'datapath'
+  Processing 'flex_counter_NUM_CNT_BITS10'
+Information: Added key list 'DesignWare' to design 'flex_counter_NUM_CNT_BITS10'. (DDB-72)
+  Processing 'counter'
+  Processing 'controller'
+  Processing 'sync'
+  Processing 'avg_four'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'flex_counter_NUM_CNT_BITS10_DW01_dec_0'
+  Processing 'flex_counter_NUM_CNT_BITS10_DW01_inc_0'
+  Mapping 'flex_counter_NUM_CNT_BITS10_DW_mult_uns_0'
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:21  919998.0      1.79     250.8       0.0                          
+    0:00:21  919998.0      1.79     250.8       0.0                          
+    0:00:21  919998.0      1.79     250.8       0.0                          
+    0:00:21  919998.0      1.79     250.8       0.0                          
+    0:00:21  919998.0      1.79     250.8       0.0                          
+    0:00:21  919998.0      1.79     250.8       0.0                          
+    0:00:22  898110.0      1.83     255.5       0.0                          
+    0:00:22  898326.0      1.84     253.8       0.0                          
+    0:00:22  898326.0      1.80     251.0       0.0                          
+    0:00:23  898182.0      1.81     251.7       0.0                          
+    0:00:23  898254.0      1.81     251.5       0.0                          
+    0:00:23  898326.0      1.81     251.3       0.0                          
+    0:00:23  898398.0      1.81     251.1       0.0                          
+    0:00:23  898470.0      1.81     250.9       0.0                          
+    0:00:23  898542.0      1.81     250.7       0.0                          
+    0:00:23  898614.0      1.81     250.5       0.0                          
+    0:00:23  898686.0      1.81     250.3       0.0                          
+    0:00:23  898758.0      1.79     250.1       0.0                          
+    0:00:23  898758.0      1.79     250.1       0.0                          
+    0:00:23  898758.0      1.79     250.1       0.0                          
+    0:00:23  898758.0      1.79     250.1       0.0                          
+    0:00:23  898758.0      1.79     250.1       0.0                          
+    0:00:23  898758.0      1.79     250.1       0.0                          
+    0:00:23  898758.0      1.79     250.1       0.0                          
+    0:00:23  898758.0      1.79     250.1       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:23  898758.0      1.79     250.1       0.0                          
+    0:00:24  899334.0      1.78     248.3       0.0 dp/REG_FILE/regs_reg[0][7]/D
+    0:00:24  900414.0      1.74     243.1       0.0 dp/REG_FILE/regs_reg[0][4]/D
+    0:00:24  903294.0      1.73     242.8       0.0 dp/REG_FILE/regs_reg[0][1]/D
+    0:00:25  904734.0      1.71     240.4       0.0 dp/REG_FILE/regs_reg[0][8]/D
+    0:00:25  905238.0      1.71     239.6       0.0 dp/REG_FILE/regs_reg[0][10]/D
+    0:00:25  905742.0      1.70     239.1       0.0 dp/REG_FILE/regs_reg[0][13]/D
+    0:00:25  906498.0      1.70     238.8       0.0 dp/REG_FILE/regs_reg[0][11]/D
+    0:00:25  906642.0      1.70     238.1       0.0 dp/REG_FILE/regs_reg[0][8]/D
+    0:00:25  907002.0      1.69     238.0       0.0 dp/ALU_MAP/CLA_ADDR/S[13]
+    0:00:25  907506.0      1.69     237.9       0.0 dp/REG_FILE/regs_reg[0][8]/D
+    0:00:26  908703.0      1.68     235.9       0.0 dp/REG_FILE/regs_reg[0][8]/D
+    0:00:26  911979.0      1.68     235.1       0.0 dp/REG_FILE/regs_reg[0][2]/D
+    0:00:26  912411.0      1.67     234.2       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:26  912843.0      1.65     232.6       0.0 dp/REG_FILE/regs_reg[0][8]/D
+    0:00:26  912987.0      1.65     232.3       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:26  913131.0      1.65     232.1       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:26  914283.0      1.65     231.9       0.0 dp/REG_FILE/regs_reg[0][1]/D
+    0:00:26  914499.0      1.64     231.0       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:26  915363.0      1.63     230.0       0.0 dp/REG_FILE/regs_reg[0][8]/D
+    0:00:27  915291.0      1.63     229.6       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:27  915579.0      1.63     229.3       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:27  915579.0      1.62     229.1       0.0 dp/REG_FILE/regs_reg[0][9]/D
+    0:00:27  915579.0      1.62     228.7       0.0 dp/REG_FILE/regs_reg[0][2]/D
+    0:00:27  915435.0      1.62     228.6       0.0 dp/REG_FILE/regs_reg[0][13]/D
+    0:00:27  915507.0      1.62     227.9       0.0 dp/REG_FILE/regs_reg[0][2]/D
+    0:00:27  916083.0      1.61     227.0       0.0 dp/REG_FILE/regs_reg[0][7]/D
+    0:00:27  916299.0      1.60     226.4       0.0 dp/REG_FILE/regs_reg[0][2]/D
+    0:00:28  916515.0      1.60     226.1       0.0 dp/REG_FILE/regs_reg[4][5]/D
+    0:00:28  916659.0      1.59     225.4       0.0 dp/REG_FILE/regs_reg[0][15]/D
+    0:00:28  916947.0      1.59     225.4       0.0 dp/REG_FILE/regs_reg[0][1]/D
+    0:00:28  916155.0      1.59     225.2       0.0 dp/REG_FILE/regs_reg[0][9]/D
+    0:00:28  915363.0      1.59     224.9       0.0 dp/REG_FILE/regs_reg[0][0]/D
+    0:00:28  915579.0      1.58     223.9       0.0 dp/REG_FILE/regs_reg[7][9]/D
+    0:00:28  915579.0      1.58     223.9       0.0 dp/REG_FILE/regs_reg[4][13]/D
+    0:00:29  915723.0      1.58     223.4       0.0 dp/REG_FILE/regs_reg[0][0]/D
+    0:00:29  915867.0      1.58     223.2       0.0 dp/REG_FILE/regs_reg[0][0]/D
+    0:00:29  916083.0      1.57     222.7       0.0 dp/REG_FILE/regs_reg[7][13]/D
+    0:00:29  916659.0      1.57     222.4       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:29  918531.0      1.57     222.4       0.0 dp/REG_FILE/regs_reg[7][9]/D
+    0:00:29  918603.0      1.57     222.3       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:33  920799.0      1.57     221.9       0.0                          
+    0:00:33  920943.0      1.57     221.8       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:34  920943.0      1.56     221.8       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:34  920943.0      1.56     221.8       0.0 dp/REG_FILE/regs_reg[0][2]/D
+    0:00:34  920943.0      1.56     221.4       0.0 dp/REG_FILE/regs_reg[0][3]/D
+    0:00:34  921303.0      1.56     221.2       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:00:37  921735.0      1.56     221.1       0.0                          
+    0:00:37  922095.0      1.56     221.1       0.0 dp/REG_FILE/regs_reg[0][13]/D
+    0:00:37  921303.0      1.56     221.1       0.0 dp/REG_FILE/regs_reg[7][13]/D
+    0:00:38  921231.0      1.56     221.1       0.0 dp/REG_FILE/regs_reg[7][13]/D
+    0:00:41  923391.0      1.56     220.9       0.0                          
+    0:00:44  923463.0      1.56     220.9       0.0                          
+    0:00:47  923247.0      1.56     221.0       0.0                          
+    0:00:52  924543.0      1.56     220.7       0.0                          
+    0:00:52  924687.0      1.56     220.7       0.0 dp/REG_FILE/regs_reg[0][15]/D
+    0:00:52  924831.0      1.56     220.6       0.0 dp/REG_FILE/regs_reg[0][14]/D
+    0:00:53  925407.0      1.55     220.5       0.0 dp/REG_FILE/regs_reg[0][2]/D
+    0:00:53  925407.0      1.55     220.5       0.0 dp/REG_FILE/regs_reg[0][2]/D
+    0:00:53  925335.0      1.55     220.4       0.0 dp/REG_FILE/regs_reg[2][0]/D
+    0:00:54  925119.0      1.55     220.3       0.0                          
+    0:00:58  925479.0      1.55     219.8       0.0                          
+    0:00:58  925911.0      1.55     219.8       0.0 dp/REG_FILE/regs_reg[0][4]/D
+    0:00:58  926055.0      1.55     219.7       0.0 dp/REG_FILE/regs_reg[0][3]/D
+    0:00:59  926487.0      1.55     219.5       0.0 dp/REG_FILE/regs_reg[0][10]/D
+    0:00:59  927063.0      1.55     219.3       0.0 dp/REG_FILE/regs_reg[0][14]/D
+    0:00:59  927135.0      1.55     218.8       0.0 dp/REG_FILE/regs_reg[0][7]/D
+    0:00:59  927423.0      1.54     218.6       0.0 dp/REG_FILE/regs_reg[0][14]/D
+    0:00:59  927927.0      1.54     218.3       0.0 dp/REG_FILE/regs_reg[0][9]/D
+    0:01:00  928575.0      1.54     218.0       0.0 dp/REG_FILE/regs_reg[0][12]/D
+    0:01:00  928647.0      1.54     217.2       0.0 dp/REG_FILE/regs_reg[0][3]/D
+    0:01:00  928863.0      1.54     216.8       0.0 dp/REG_FILE/regs_reg[0][3]/D
+    0:01:01  929583.0      1.53     216.2       0.0                          
+    0:01:03  929655.0      1.53     216.4       0.0                          
+    0:01:06  929511.0      1.53     216.6       0.0                          
+    0:01:06  929655.0      1.53     216.6       0.0 dp/REG_FILE/regs_reg[0][5]/D
+    0:01:10  929511.0      1.53     216.0       0.0                          
+    0:01:14  929727.0      1.53     215.8       0.0                          
+    0:01:18  929871.0      1.53     215.7       0.0                          
+    0:01:18  929871.0      1.53     215.7       0.0 dp/REG_FILE/regs_reg[0][7]/D
+    0:01:21  930375.0      1.53     215.2       0.0                          
+    0:01:21  930303.0      1.53     215.1       0.0 dp/REG_FILE/regs_reg[4][0]/D
+    0:01:21  930375.0      1.53     215.7       0.0 dp/REG_FILE/regs_reg[0][8]/D
+    0:01:25  930735.0      1.52     215.6       0.0                          
+    0:01:25  930591.0      1.52     215.6       0.0 dp/REG_FILE/regs_reg[0][0]/D
+    0:01:27  930591.0      1.52     215.6       0.0                          
+    0:01:31  931248.0      1.52     215.6       0.0                          
+    0:01:34  931248.0      1.52     215.6       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:35  931464.0      1.52     215.6       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:38  930240.0      1.52     215.3       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:39  930240.0      1.52     215.2       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:43  930951.0      1.52     214.3       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:43  930951.0      1.52     214.3       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:47  931095.0      1.52     214.3       0.0                          
+    0:01:47  931095.0      1.52     214.2       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:52  930987.0      1.52     214.1       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:52  931599.0      1.52     214.3       0.0 dp/REG_FILE/regs_reg[0][0]/D
+    0:01:52  931887.0      1.52     213.4       0.0 dp/REG_FILE/regs_reg[1][6]/D
+    0:01:53  932463.0      1.52     213.3       0.0 dp/REG_FILE/regs_reg[0][0]/D
+    0:01:54  932643.0      1.52     213.3       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:55  932931.0      1.52     213.3       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:01:57  932931.0      1.52     213.3       0.0                          
+    0:01:57  932931.0      1.52     213.3       0.0                          
+    0:01:57  933075.0      1.52     213.3       0.0                          
+    0:01:58  933147.0      1.51     213.3       0.0                          
+    0:01:58  933651.0      1.51     213.2       0.0                          
+    0:01:58  933507.0      1.51     212.8       0.0                          
+    0:01:58  934011.0      1.51     212.8       0.0                          
+    0:01:58  933651.0      1.51     212.6       0.0                          
+    0:01:58  933219.0      1.51     212.4       0.0                          
+    0:01:59  933003.0      1.51     211.9       0.0                          
+    0:01:59  932643.0      1.51     211.6       0.0                          
+    0:01:59  933003.0      1.51     211.4       0.0                          
+    0:01:59  932715.0      1.51     211.2       0.0                          
+    0:01:59  932139.0      1.51     211.0       0.0                          
+    0:01:59  932499.0      1.51     211.0       0.0                          
+    0:01:59  931131.0      1.51     210.6       0.0                          
+    0:02:00  930987.0      1.51     209.2       0.0                          
+    0:02:00  930987.0      1.51     209.4       0.0                          
+    0:02:00  930915.0      1.51     209.1       0.0                          
+    0:02:00  931059.0      1.51     209.0       0.0                          
+    0:02:00  931131.0      1.51     209.0       0.0                          
+    0:02:00  931275.0      1.50     209.3       0.0                          
+    0:02:01  931635.0      1.50     207.9       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:02:01  931635.0      1.50     207.9       0.0                          
+    0:02:01  931635.0      1.50     207.9       0.0                          
+    0:02:01  931635.0      1.50     207.9       0.0                          
+    0:02:01  920763.0      1.56     213.0       0.0                          
+    0:02:01  918747.0      1.56     213.3       0.0                          
+    0:02:01  918459.0      1.56     213.3       0.0                          
+    0:02:01  918315.0      1.56     213.3       0.0                          
+    0:02:01  918315.0      1.56     213.3       0.0                          
+    0:02:01  918315.0      1.56     213.3       0.0                          
+    0:02:02  918495.0      1.56     213.4       0.0 dp/ALU_MAP/CLA_ADDR/S[15]
+    0:02:02  918639.0      1.55     212.8       0.0 dp/REG_FILE/regs_reg[0][14]/D
+    0:02:02  919215.0      1.55     212.4       0.0 dp/REG_FILE/regs_reg[0][14]/D
+    0:02:02  919431.0      1.54     212.3       0.0 dp/REG_FILE/regs_reg[0][15]/D
+    0:02:03  921879.0      1.54     212.0       0.0 dp/REG_FILE/regs_reg[0][15]/D
+    0:02:03  921879.0      1.54     211.9       0.0 dp/REG_FILE/regs_reg[0][15]/D
+    0:02:03  922167.0      1.54     211.7       0.0 dp/REG_FILE/regs_reg[0][15]/D
+    0:02:03  922311.0      1.54     211.9       0.0 dp/REG_FILE/regs_reg[0][15]/D
+    0:02:04  922527.0      1.54     211.8       0.0 dp/REG_FILE/regs_reg[1][1]/D
+    0:02:04  922527.0      1.54     211.8       0.0 dp/REG_FILE/regs_reg[0][7]/D
+    0:02:04  922527.0      1.53     211.8       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:02:04  922959.0      1.53     211.7       0.0 dp/REG_FILE/regs_reg[0][15]/D
+    0:02:05  922959.0      1.53     211.7       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:02:05  922959.0      1.53     211.7       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:02:05  923031.0      1.53     211.6       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:02:05  923319.0      1.53     211.1       0.0 dp/REG_FILE/regs_reg[0][14]/D
+    0:02:06  923607.0      1.52     211.1       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:02:06  923607.0      1.52     211.1       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:02:06  923607.0      1.52     210.6       0.0 dp/REG_FILE/regs_reg[1][8]/D
+    0:02:06  923607.0      1.52     210.7       0.0 dp/REG_FILE/regs_reg[0][15]/D
+    0:02:06  923607.0      1.52     210.6       0.0 dp/REG_FILE/regs_reg[0][6]/D
+    0:02:09  923535.0      1.52     210.5       0.0                          
+    0:02:09  923535.0      1.52     210.5       0.0                          
+    0:02:09  923535.0      1.52     210.5       0.0                          
+    0:02:09  921591.0      1.52     210.5       0.0                          
+    0:02:09  921591.0      1.52     210.5       0.0                          
+    0:02:09  921591.0      1.52     210.5       0.0                          
+    0:02:09  921591.0      1.52     210.5       0.0                          
+    0:02:09  921591.0      1.52     210.5       0.0                          
+    0:02:09  921591.0      1.52     210.5       0.0                          
+    0:02:09  921591.0      1.52     210.5       0.0                          
+    0:02:10  921303.0      1.52     210.5       0.0                          
+    0:02:11  919071.0      1.52     210.5       0.0                          
+    0:02:11  919071.0      1.52     210.5       0.0                          
+    0:02:11  919359.0      1.52     210.4       0.0                          
+    0:02:11  919647.0      1.52     210.2       0.0                          
+    0:02:11  920007.0      1.52     210.0       0.0                          
+    0:02:12  920007.0      1.52     209.8       0.0                          
+    0:02:12  920007.0      1.52     209.2       0.0                          
+    0:02:12  919791.0      1.52     209.1       0.0                          
+    0:02:12  919791.0      1.52     209.0       0.0                          
+    0:02:13  919647.0      1.52     208.7       0.0                          
+    0:02:13  919719.0      1.52     208.6       0.0                          
+    0:02:13  919863.0      1.52     208.6       0.0 dp/REG_FILE/regs_reg[0][6]/D
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+
+  Optimization Complete
+  ---------------------
+1
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> Writing verilog file '/home/ecegrid/a/ece337/Submissions/Fall14/Lab4/Avg_Four/mg75/mapped/avg_four.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 5 nets to module avg_four using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+dc_shell> 
+Script Done
+
+dc_shell> 
+Checking Design
+
+dc_shell>  
+****************************************
+check_design summary:
+Version:     G-2012.06
+Date:        Wed Sep 24 17:10:01 2014
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      8
+    Shorted outputs (LINT-31)                                       3
+    Constant outputs (LINT-52)                                      5
+
+Cells                                                              17
+    Connected to power or ground (LINT-32)                         15
+    Nets connected to multiple pins on same cell (LINT-33)          2
+--------------------------------------------------------------------------------
+
+Warning: In design 'avg_four', output port 'avg_out[15]' is connected directly to output port 'avg_out[14]'. (LINT-31)
+Warning: In design 'controller', output port 'src1[3]' is connected directly to output port 'dest[3]'. (LINT-31)
+Warning: In design 'controller', output port 'src1[3]' is connected directly to output port 'src2[3]'. (LINT-31)
+Warning: In design 'avg_four', a pin on submodule 'dp' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src1[3]' is connected to logic 0. 
+Warning: In design 'avg_four', a pin on submodule 'dp' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src2[3]' is connected to logic 0. 
+Warning: In design 'avg_four', a pin on submodule 'dp' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'dest[3]' is connected to logic 0. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'clear' is connected to logic 0. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[9]' is connected to logic 1. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[8]' is connected to logic 1. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[7]' is connected to logic 1. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[6]' is connected to logic 1. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[5]' is connected to logic 1. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[4]' is connected to logic 0. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 0. 
+Warning: In design 'counter', a pin on submodule 'call_counter' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'alu_DATA_SIZE_BITS16', a pin on submodule 'CLA_ADDR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'Cin' is connected to logic 0. 
+Warning: In design 'counter', the same net is connected to more than one pin on submodule 'call_counter'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'clear', 'rollover_val[4]'', 'rollover_val[2]', 'rollover_val[1]', 'rollover_val[0]'.
+Warning: In design 'counter', the same net is connected to more than one pin on submodule 'call_counter'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'rollover_val[9]', 'rollover_val[8]'', 'rollover_val[7]', 'rollover_val[6]', 'rollover_val[5]', 'rollover_val[3]'.
+Warning: In design 'avg_four', output port 'avg_out[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'avg_four', output port 'avg_out[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'controller', output port 'src1[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'controller', output port 'src2[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'controller', output port 'dest[3]' is connected directly to 'logic 0'. (LINT-52)
+1
+dc_shell> 
+Thank you...

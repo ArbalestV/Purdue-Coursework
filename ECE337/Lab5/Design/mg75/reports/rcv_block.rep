@@ -1,0 +1,132 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rcv_block
+Version: G-2012.06
+Date   : Wed Oct  1 01:37:07 2014
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: RCU/state_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: TIME_CNT/CTR1/f_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RCU/state_reg[2]/CLK (DFFSR)                            0.00       0.00 r
+  RCU/state_reg[2]/Q (DFFSR)                              0.44       0.44 r
+  RCU/U12/Y (INVX2)                                       0.14       0.58 f
+  RCU/U13/Y (NAND3X1)                                     0.19       0.77 r
+  RCU/U23/Y (INVX2)                                       0.13       0.90 f
+  RCU/enable_timer (rcu)                                  0.00       0.90 f
+  TIME_CNT/enable_timer (timer)                           0.00       0.90 f
+  TIME_CNT/CTR1/count_enable (flex_counter_1)             0.00       0.90 f
+  TIME_CNT/CTR1/U21/Y (OR2X2)                             0.19       1.09 f
+  TIME_CNT/CTR1/U39/Y (INVX1)                             0.15       1.24 r
+  TIME_CNT/CTR1/U38/Y (INVX2)                             0.18       1.42 f
+  TIME_CNT/CTR1/U56/Y (OAI21X1)                           0.14       1.56 r
+  TIME_CNT/CTR1/U24/Y (OR2X1)                             0.22       1.78 r
+  TIME_CNT/CTR1/f_reg[3]/D (DFFSR)                        0.00       1.78 r
+  data arrival time                                                  1.78
+
+  clock clk (rise edge)                                   2.00       2.00
+  clock network delay (ideal)                             0.00       2.00
+  TIME_CNT/CTR1/f_reg[3]/CLK (DFFSR)                      0.00       2.00 r
+  library setup time                                     -0.21       1.79
+  data required time                                                 1.79
+  --------------------------------------------------------------------------
+  data required time                                                 1.79
+  data arrival time                                                 -1.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+ 
+****************************************
+Report : area
+Design : rcv_block
+Version: G-2012.06
+Date   : Wed Oct  1 01:37:07 2014
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                           15
+Number of nets:                            31
+Number of cells:                            6
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros:                           0
+Number of buf/inv:                          0
+Number of references:                       6
+
+Combinational area:       51975.000000
+Noncombinational area:    57024.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:          108999.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : rcv_block
+Version: G-2012.06
+Date   : Wed Oct  1 01:37:07 2014
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+rcv_block                                 2.806   41.106   33.940   43.912 100.0
+  DATA_BUFFER (rx_data_buff)           2.00e-03   10.348    6.658   10.350  23.6
+  STOP_BIT_CHCK (stop_bit_chk)         2.58e-03    1.027    0.737    1.030   2.3
+  SHIFT_REG (sr_9bit)                     0.140    9.409    6.005    9.549  21.7
+    SHIFT_BLOCK (flex_stp_sr_NUM_BITS9_SHIFT_MSB0)
+                                          0.140    9.409    6.005    9.549  21.7
+  TIME_CNT (timer)                        2.440   13.450   16.228   15.889  36.2
+    CTR2 (flex_counter_0)                 0.188    5.316    8.091    5.505  12.5
+    CTR1 (flex_counter_1)                 2.252    8.133    8.137   10.385  23.6
+  RCU (rcu)                               0.145    3.281    2.632    3.426   7.8
+  START (start_bit_det)                7.66e-02    3.591    1.681    3.667   8.4
+1

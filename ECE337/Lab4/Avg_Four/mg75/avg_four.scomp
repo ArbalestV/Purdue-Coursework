@@ -1,0 +1,16 @@
+Model Technology ModelSim SE-64 vlog 10.1b Compiler 2012.04 Apr 26 2012
+-- Compiling module avg_four
+-- Compiling module sync
+-- Compiling module counter
+-- Compiling module controller
+-- Compiling module flex_counter
+
+Top level modules:
+	avg_four
+Model Technology ModelSim SE-64 vcom 10.1b Compiler 2012.04 Apr 26 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity tb_avg_four
+-- Compiling architecture vectorized_test_bench of tb_avg_four

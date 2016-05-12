@@ -1,0 +1,44 @@
+11.1. Design Questions
+
+1. Total no. of clock cycles required in minimum = 5.
+Therefore, in terms of time, min. time = (5 * 5 ns) = 25 ns
+Min. clock cycles to ensure data remians valid = 5 clock cycles (1 clock cycle to go from idle to store, then 4 from reg[5] to reg[1].
+
+2. Pseudo-code for dot product of src1*src2 = dest
+
+idle: if (data_ready = 0) goto idle; //wait until data_ready = 1
+store: if (data_ready = 0) goto eidle; //go to error state
+       reg[5] = data; //store data in register 5
+       err = 0;//reset error
+sort1: reg[1] = reg[2];//1 <- 2
+sort2: reg[2] = reg[3];//2 <- 3
+sort3: reg[3] = reg[4]; //3 <- 4
+sort4: reg[4] = reg[5];//4 <- 5
+multiply:   reg[6] = reg[1] * reg[3];
+       	    reg[7] = reg[2] * reg[4];
+add:        reg[0] = reg[6] + reg[7]; //add the dot products together, store result
+               if (V) goto eidle; //on overflow, err condition
+               goto idle;
+eidle: err = 1;//set error flag
+       if (data_ready = 1) goto store;//wait until data_ready = 1
+       if (data_ready = 0) goto eidle; 	 
+
+
+Verilog File IO Demo
+1. The output file produced by the code is blurred from the original. Since we are averaging out the pixels, this makes sense for the resultant image file to have the pixels being different from the original file. In this case, the original is clearer.
+2. file Input: var_in = $fopen(input_filename, "rb")  
+   $fscanf(var_in,"%c", var)//read from a file
+   $ftell(var_in))
+   file Output: output_var = $fopen(output_filename, "wb") 
+   $fwrite(output_var,"%c",var) //write to a file
+   Closing a file: $fclose(file_name)
+   fseek(input_var,number_of_bytes,format_specific_statement)
+
+3. Different format specifies:-
+(a) SEEK_START
+(b) SEEK_CUR
+(c) SEEK_END
+
+
+
+

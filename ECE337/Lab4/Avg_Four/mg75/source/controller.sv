@@ -1,0 +1,207 @@
+module controller
+  (
+  input wire clk,
+  input wire n_reset,
+  input wire dr,
+  input wire overflow,
+  output reg cnt_up,
+  output wire modwait,
+  output reg [1:0] op,
+  output reg [3:0] src1,
+  output reg [3:0] src2,
+  output reg [3:0] dest,
+  output reg err
+  );
+  reg modwait2;
+  typedef enum logic [3:0] {EIDLE, IDLE, STORE, SORT1, SORT2, SORT3, SORT4, ADD1, ADD2, ADD3} state_type;
+  state_type state, nextstate;
+  
+  always@(posedge clk, negedge n_reset)
+  begin
+    if (n_reset == 0) 
+    begin
+      state <= IDLE;
+    end
+    else begin
+      state <= nextstate;
+    end
+  end
+  
+  //output combinational block
+  always @ (state) 
+    begin
+      cnt_up = 1'b0;
+      modwait2 = 1'b0;
+      op = 2'b00;
+      src1 = 4'b0000;
+      src2 = 4'b0000;
+      dest = 4'b0000;
+      err = 1'b0; 
+    case (state)
+      EIDLE: begin
+        cnt_up = 1'b0;
+        modwait2 = 1'b0;
+        op = 2'b00;
+        src1 = 4'b0000;
+        src2 = 4'b0000;
+        dest = 4'b0000;
+        err = 1'b1;
+      end
+      IDLE: begin
+        cnt_up = 1'b0;
+        modwait2 = 1'b0;
+        op = 2'b00;
+        src1 = 4'b0000;
+        src2 = 4'b0000;
+        dest = 4'b0000;
+        err = 1'b0; 
+      end
+      STORE: begin
+        cnt_up = 1'b1;
+        modwait2 = 1'b1;
+        op = 2'b10;
+        src1 = 4'b0000;
+        src2 = 4'b0000;
+        dest = 4'b0101;
+        err = 1'b0;
+      end
+      SORT1: begin
+        cnt_up = 1'b0;
+        modwait2 = 1'b1;
+        op = 2'b01;
+        src1 = 4'b0010;
+        src2 = 4'b0000;
+        dest = 4'b0001;
+        err = 1'b0;
+      end
+      SORT2: begin
+        cnt_up = 1'b0;
+        modwait2 = 1'b1;
+        op = 2'b01;
+        src1 = 4'b0011;
+        src2 = 4'b0000;
+        dest = 4'b0010;
+        err = 1'b0;
+      end
+      SORT3: begin
+        cnt_up = 1'b0;
+        modwait2 = 1'b1;
+        op = 2'b01;
+        src1 = 4'b0100;
+        src2 = 4'b0000;
+        dest = 4'b0011;
+        err = 1'b0;
+      end
+      SORT4: begin
+        cnt_up = 1'b0;
+        modwait2 = 1'b1;
+        op = 2'b01;
+        src1 = 4'b0101;
+        src2 = 4'b0000;
+        dest = 4'b0100;
+        err = 1'b0;
+      end
+      ADD1: begin
+        cnt_up = 1'b0;
+        modwait2 = 1'b1;
+        op = 2'b11;
+        src1 = 4'b0001;
+        src2 = 4'b0010;
+        dest = 4'b0110;
+        err = 1'b0;
+      end
+      ADD2: begin
+        cnt_up = 1'b0;
+        modwait2 = 1'b1;
+        op = 2'b11;
+        src1 = 4'b0011;
+        src2 = 4'b0100;
+        dest = 4'b0111;
+        err = 1'b0;
+      end
+      ADD3: begin
+        cnt_up = 1'b0;
+        modwait2 = 1'b1;
+        op = 2'b11;
+        src1 = 4'b0110;
+        src2 = 4'b0111;
+        dest = 4'b0000;
+        err = 1'b0;
+      end
+      endcase
+    end
+    
+assign modwait = modwait2;    
+
+  always @ (state, dr, overflow) begin : Next_state
+    nextstate = IDLE;
+    case (state)
+      EIDLE: begin
+        if (dr == 1)
+          nextstate = STORE;
+        else
+          nextstate = EIDLE;
+        end
+      IDLE: begin
+        if (dr == 1)
+          nextstate = STORE;
+        else
+          nextstate = IDLE;
+        end
+      STORE: begin
+        if (dr == 1)
+          nextstate = SORT1;
+        else
+          nextstate = EIDLE;
+        end
+      SORT1: begin
+        //if (dr == 1)
+          nextstate = SORT2;
+        /*else
+          nextstate = IDLE;
+        end*/
+      end
+      SORT2: begin
+        //if (dr == 1)
+          nextstate = SORT3;
+        /*else
+          nextstate = IDLE;
+        end*/
+      end
+      SORT3: begin
+        //if (dr == 1)
+          nextstate = SORT4;
+        /*else
+          nextstate = IDLE;
+        end*/
+      end
+      SORT4: begin
+        //if (dr == 1)
+          nextstate = ADD1;
+        /*else
+          nextstate = IDLE;
+        end*/
+      end
+      ADD1: begin
+        if (overflow == 0)
+          nextstate = ADD2;
+        else
+          nextstate = EIDLE;
+        end
+      ADD2: begin
+        if (overflow == 0)
+          nextstate = ADD3;
+        else
+          nextstate = EIDLE;
+        end
+      ADD3: begin
+        if (overflow == 0)
+          nextstate = IDLE;
+        else
+          nextstate = EIDLE;
+        end
+      endcase
+    end
+    
+    
+  endmodule
