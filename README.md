@@ -1,6 +1,6 @@
 # Purdue
 
-Repository or Purdue coursework.
+Repository for Purdue coursework.
 
 Course ID -> Name of Class
 
